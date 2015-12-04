@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="contacts.css">
-<!--<s:Push Id="init" Value="$initvalues()"/>
-<s:Push Id="search" Value="$param1"/>
-<s:Push Id="s" Value="$SetListType()"></s:Push> --> 
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="Client\contacts.css">
+
 <c:SwipeHorizontalLayout Id="swipe_layout" Index="1">
-  <!--  <s:Include File="\Components\sideMenu.xml"/>-->
+
   
   <c:VerticalLayout>
 
@@ -20,52 +18,37 @@
     </c:DockLayout>
 
     
-		  <s:Push Id="allClients" Value="$GetAllsActiveTask2()"></s:Push>
-		  <s:Push Id="count_allClients" Value="$GetUnloadCount($allClients)"></s:Push>
+		
 
-	    
-	   
+<!--<s:Push Id="event" Value="$GetEventDetails($param1)"></s:Push>-->
+<s:Push Id="exTasks" Value="$GetExecutedContact()"></s:Push>  
 	
 	    
-    
-    <c:HorizontalLine/>
+   
 
 	<!-- Begin all visits screen -->
-		<s:If Test="$count_allClients > 0">
-			<c:ScrollView Id="SVAll">
-				<s:Iterator Id="allClientsItem" Value="$allClients">      
-	
-	          <c:HorizontalLine/>
-	          <c:HorizontalLayout CssClass="grid">
-	            <c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
-	            <c:VerticalLayout>
-	              <c:TextView Text="$allClientsItem.FIO" CssClass="main_row"></c:TextView>
+			<c:ScrollView>
+			<s:Iterator Id="eTask" Value="$exTasks">
 
+			<c:SwipeHorizontalLayout Id="swipe_layout2" CssClass="swipe_layout">
+					<c:DockLayout CssClass="grid">
+						<c:Image />
+						<c:VerticalLayout>
+							<c:TextView Text="$eTask.FIO" CssClass="description_row"></c:TextView>
+							<c:TextView Text="$eTask.Tel" CssClass="main_row"></c:TextView>
+						</c:VerticalLayout>						
+					</c:DockLayout>
+					
+				</c:SwipeHorizontalLayout>
+				
 
-
-	            
-
-	              <c:TextView Text="$allClientsItem.Tel" CssClass="description_row"></c:TextView>
-		
-	            </c:VerticalLayout>
-	            <c:Image />
-	          </c:HorizontalLayout>
-	
-	        </s:Iterator>
-			<c:HorizontalLine/>
-	        
-	
-	        <c:HorizontalLayout CssClass="end_of_block"/>
-	
+			</s:Iterator>
 				
 	
 	      </c:ScrollView>
 	      	
 	      
-    </s:If>
-      <s:Else>
-				<c:TextView Text="Нет контактов" CssClass="emptyRecordSetAllRequest"/>				
-		</s:Else>
+
 
 	<!-- End Body screen   -->
     

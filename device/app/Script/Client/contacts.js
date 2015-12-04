@@ -5,25 +5,24 @@ function DoBackAndClean(){
 	//DB.Rollback();
 }
 
+function GetEventDetails() {
 
-function GetAllsActiveTask2() {
-	var q = new Query();
-
-	var queryText = "SELECT Id, FIO, Tel" + 
-		" FROM Catalog_Client_Contact";
-
-	if ($.Exists("searchAll")) {
-		var searchString = $.searchAll;
-		if ($.searchAll != null && $.searchAll != ""){
-			var searchtail = " WHERE  (Contains(Ref, @Ref)";
-			q.AddParameter("SearchText", searchString);
-			queryText = queryText + searchtail;
-		}
-	}
-	q.Text = queryText;
-
-	return q.Execute().Unload();
+	return Vars.getEvent();
 }
+
+function GetExecutedContact(event) {
+	var query = new Query("SELECT Id, FIO, Tel FROM Catalog_Client_Contact");
+//		var query = new Query("select * from Document_Event_Equipments WHERE Ref = @ref AND  Result = @result");
+
+
+	//query.AddParameter("ref", event);
+	//query.AddParameter("result", "Done");
+
+//Dialog.Debug(event);
+
+	return query.Execute();
+}
+
 
 function actionDoSelect(p){
 	Vars.setClient(p);
