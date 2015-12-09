@@ -1,6 +1,5 @@
 .grid vl {
-	margin-left: -3%;
-	width: 90%;    
+	width: 100%;
 	}
 
 .grid img {
@@ -8,8 +7,16 @@
         margin-top: 16%;
         margin-left: 2.5%;
         background-image: url(arrow.png);
-    }	
-	
+    }
+
+
+.coord {
+	  width: 10.3mm;
+	  height: 9mm;
+	  dock-align: right;
+	  background-image: url(geo_set.png);
+	}
+
 .memo_block {
 	height: 24sp;
 }
@@ -38,7 +45,7 @@
     dock-align: left;
     font: 36% arial;
     margin-left: 3.5%;
-    padding-top: 30%;	
+    padding-top: 30%;
 }
 
 .main_row_custname{
@@ -47,8 +54,8 @@
     white-space: normal;
     font: 40% Arial;
     margin-top: 0%;
-    
-	
+
+
 }
 
 .main_row_contact{
@@ -57,8 +64,8 @@
     white-space: normal;
     font: 90% Arial;
     margin-top: 0%;
-    
-    
+
+
 }
 
 .main_row_phone{
@@ -66,28 +73,13 @@
     height: 20%;
     white-space: normal;
     font: 90% Arial;
-    margin-top: 10%;    
-}
-
-.main_row {
-    width: 100%;
-    height: 40%;
-    white-space: normal;
-    font: 60% Arial;
     margin-top: 10%;
 }
 
-.memo_block vl description_row{
-	font: 80% Arial;
-	height: 18%;
-	width: 100%;
-	
-}
-
 .memo_block vl main_row {
-   	font: 40% Arial;          
+   	font: 40% Arial;
         }
-        
+
 .requestTextBox {
 	width: 87%;
 }
@@ -166,7 +158,7 @@ width: 40%;
 height: 100%;
 dock-align: right;
 }
-	
+
 	.btn_right_footer TextView {
             width: 100%;
             height: 100%;
@@ -183,7 +175,7 @@ dock-align: right;
         padding-top: 11%;
         padding-left: 5%;
     }
-        
+
 
 .main_row_manager{
 	width: 100%;
@@ -206,7 +198,7 @@ dock-align: right;
 
 .infoPlaceWithPhone {
     margin-left: -3%;
-    width: 80%;    
+    width: 80%;
     }
 
 .phone {
@@ -214,7 +206,7 @@ dock-align: right;
     height: 3.5mm;
     margin-top: 37%;
     margin-right: 3mm;
-    dock-align: right;  
+    dock-align: right;
 }
 
 .phone vl{
@@ -229,7 +221,7 @@ dock-align: right;
 .iphone {
     height: 100%;
     width: 100%;
-    background-image: url(phone.png);    
+    background-image: url(phone.png);
 }
 
 .phoneBox{

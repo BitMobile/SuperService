@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="eqHistory.css">
+  <c:DockLayout>
+    <c:DockLayout CssClass="top_navigator">
+      <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+         <c:Image/>
+        <c:TextView Text="#back#"/>
+      </c:HorizontalLayout>
+      <c:HorizontalLayout>
+        <c:TextView Text="#deviceHistory#" />
+      </c:HorizontalLayout>
+    </c:DockLayout>
+    <c:HorizontalLine/>
+  <c:ScrollView>
+
+    <s:Iterator Id="HistoryItem" Value="$getEqHistory($param1)">
+
+           <c:HorizontalLayout CssClass="grid">
+           <c:VerticalLayout CssClass="$getStatusStyle($HistoryItem.Result)"></c:VerticalLayout>
+           <c:VerticalLayout>
+             <c:TextView Text="{$HistoryItem.Period} {$HistoryItem.Executor}" CssClass="description_row"></c:TextView>
+             <c:TextView Id="EQComment" Text="$HistoryItem.Comment" CssClass="main_row"></c:TextView>
+           </c:VerticalLayout>
+           </c:HorizontalLayout>
+
+          <c:HorizontalLine/>
+
+    </s:Iterator>
+	</c:ScrollView>
+</c:DockLayout>
+
+
+
+
+</c:Screen>

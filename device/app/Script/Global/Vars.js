@@ -3,7 +3,8 @@ var historyStart = undefined;
 var historyStop = undefined;
 
 //-------------------------------------------
-var recvStartPeriod;
+var recvStartPeriod = "";
+var backupStartPeriod;
 function setRecvStartPeriod(a){
 	recvStartPeriod = a;
 }
@@ -12,7 +13,8 @@ function getRecvStartPeriod(){
 	return recvStartPeriod;
 }
 //-----------------------------------------
-var recvStopPeriod;
+var recvStopPeriod = "";
+var backupStopPeriod;
 function setRecvStopPeriod(a){
 	recvStopPeriod = a;
 }
@@ -47,4 +49,3 @@ function getClient(){
 	return currentClient;
 }
 // End Current Event ID
-

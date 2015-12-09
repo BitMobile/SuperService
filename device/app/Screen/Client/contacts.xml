@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="Client\contacts.css">
 
+<s:Push Id="s" Value="$SetListType()"></s:Push> -->
 <c:SwipeHorizontalLayout Id="swipe_layout" Index="1">
 
-  
+
   <c:VerticalLayout>
 
     <c:DockLayout CssClass="top_navigator">
@@ -17,18 +18,20 @@
       </c:HorizontalLayout>
     </c:DockLayout>
 
-    
+
+		  <s:Push Id="allClients" Value="$GetAllsActiveContact($param1)"></s:Push>
 		
 
 <!--<s:Push Id="event" Value="$GetEventDetails($param1)"></s:Push>-->
 <s:Push Id="exTasks" Value="$GetExecutedContact()"></s:Push>  
-	
-	    
-   
+
+
+
 
 	<!-- Begin all visits screen -->
 			<c:ScrollView>
 			<s:Iterator Id="eTask" Value="$exTasks">
+				<s:Iterator Id="allClientsItem" Value="$allClients">
 
 			<c:SwipeHorizontalLayout Id="swipe_layout2" CssClass="swipe_layout">
 					<c:DockLayout CssClass="grid">
@@ -36,22 +39,26 @@
 						<c:VerticalLayout>
 							<c:TextView Text="$eTask.FIO" CssClass="description_row"></c:TextView>
 							<c:TextView Text="$eTask.Tel" CssClass="main_row"></c:TextView>
+
+
 						</c:VerticalLayout>						
 					</c:DockLayout>
-					
+
+
 				</c:SwipeHorizontalLayout>
-				
+
 
 			</s:Iterator>
-				
-	
-	      </c:ScrollView>
-	      	
-	      
 
+
+	      </c:ScrollView>
+
+
+
+				<c:TextView Text="Нет контактов" CssClass="emptyRecordSetAllRequest"/>
 
 	<!-- End Body screen   -->
-    
+
   </c:VerticalLayout>
 
 </c:SwipeHorizontalLayout>

@@ -7,15 +7,15 @@ function DoBackAndClean(){
 
 function GetEventDetails() {
 
-	return Vars.getEvent();
-}
+
+function GetAllsActiveContact() {
 
 function GetExecutedContact(event) {
 	var query = new Query("SELECT Id, FIO, Tel FROM Catalog_Client_Contact");
 //		var query = new Query("select * from Document_Event_Equipments WHERE Ref = @ref AND  Result = @result");
 
 
-	//query.AddParameter("ref", event);
+	q.Text = queryText;
 	//query.AddParameter("result", "Done");
 
 //Dialog.Debug(event);

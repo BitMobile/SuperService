@@ -24,7 +24,7 @@
 
 	 <c:HorizontalLine/>
    <c:HorizontalLayout CssClass="grid">
-   <c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
+   
    <c:VerticalLayout>
      <c:TextView Text="#descriptionEQ#" CssClass="description_row"></c:TextView>
      <c:TextView Id="DescEQ" CssClass="main_row_custname"></c:TextView>
@@ -35,7 +35,7 @@
   <c:HorizontalLine/>
 
   <c:HorizontalLayout CssClass="grid">
-  <c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
+
   <c:VerticalLayout>
     <c:TextView Text="#serialNum#" CssClass="description_row"></c:TextView>
     <c:TextView Id="SN" CssClass="main_row_custname"></c:TextView>
@@ -44,7 +44,7 @@
   </c:HorizontalLayout>
 <c:HorizontalLine/>
   <c:HorizontalLayout CssClass="grid">
-  <c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
+
   <c:VerticalLayout>
     <c:TextView Text="#softVersion#" CssClass="description_row"></c:TextView>
     <c:TextView Id="ver" CssClass="main_row_custname"></c:TextView>
@@ -55,7 +55,7 @@
  <c:HorizontalLine/>
 
  <c:HorizontalLayout CssClass="grid">
- <c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
+
  <c:VerticalLayout>
    <c:TextView Text="#remote#" CssClass="description_row"></c:TextView>
    <c:TextView Id="remote" CssClass="main_row_custname"></c:TextView>
@@ -65,7 +65,7 @@
 <c:HorizontalLine/>
 
 <c:HorizontalLayout Id="remoteDateBlock" CssClass="grid" Visible="false">
-<c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
+
 <c:VerticalLayout>
   <c:TextView Text="#remoteData#" CssClass="description_row"></c:TextView>
   <c:TextView Id="remoteData" CssClass="main_row_custname"></c:TextView>

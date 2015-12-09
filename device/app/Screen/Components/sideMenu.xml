@@ -8,21 +8,21 @@
 
       <c:DockLayout CssClass="btn_item">
         <c:HorizontalLayout OnClickAction="$DoAction(Events)">
-          <c:Image CssClass="btn_requests"/>			  
+          <c:Image CssClass="btn_requests"/>
 		  <c:TextView CssClass="menu_text" Text="#requests#"></c:TextView>
 		</c:HorizontalLayout>
       </c:DockLayout>
       <c:HorizontalLine/>
 
-    
+
       <c:DockLayout CssClass="btn_item">
         <c:HorizontalLayout OnClickAction="$DoAction(Client)">
-          <c:Image CssClass="btn_clients"/>        
+          <c:Image CssClass="btn_clients"/>
       <c:TextView CssClass="menu_text" Text="#clients#"></c:TextView>
     </c:HorizontalLayout>
       </c:DockLayout>
       <c:HorizontalLine/>
-             	  
+
 	     <c:DockLayout CssClass="btn_item">
         <c:HorizontalLayout OnClickAction="$DoAction(Sync)">
           <c:Image CssClass="btn_sync"/>
@@ -32,7 +32,7 @@
       <c:HorizontalLine/>
 
       <c:DockLayout CssClass="btn_item">
-        <c:HorizontalLayout>
+        <c:HorizontalLayout OnClickAction="$DoAction(About)">
           <c:Image CssClass="btn_info"/>
           <c:TextView CssClass="menu_text" Text="#info#"></c:TextView>
         </c:HorizontalLayout>
@@ -41,4 +41,4 @@
       <c:HorizontalLine/>
 
     </c:VerticalLayout>
-</c:Component>	
+</c:Component>

@@ -4,9 +4,10 @@
   <bp:Workflow Name="Main" Controller="Main\Main.js">
 
     <bp:Step Name="Menu" Screen="Main.xml" Controller="Main\Main.js">
-    	<bp:Action Name="Events" NextWorkflow="Events"></bp:Action>	
-      <bp:Action Name="Client" NextWorkflow="Client"></bp:Action> 
-      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>      
+    	<bp:Action Name="Events" NextWorkflow="Events"></bp:Action>
+      <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
+      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+      <bp:Action Name="About" NextWorkflow="About"></bp:Action>
     </bp:Step>
 
   </bp:Workflow>
@@ -16,99 +17,118 @@
     <bp:Step Name="Main" Screen="Events\main.xml" Controller="Events\main.js">
       <bp:Action Name="EditFilter" NextStep="EditFilter"></bp:Action>
       <bp:Action Name="DoSelect" NextWorkflow="Event"></bp:Action>
-       <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>       
-      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>      	
+       <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
+      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+      <bp:Action Name="About" NextWorkflow="About"></bp:Action>
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Events\main.js">
-         
-    </bp:Step>
 
+    </bp:Step>
 
 
   </bp:Workflow>
 
    <bp:Workflow Name="Event" Controller="Events\event.js">
-    <bp:Step Name="Main" Screen="Events\event.xml" Controller="Events\event.js">
-           <bp:Action Name="tasks" NextStep="tasks"></bp:Action>
+        <bp:Step Name="Main" Screen="Events\event.xml" Controller="Events\event.js">
            <bp:Action Name="Equipment" NextStep="Equipment"></bp:Action>
-           <bp:Action Name="ShowContacts" NextStep="contacts" />    
+           <bp:Action Name="tasks" NextStep="tasks"></bp:Action>
+           <bp:Action Name="ShowContacts" NextStep="contacts" />
+           <bp:Action Name="Map" NextStep="Map" />
         </bp:Step>
- <bp:Step Name="contacts" Screen="Client\contacts.xml" Controller="Client\contacts.js">
+        <bp:Step Name="contacts" Screen="Client\contacts.xml" Controller="Client\contacts.js">
 
-    </bp:Step>
+        </bp:Step>
          <bp:Step Name="tasks" Screen="Events\tasks.xml" Controller="Events\tasks.js">
-<bp:Action Name="Total" NextStep="Total"></bp:Action>
-<bp:Action Name="task" NextStep="task"></bp:Action>
+            <bp:Action Name="Total" NextStep="Total"></bp:Action>
+            <bp:Action Name="task" NextStep="task"></bp:Action>
+        </bp:Step>
 
-          </bp:Step>
-
-  <bp:Step Name="task" Screen="Events\task.xml" Controller="Events\tasks.js">
-
-      <bp:Action Name="Forward" NextStep="tasks" />
-    </bp:Step>
+        <bp:Step Name="task" Screen="Events\task.xml" Controller="Events\tasks.js">
+            <bp:Action Name="Forward" NextStep="tasks" />
+        </bp:Step>
 
         <bp:Step Name="Total" Screen="Events\total.xml" Controller="Events\total.js">
-              
         </bp:Step>
 
-      <bp:Step Name="Equipment" Screen="Equipment\main.xml" Controller="Equipment\main.js">
+        <bp:Step Name="Equipment" Screen="Equipment\main.xml" Controller="Equipment\main.js">
           <bp:Action Name="equipmentDetails" NextStep="equipmentDetails"></bp:Action>
         </bp:Step>
 
-        <bp:Step Name="equipmentDetails" Screen="Equipment\equipmentDetails.xml" Controller="Equipment\equipmentDetails.js">              
+        <bp:Step Name="equipmentDetails" Screen="Equipment\equipmentDetails.xml" Controller="Equipment\equipmentDetails.js">
+          <bp:Action Name="eqHistory" NextStep="eqHistory"></bp:Action>
         </bp:Step>
-   </bp:Workflow> 
+
+        <bp:Step Name="eqHistory" Screen="Equipment\eqHistory.xml" Controller="Equipment\eqHistory.js">
+        </bp:Step>
+
+        <bp:Step Name="Map" Screen="Common\mapview.xml" Controller="Common\mapview.js">
+        </bp:Step>
+   </bp:Workflow>
 
   <bp:Workflow Name="Client" Controller="Client\main.js">
 
     <bp:Step Name="Main" Screen="Client\main.xml" Controller="Client\main.js">
       <bp:Action Name="EditFilter" NextStep="EditFilter"></bp:Action>
-      <bp:Action Name="Events" NextWorkflow="Events"></bp:Action>  
-      <bp:Action Name="DoSelect" NextWorkflow="ClentView"></bp:Action>      
-      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>   
-           
+      <bp:Action Name="Events" NextWorkflow="Events"></bp:Action>
+      <bp:Action Name="DoSelect" NextWorkflow="ClentView"></bp:Action>
+      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+      <bp:Action Name="About" NextWorkflow="About"></bp:Action>
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Client\main.js">
-         
+
     </bp:Step>
 
- 
 
   </bp:Workflow>
 
 
  <bp:Workflow Name="Sync">
     <bp:Step Name="Sync" Screen="Sync\Sync.xml" Controller="Sync\Main.js">
-      <bp:Action Name="Events" NextWorkflow="Events"></bp:Action> 
-       <bp:Action Name="DoSelect" NextWorkflow="ClentView"></bp:Action>  
+      <bp:Action Name="Events" NextWorkflow="Events"></bp:Action>
+      <bp:Action Name="DoSelect" NextWorkflow="ClentView"></bp:Action>
+      <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
+      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+      <bp:Action Name="About" NextWorkflow="About"></bp:Action>
     </bp:Step>
 
-    
+  </bp:Workflow>
+
+   <bp:Workflow Name="About">
+    <bp:Step Name="About" Screen="About\About.xml" Controller="About\Main.js">
+      <bp:Action Name="Events" NextWorkflow="Events"></bp:Action>
+      <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
+      <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+      <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+    </bp:Step>
+
   </bp:Workflow>
 
 
    <bp:Workflow Name="ClentView" Controller="Client\client.js">
     <bp:Step Name="Main" Screen="Client\client.xml" Controller="Client\client.js">
-           <bp:Action Name="ShowContacts" NextStep="contacts" />    
-           <bp:Action Name="Equipment" NextStep="Equipment"></bp:Action> 
+           <bp:Action Name="ShowContacts" NextStep="contacts" />
+           <bp:Action Name="Equipment" NextStep="Equipment"></bp:Action>
+           <bp:Action Name="Map" NextStep="Map" />
     </bp:Step>
- <bp:Step Name="contacts" Screen="Client\contacts.xml" Controller="Client\contacts.js">
+    <bp:Step Name="contacts" Screen="Client\contacts.xml" Controller="Client\contacts.js">
 
     </bp:Step>
 
     <bp:Step Name="Equipment" Screen="Equipment\main.xml" Controller="Equipment\main.js">
           <bp:Action Name="equipmentDetails" NextStep="equipmentDetails"></bp:Action>
-        </bp:Step>
+    </bp:Step>
 
-        <bp:Step Name="equipmentDetails" Screen="Equipment\equipmentDetails.xml" Controller="Equipment\equipmentDetails.js">              
-        </bp:Step>
+    <bp:Step Name="equipmentDetails" Screen="Equipment\equipmentDetails.xml" Controller="Equipment\equipmentDetails.js">
+      <bp:Action Name="eqHistory" NextStep="eqHistory"></bp:Action>
+    </bp:Step>
 
-   </bp:Workflow> 
+    <bp:Step Name="eqHistory" Screen="Equipment\eqHistory.xml" Controller="Equipment\eqHistory.js">
+    </bp:Step>
 
-
-
-  
+    <bp:Step Name="Map" Screen="Common\mapview.xml" Controller="Common\mapview.js">
+    </bp:Step>
+   </bp:Workflow>
 
 </bp:BusinessProcess>

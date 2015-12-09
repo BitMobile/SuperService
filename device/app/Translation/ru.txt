@@ -13,7 +13,7 @@ requndone	осталось
 reqmth	за месяц
 sync	Синхронизация
 info	О программе
-today	Сегодня	
+today	Сегодня
 requestsAll	Все
 search		Поиск
 begin	Начало
@@ -45,6 +45,11 @@ ready	Готово
 comment	Комментарий
 send	Отправить
 Terget	Цель
+serialNum	Серийный номер
+softVersion	Версия ПО
+remote	Удаленный доступ
+remoteData	Данные для удаленного доступа
+history	История
 tasks		Задачи
 task		Задача
 todoDone	Задач выполнено
@@ -52,3 +57,23 @@ execute		Выполнить
 retrieve	Вернуть
 newTasks	НЕВЫПОЛНЕННЫЕ
 executedtask	ВЫПОЛНЕННЫЕ
+device	Прибор
+Yes	Да
+deviceHistory	История
+equipment	Оборудование
+descriptionEQ	Наименование
+No	Нет
+noDescriGiven	Описание отсутсвует
+enterDateTime	Введите дату и время
+select_answer	Выберите ответ
+about	ПОДРОБНЕЕ О ПРИЛОЖЕНИИ
+version	Версия
+superDescription	СуперСервис — мобильное решение для сбора заказов, анкетирования и мерчандайзинга, контроля работы сотрудников.
+support	Тех.поддержка
+idea	Предложить идею
+agreement	Используя приложение вы принимаете условия лицензионного соглашения.
+icons	При создании приложения использованы иконки Icons8. Сайт разработчика icons8.com
+firstBIT	Первый БИТ — эффективные решения для вашего бизнеса. Лидер на рынке автоматизации 1С с 17 летним опытом!
+webSite	Сайт разработчика
+others	Другие приложения
+developer	Разработчик

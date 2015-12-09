@@ -1,57 +1,60 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="client.css">
-	
+
   <c:DockLayout>
 
     <c:DockLayout CssClass="top_navigator">
       <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBackAndClean()">
          <c:Image/>
         <c:TextView Text="#back#"/>
-      </c:HorizontalLayout>     
+      </c:HorizontalLayout>
     <!--  	<c:Button Id="btnForward" Text="#next#" CssClass="btn_forward" OnClickAction="$DoActionAndSave(GoParams, $param1, $objCust, $objOutlet)"/>-->
       <c:HorizontalLayout>
         <c:TextView Text="#client#" />
       </c:HorizontalLayout>
     </c:DockLayout>
-	
+
 	<c:DockLayout CssClass="footer">
 		<c:DockLayout CssClass="btn_left_footer" OnClickAction="$DoAction(ShowContacts)">
 			<c:TextView Text="#contacts#" />
 		</c:DockLayout>
-		
+
 		<c:DockLayout CssClass="btn_right_footer" OnClickAction="$DoAction(Equipment)">
 			<c:TextView Text="#devices#" />
 		</c:DockLayout>
-		
+
 	</c:DockLayout>
 	<c:ScrollView>
 	 <c:HorizontalLine/>
-	  <c:HorizontalLayout CssClass="grid">
-		<c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>
-		<c:VerticalLayout>
-		  <c:TextView Text="#descriptioncust#" CssClass="description_row"></c:TextView>
-		  <c:TextView Id= "Description" CssClass="main_row_custname"></c:TextView>		   
-		</c:VerticalLayout>	
-		<c:Image/>	
+    <c:HorizontalLayout CssClass="grid">
+  		<c:VerticalLayout>
+  		  <c:TextView Text="#descriptioncust#" CssClass="description_row"></c:TextView>
+  		  <c:TextView Id= "Description" CssClass="main_row"></c:TextView>
+  		</c:VerticalLayout>
 	  </c:HorizontalLayout>
-	  
 
-		
+
+
 		<c:HorizontalLine/>
-	  <c:HorizontalLayout CssClass="grid">
-	  <c:VerticalLayout CssClass="no_mark"></c:VerticalLayout>	
-		<c:VerticalLayout>
-		  <c:TextView Text="#address#" CssClass="description_row"></c:TextView>
-		  <c:TextView Id="Address" CssClass="main_row_custname"></c:TextView>		  
-		</c:VerticalLayout>		
-	  </c:HorizontalLayout>
- 
+    <s:If Test="$isEmptyCoordinats($clientRef)">
+  	  <c:DockLayout CssClass="grid">
+  		<c:VerticalLayout>
+  		  <c:TextView Text="#address#" CssClass="description_row"></c:TextView>
+  		  <c:TextView Id="Address" CssClass="main_row"></c:TextView>
+  		</c:VerticalLayout>
+  	  </c:DockLayout>
+    </s:If>
+    <s:Else>
+      <c:DockLayout CssClass="grid" OnClickAction="$DoAction(Map, $clientRef)">
+          <c:Image CssClass="coord" />
+      <c:VerticalLayout>
+        <c:TextView Text="#address#" CssClass="description_row"></c:TextView>
+        <c:TextView Id="Address" CssClass="main_row"></c:TextView>
+      </c:VerticalLayout>
+      </c:DockLayout>
+    </s:Else>
 
-	  
-	  
-	 
-	
-	
+
 	</c:ScrollView>
 </c:DockLayout>
 

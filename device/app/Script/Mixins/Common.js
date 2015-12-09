@@ -1,7 +1,7 @@
 
 //---------------Common functions-----------
 function PullArray(arr, ind){
-	return arr[ind];	
+	return arr[ind];
 }
 
 function GenerateGuid() {
@@ -38,7 +38,7 @@ function makeCall(num){
 }
 
 function GetUnloadCount(rs){
-	return rs.Count();	
+	return rs.Count();
 }
 
 function Inversion(val){
@@ -60,3 +60,10 @@ function checkFieldLength(sender, cutlength){
 	}
 }
 
+function isEmptyCoordinats(client){
+	if (client.Latitude == 0 && client.Longitude == 0){
+		return true;
+	} else {
+		return false;
+	}
+}

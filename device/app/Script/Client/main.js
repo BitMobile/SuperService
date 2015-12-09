@@ -22,7 +22,7 @@ function OpenMenu() {
 
 
 function MakeFilterSettingsBackUp(){
-	
+
 	if ($.Exists("BUFilterCopy") == true){
 		$.Remove("BUFilterCopy");
 		$.Add("BUFilterCopy", new Dictionary());
@@ -33,7 +33,7 @@ function MakeFilterSettingsBackUp(){
 		$.BUFilterCopy.Add("Start", recvStartPeriod);
 		$.BUFilterCopy.Add("Stop", recvStopPeriod);
 	}
-	
+
 }
 
 function getGlobalStart(){
@@ -49,7 +49,7 @@ function RollBackAndBack(){
 	Vars.setRecvStartPeriod($.BUFilterCopy.Start);
 	Vars.setRecvStopPeriod($.BUFilterCopy.Stop);
 	Workflow.Back();
-	
+
 }
 
 
@@ -71,7 +71,7 @@ function findinalltext(key){
 function GetAllsActiveTask() {
 	var q = new Query();
 
-	var queryText = "SELECT Id, Description, Address" + 
+	var queryText = "SELECT Id, Description, Address" +
 		" FROM Catalog_Client";
 
 	if ($.Exists("searchAll")) {
@@ -86,7 +86,7 @@ function GetAllsActiveTask() {
 	//	Dialog.Debug(recvStartPeriod());
 	//	Dialog.Debug(Vars.getRecvStopPeriod());
 
-	
+
 	}
 	q.Text = queryText;
 	//q.AddParameter("StatusComp", DB.Current.Constant.VisitStatus.Completed);

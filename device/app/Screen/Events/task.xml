@@ -13,18 +13,18 @@
 		</c:DockLayout>
 
 		<c:HorizontalLine />
-		
+
 		<c:HorizontalLayout Id="btnDone" CssClass="bottom_btn" OnEvent="Back" OnClickAction="$DoBack()">
 			<c:TextView Text="#ready#" />
 		</c:HorizontalLayout>
 		<c:HorizontalLine CssClass="b_line" />
 
 		<c:ScrollView Id="grScrollView">
-			
+
 			<c:HorizontalLayout CssClass="margin_top" />
 			<c:HorizontalLine />
-			
-			
+
+
 
 			<c:HorizontalLayout CssClass="grid">
 				<c:VerticalLayout>
@@ -44,7 +44,7 @@
 
 			<c:HorizontalLayout CssClass="memo_block">
 				<c:VerticalLayout>
-					<c:TextView Text="#Comment#" CssClass="description_row"></c:TextView>
+					<c:TextView Text="#comment#" CssClass="description_row"></c:TextView>
 					<c:TextView Text="$task.Comment" CssClass="main_row" />
 				</c:VerticalLayout>
 			</c:HorizontalLayout>
@@ -54,16 +54,6 @@
 
 			<c:HorizontalLayout CssClass="empty_caption_grid" />
 			<c:HorizontalLine />
-
-			<!--<c:VerticalLayout CssClass="half_grid">
-				<s:If Test="$task.Result.Name != null">
-					<c:Button Text="#noteAsNew#" CssClass="negative_decision" OnClickAction="$RetrieveTask($visitTask.Id)" />
-				</s:If>
-				<s:Else>
-					<c:Button Text="#noteAsExecuted#" CssClass="positive_decision" OnClickAction="$CompleteTheTask($task.Id, $workflow.tasks)" />
-				</s:Else>
-			</c:VerticalLayout>
-			<c:HorizontalLine />-->
 
 			<c:HorizontalLayout CssClass="end_of_block" />
 
