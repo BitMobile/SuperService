@@ -1,13 +1,17 @@
 <c:Component xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack">
 	    <c:VerticalLayout CssClass="menu">
+			<s:Push Id="styles" Value="$GetItemsStyles()"></s:Push>
 
-      <c:HorizontalLayout CssClass="header" OnEvent="Forward" OnClickAction="$CloseMenu()">
-        <c:Image CssClass="btn_summary"/>
-        <c:TextView CssClass="menu_text" Text="#summary#"></c:TextView>
-      </c:HorizontalLayout>
+			<c:DockLayout CssClass="$styles.Summary">
+		      <c:HorizontalLayout  OnClickAction="$menuClickAction(Summary)">
+				      <c:Image CssClass="btn_summary"/>
+				      <c:TextView CssClass="menu_text" Text="#summary#"></c:TextView>
+		      </c:HorizontalLayout>
+			</c:DockLayout>
+			<c:HorizontalLine/>
 
-      <c:DockLayout CssClass="btn_item">
-        <c:HorizontalLayout OnClickAction="$DoAction(Events)">
+			<c:DockLayout CssClass="$styles.Events">
+        <c:HorizontalLayout OnClickAction="$menuClickAction(Events)">
           <c:Image CssClass="btn_requests"/>
 		  <c:TextView CssClass="menu_text" Text="#requests#"></c:TextView>
 		</c:HorizontalLayout>
@@ -15,24 +19,24 @@
       <c:HorizontalLine/>
 
 
-      <c:DockLayout CssClass="btn_item">
-        <c:HorizontalLayout OnClickAction="$DoAction(Client)">
+      <c:DockLayout CssClass="$styles.Client">
+        <c:HorizontalLayout OnClickAction="$menuClickAction(Client)">
           <c:Image CssClass="btn_clients"/>
       <c:TextView CssClass="menu_text" Text="#clients#"></c:TextView>
     </c:HorizontalLayout>
       </c:DockLayout>
       <c:HorizontalLine/>
 
-	     <c:DockLayout CssClass="btn_item">
-        <c:HorizontalLayout OnClickAction="$DoAction(Sync)">
+	     <c:DockLayout CssClass="$styles.Sync">
+        <c:HorizontalLayout OnClickAction="$menuClickAction(Sync)">
           <c:Image CssClass="btn_sync"/>
           <c:TextView CssClass="menu_text" Text="#sync#"></c:TextView>
         </c:HorizontalLayout>
       </c:DockLayout>
       <c:HorizontalLine/>
 
-      <c:DockLayout CssClass="btn_item">
-        <c:HorizontalLayout OnClickAction="$DoAction(About)">
+      <c:DockLayout CssClass="$styles.About">
+        <c:HorizontalLayout OnClickAction="$menuClickAction(About)">
           <c:Image CssClass="btn_info"/>
           <c:TextView CssClass="menu_text" Text="#info#"></c:TextView>
         </c:HorizontalLayout>

@@ -55,7 +55,7 @@ svl vl {
     .menu hl {
         width: 100%;
     }
-	
+
     .menu dl {
         width: 100%;
     }
@@ -80,7 +80,7 @@ svl vl {
             .menu dl hl TextView {
                 width: 60%;
                 height: 40%;
-                margin-left: 4%;                
+                margin-left: 4%;
                 vertical-align: central;
                 color: #ffffff;
                 font: 90% arial;
@@ -98,90 +98,6 @@ svl vl {
     color: #c5e3f7;
     font: 30% arial;
 }
-
-.header {
-    height: 8sp;
-    width: 100%;
-    margin-top: 2%;
-    background-color: #e6891b;
-}
-
-.btn_summary {
-    height: 65%;
-    margin-left: 5%;
-    vertical-align: central;
-    background-image: url(SuperShield.png);
-}
-
-.btn_requests {
-    height: 44%;
-	margin-left: 1%;
-	margin-right: 1%;
-    vertical-align: central;
-    background-image: url(task.png);
-}
-.btn_samurai {
-    height: 44%;
-	margin-left: 1%;
-	margin-right: 1%;
-    vertical-align: central;
-    background-image: url(icon_mountains.png);
-}
-
-.btn_orders {
-    height: 58%;
-    vertical-align: central;
-    background-image: url(BITiPhone.png);
-}
-
-.btn_clients {
-    height: 48.9%;
-    vertical-align: central;
-    background-image: url(Cheloveki.png);
-}
-
-.btn_reports {
-    height: 48.9%;
-    vertical-align: central;
-    background-image: url(AllRight.png);
-}
-.btn_worktimesheets {
-    height: 48.9%;
-    vertical-align: central;
-    background-image: url(clock.png);
-}
-.btn_stocks {
-    height: 48.9%;
-    vertical-align: central;
-    background-image: url(Posilka.png);
-}
-
-.btn_kpi {
-    height: 54.5%;
-    vertical-align: central;
-    background-image: url(AllRight.png);
-}
-
-.btn_set {
-    height: 58%;
-    vertical-align: central;
-    background-image: url(Detalka.png);
-}
-
-.btn_sync {
-    height: 48%;
-    padding-right: 3%;
-	margin-left: -1%;
-    vertical-align: central;
-    background-image: url(TudaSuda.png);
-}
-
-.btn_info {
-    height: 56.8%;
-    vertical-align: central;
-    background-image: url(interesno.png);
-}
-
 
 .grid {
     height: 45%;

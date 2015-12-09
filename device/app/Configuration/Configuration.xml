@@ -2,7 +2,7 @@
 <c:Configuration xmlns:c="BitMobile.Configuration" xmlns:s="BitMobile.ValueStack">
 
   <c:BusinessProcess File="BusinessProcess.xml" />
-  
+
   <c:Style>
 
     <c:DefaultStyles>
@@ -14,12 +14,12 @@
       <s:Else>
         <c:DefaultStyle File="phone.css" />
       </s:Else>
-      
+
     </c:DefaultStyles>
 
   </c:Style>
 
-  <c:Script> 
+  <c:Script>
 
     <c:GlobalEvents File="Global\Events.js" />
 
@@ -33,6 +33,7 @@
       <c:Mixin File="Mixins\Common.js" Target="*.js" />
       <c:Mixin File="Mixins\Workflow.js" Target="*.js" />
       <c:Mixin File="Mixins\DB.js" Target="*.js" />
+      <c:Mixin File="Mixins\SideMenu.js" Target="*.js" />
     </c:Mixins>
 
   </c:Script>

@@ -49,3 +49,13 @@ function getClient(){
 	return currentClient;
 }
 // End Current Event ID
+
+var GlobalWorkflow;
+
+function getGlobalWorkflow(){
+	return GlobalWorkflow;
+}
+
+function setGlobalWorkflow(a){
+		GlobalWorkflow = a;
+}

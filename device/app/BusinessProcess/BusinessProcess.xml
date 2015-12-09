@@ -20,6 +20,7 @@
        <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+      <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Events\main.js">
@@ -74,6 +75,7 @@
       <bp:Action Name="DoSelect" NextWorkflow="ClentView"></bp:Action>
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+      <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Client\main.js">
@@ -91,6 +93,7 @@
       <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+      <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
     </bp:Step>
 
   </bp:Workflow>
@@ -101,6 +104,7 @@
       <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+      <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
     </bp:Step>
 
   </bp:Workflow>
