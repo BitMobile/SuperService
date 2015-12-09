@@ -37,27 +37,28 @@
             </c:VerticalLayout>
           </c:VerticalLayout>
 
-          <!--<c:VerticalLayout CssClass="right">
+          <c:VerticalLayout CssClass="right">
             <c:DockLayout CssClass="grid">
               <c:VerticalLayout>
-                
-                <c:TextView Text="" CssClass="main_row"></c:TextView>
+                <s:Push Id="donemonth" Value="$GetToMonthDoneRequestsCount()"/>
+                <c:TextView Text="$donemonth" CssClass="main_row"></c:TextView>
                 <c:TextView Text="#reqdone#" CssClass="description_row"/>
                 <c:TextView Text="#reqmth#" CssClass="description_row"/>
               </c:VerticalLayout>
             </c:DockLayout>
             <c:HorizontalLine/>
             <c:DockLayout CssClass="grid">
-              <c:VerticalLayout>                
-                <c:TextView Text="" CssClass="main_row"></c:TextView>
+              <c:VerticalLayout>
+                <s:Push Id="undonemonth" Value="$GetToMonthUnDoneRequestCount()"/>
+                <c:TextView Text="$undonemonth" CssClass="main_row"></c:TextView>
                 <c:TextView Text="#requndone#" CssClass="description_row"/>
                 <c:TextView Text="#reqmth#" CssClass="description_row"/>
               </c:VerticalLayout>
             </c:DockLayout>
-          </c:VerticalLayout>-->
+          </c:VerticalLayout>
 
         </c:DockLayout>
-        
+
       </c:VerticalLayout>
 
     </c:VerticalLayout>

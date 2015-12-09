@@ -1,4 +1,5 @@
-﻿
+﻿	 var curUser = $.common.UserRef;
+
 // ------------------------ Main screen module ------------------------
 
 function CloseMenu() {
@@ -30,7 +31,6 @@ function GetToDayUnDoneRequestsCount(){//(searchText - строка поиска
 	q.AddParameter("DateStart", DateTime.Now.Date);
 	q.AddParameter("DateEnd", DateTime.Now.Date.AddDays(1));
 	return q.ExecuteCount();
-
 }
 
 function GetToDayDoneRequestCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
@@ -40,6 +40,21 @@ function GetToDayDoneRequestCount(){//(searchText - строка поиска, g
 	q.AddParameter("DateEnd", DateTime.Now.Date.AddDays(1));
 	return q.ExecuteCount();
 }
+
+function GetToMonthDoneRequestsCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
+	var q = new Query("SELECT DE.id FROM Document_Event DE WHERE DE.ActualEndDate >= datetime('now', 'start of month') AND DE.ActualEndDate <= datetime('now', 'start of month', '+1 months') AND DE.Status = @StatusEx");
+
+	//q.AddParameter("StatusComp", DB.Current.Constant.VisitStatus.Completed);
+	q.AddParameter("StatusEx", DB.Current.Constant.StatusyEvents.Done);
+	return q.ExecuteCount();
+}
+
+function GetToMonthUnDoneRequestCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
+	var q = new Query("SELECT DE.id FROM Document_Event DE WHERE DE.StartDatePlan >= datetime('now', 'start of month') AND DE.StartDatePlan < datetime('now', 'start of month', '+1 months') AND DE.Status == @StatusComp");
+	q.AddParameter("StatusComp",  DB.Current.Constant.StatusyEvents.Appointed);
+	return q.ExecuteCount();
+}
+
 
 
 
