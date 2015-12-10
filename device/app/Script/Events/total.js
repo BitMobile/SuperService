@@ -1,5 +1,5 @@
 function isHungry(sender){
-	
+
 	if ($.HungryImageFalse.Visible == true){
 		$.HungryImageFalse.Visible = false;
 		$.HungryImageTrue.Visible = true;
@@ -9,19 +9,19 @@ function isHungry(sender){
 		$.HungryImageTrue.Visible = false;
 		$.HungryImageFalse.Visible = true;
 	}
-	
-	if ($.Exists("HungryTap")){		
-		$.Remove("HungryTap");		
+
+	if ($.Exists("HungryTap")){
+		$.Remove("HungryTap");
 	} else {
 		$.Add("HungryTap",true);
 	}
-	
+
 }
 
 
 
 function isAngry(sender){
-	
+
 	if ($.AngryImageFalse.Visible == true){
 		$.AngryImageFalse.Visible = false;
 		$.AngryImageTrue.Visible = true;
@@ -29,32 +29,32 @@ function isAngry(sender){
 		$.HungryImageFalse.Visible = true;
 	} else {
 		$.AngryImageTrue.Visible = false;
-		$.AngryImageFalse.Visible = true;		
+		$.AngryImageFalse.Visible = true;
 	}
-	
-	if ($.Exists("AngryTap")){		
-		$.Remove("AngryTap");		
+
+	if ($.Exists("AngryTap")){
+		$.Remove("AngryTap");
 	} else {
 		$.Add("AngryTap",true);
 	}
-	
+
 }
 
-function checkCommentLength(sender){	
+function checkCommentLength(sender){
 	//var str = sender.Text;
-	//sender.Text = Left(str, 250);	
+	//sender.Text = Left(str, 250);
 }
 
 function createReminder(event){
 	if ($.HungryImageTrue.Visible || $.AngryImageTrue.Visible) {
-		
+
 		if (!IsNullOrEmpty($.RemindComment.Text)){
 			var reminder = DB.Create("Document.Reminder");
 			reminder.Reminders = event;
 
 			if ($.HungryImageTrue.Visible && !$.AngryImageTrue.Visible){
 				reminder.ViewReminder = DB.Current.Constant.VidRemember.Sale;
-			} 
+			}
 
 			if (!$.HungryImageTrue.Visible && $.AngryImageTrue.Visible){
 				reminder.ViewReminder = DB.Current.Constant.VidRemember.Problem;
@@ -88,7 +88,7 @@ function askCommit(sender, event){
 function CommitEvent(state, args){
 	obj = state.GetObject();
 	obj.Status = DB.Current.Constant.StatusyEvents.Done;
-	obj.ActualdDate = DateTime.Now;
+	obj.ActualEndDate = DateTime.Now;
 	obj.Save();
 	Workflow.Commit();
 }

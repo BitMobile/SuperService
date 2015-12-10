@@ -1,5 +1,4 @@
-﻿	 var curUser = $.common.UserRef;
-
+﻿
 // ------------------------ Main screen module ------------------------
 
 function CloseMenu() {
@@ -23,7 +22,7 @@ function OpenMenu() {
 }
 
 //----------------Begin Info Block Visit---------------------------------
-function GetToDayUnDoneRequestsCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
+function GetToDayDoneRequestCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
 	var q = new Query("SELECT DE.id FROM Document_Event DE WHERE DE.ActualEndDate >= @DateStart AND DE.ActualEndDate <= @DateEnd AND DE.Status = @StatusEx");
 
 	//q.AddParameter("StatusComp", DB.Current.Constant.VisitStatus.Completed);
@@ -31,9 +30,10 @@ function GetToDayUnDoneRequestsCount(){//(searchText - строка поиска
 	q.AddParameter("DateStart", DateTime.Now.Date);
 	q.AddParameter("DateEnd", DateTime.Now.Date.AddDays(1));
 	return q.ExecuteCount();
+
 }
 
-function GetToDayDoneRequestCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
+function GetToDayUnDoneRequestsCount(){//(searchText - строка поиска, getCount - получать ли количество[1-ДА,0-НЕТ])
 	var q = new Query("SELECT DE.id FROM Document_Event DE WHERE DE.StartDatePlan >= @DateStart AND DE.StartDatePlan < @DateEnd AND DE.Status == @StatusComp");
 	q.AddParameter("StatusComp",  DB.Current.Constant.StatusyEvents.Appointed);
 	q.AddParameter("DateStart", DateTime.Now.Date);
