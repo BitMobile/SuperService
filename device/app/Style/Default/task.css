@@ -52,3 +52,10 @@ dock-align: right;
   dock-align: left;
   background-color: #ffc0cb;
 }
+
+.memo_block {
+    height: 24sp;
+}
+  .memo_block vl MemoEdit{
+    font: 22% Arial;
+  }
