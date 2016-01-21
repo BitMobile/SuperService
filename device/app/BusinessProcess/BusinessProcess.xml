@@ -61,6 +61,10 @@
         </bp:Step>
 
         <bp:Step Name="eqHistory" Screen="Equipment\eqHistory.xml" Controller="Equipment\eqHistory.js">
+          <bp:Action Name="eqHistoryDetails" NextStep="eqHistoryDetails"></bp:Action>
+        </bp:Step>
+
+        <bp:Step Name="eqHistoryDetails" Screen="Equipment\eqHistoryDetails.xml" Controller="Equipment\eqHistoryDetails.js">
         </bp:Step>
 
         <bp:Step Name="Map" Screen="Common\mapview.xml" Controller="Common\mapview.js">
@@ -129,6 +133,10 @@
     </bp:Step>
 
     <bp:Step Name="eqHistory" Screen="Equipment\eqHistory.xml" Controller="Equipment\eqHistory.js">
+      <bp:Action Name="eqHistoryDetails" NextStep="eqHistoryDetails"></bp:Action>
+    </bp:Step>
+
+    <bp:Step Name="eqHistoryDetails" Screen="Equipment\eqHistoryDetails.xml" Controller="Equipment\eqHistoryDetails.js">
     </bp:Step>
 
     <bp:Step Name="Map" Screen="Common\mapview.xml" Controller="Common\mapview.js">

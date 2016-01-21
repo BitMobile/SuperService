@@ -15,7 +15,7 @@
 
     <s:Iterator Id="HistoryItem" Value="$getEqHistory($param1)">
 
-           <c:HorizontalLayout CssClass="grid">
+           <c:HorizontalLayout CssClass="grid" OnClickAction="$DoAction(eqHistoryDetails, $HistoryItem.Id)">
            <c:VerticalLayout CssClass="$getStatusStyle($HistoryItem.Result)"></c:VerticalLayout>
            <c:VerticalLayout>
              <c:TextView Text="{$HistoryItem.Period} {$HistoryItem.Executor}" CssClass="description_row"></c:TextView>

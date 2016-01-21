@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="eqHistoryDetails.css">
+	<s:Push Id="historyItem" Value="$GetHistoryDetails($param1)"></s:Push>
+  <c:DockLayout>
+
+    <c:DockLayout CssClass="top_navigator">
+      <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+         <c:Image/>
+        <c:TextView Text="#back#"/>
+      </c:HorizontalLayout>
+
+      <c:HorizontalLayout>
+        <c:TextView Text="#task#" />
+      </c:HorizontalLayout>
+    </c:DockLayout>
+
+
+	<c:ScrollView>
+	 <c:HorizontalLine/>
+	  <c:HorizontalLayout CssClass="grid">
+		<c:VerticalLayout>
+		  <c:TextView Text="#doDate#" CssClass="description_row"></c:TextView>
+		  <c:TextView Text="{$historyItem.Period} ({$historyItem.Status})" CssClass="main_row"></c:TextView>
+		</c:VerticalLayout>
+	  </c:HorizontalLayout>
+
+
+		<c:HorizontalLine/>
+
+				<c:DockLayout CssClass="grid">
+				<c:VerticalLayout>
+				  <c:TextView Text="#device#" CssClass="description_row"></c:TextView>
+				  <c:TextView  Text="$historyItem.Equip" CssClass="main_row"></c:TextView>
+				</c:VerticalLayout>
+			  </c:DockLayout>
+
+    <c:HorizontalLine/>
+
+        <c:DockLayout CssClass="grid">
+        <c:VerticalLayout>
+          <c:TextView Text="#task#" CssClass="description_row"></c:TextView>
+          <c:TextView  Text="$historyItem.Target" CssClass="main_row"></c:TextView>
+        </c:VerticalLayout>
+        </c:DockLayout>
+
+    <c:HorizontalLine/>
+
+        <c:DockLayout CssClass="grid">
+        <c:VerticalLayout>
+          <c:TextView Text="#ExecutorComment#" CssClass="description_row"></c:TextView>
+          <c:TextView  Text="$historyItem.Comment" CssClass="main_row"></c:TextView>
+        </c:VerticalLayout>
+        </c:DockLayout>
+
+	</c:ScrollView>
+</c:DockLayout>
+
+</c:Screen>
