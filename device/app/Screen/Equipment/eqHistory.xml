@@ -19,7 +19,7 @@
            <c:VerticalLayout CssClass="$getStatusStyle($HistoryItem.Result)"></c:VerticalLayout>
            <c:VerticalLayout>
              <c:TextView Text="{$HistoryItem.Period} {$HistoryItem.Executor}" CssClass="description_row"></c:TextView>
-             <c:TextView Id="EQComment" Text="$HistoryItem.Comment" CssClass="main_row"></c:TextView>
+             <c:TextView Id="EQComment" Text="$HistoryItem.Target" CssClass="main_row"></c:TextView>
            </c:VerticalLayout>
            </c:HorizontalLayout>
 
