@@ -162,7 +162,7 @@ function ChooseFromGallery(objRef, eqRef) {
 
 	var pictId = Global.GenerateGuid();
 	var path = GetPrivateImagePath(objRef, pictId, ".jpg");
-	Gallery.Size = 0;
+	Gallery.Size = 2500;
 	Gallery.Copy(path, SaveImage, [objRef, eqRef, pictId]);
 }
 
@@ -171,9 +171,9 @@ function MakeSnapshot(objRef, eqRef) {
 
 	var pictId = Global.GenerateGuid();
 	var path = GetPrivateImagePath(objRef, pictId, ".jpg");
-	Camera.Size = 0;
+	Camera.Size = 2500;
 	Camera.Path = path;
-	Camera.MakeSnapshot(path, 0, SaveImage, [objRef, eqRef, pictId]);
+	Camera.MakeSnapshot(path, 2500, SaveImage, [objRef, eqRef, pictId]);
 }
 
 function GetSharedImagePath(objectID, pictID, pictExt) {
