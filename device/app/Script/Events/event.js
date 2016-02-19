@@ -11,7 +11,7 @@ function DoNextStep(param){
 		if ($.MobileSettings.UsedEquipment){
 			DoAction("tasks", param);
 			return;
-		} 
+		}
 
 		if ($.MobileSettings.UsedCheckLists){
 			var q = new Query("SELECT DEC.Id " +
@@ -29,23 +29,24 @@ function DoNextStep(param){
 }
 
 // # Begin Parameters
-function GetSnapShotPath(fileName) {
-  var q = new Query("SELECT FullFileName" +
-                    " FROM Document_Event_Files" +
-                    " WHERE FileName == @fn");
-
-  q.AddParameter("fn", fileName);
-  return q.ExecuteScalar();
-}
+// function GetSnapShotPath(fileName) {
+//   var q = new Query("SELECT FullFileName" +
+//                     " FROM Document_Event_Files" +
+//                     " WHERE FileName == @fn");
+//
+//   q.AddParameter("fn", fileName);
+//   return q.ExecuteScalar();
+// }
 
 function GetEventParams(custRef) {
-  var q = new Query("SELECT CEO.Description AS Parameter, DEP.Val AS Val, ETDP.Name AS Type " +
+  var q = new Query("SELECT DEP.Id AS Id, CEO.EditingBMA AS Editing, CEO.Id AS ParamRef, CEO.Description AS Parameter, " +
+	"DEP.Val AS Val, ETDP.Name AS Type, length(trim(DEP.Val)) AS VL " +
   "FROM Document_Event_Parameters DEP " +
   "LEFT JOIN Catalog_EventOptions CEO " +
   "ON DEP.Parameter = CEO.Id  " +
   "LEFT JOIN Enum_TypesDataParameters ETDP " +
   "ON CEO.DataTypeParameter = ETDP.ID " +
-  "WHERE CEO.DisplayingBMA = 1 AND DEP.Ref = @custRef AND CEO.DeletionMark = 0 " +
+  "WHERE CEO.DisplayingBMA = 1 AND DEP.Ref = @custRef AND (VL > 0 OR Editing = 1) AND CEO.DeletionMark = 0 " +
 	"ORDER BY DEP.LineNumber");
 
   q.AddParameter("custRef", custRef);

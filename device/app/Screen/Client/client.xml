@@ -65,40 +65,151 @@
       </c:DockLayout>
     </s:Else>
 
-    <s:Iterator Id="Params" Value="$GetCustParams($clientRef)">
+    <s:Iterator Id="Params" Value="$GetCustParams($clientRef)" Status="statusCount">
+    <s:Push Id="index" Value="{$statusCount.Index}"></s:Push>
+
+      <c:HorizontalLine/>
+      <s:If Test="$Params.Editing">
+        <!--Begin String Action -->
+            <s:If Test="$Params.Type == 'String'">
+                  <c:DockLayout CssClass="grid">
+                    <c:VerticalLayout CssClass="editable">
+                      <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+                      <c:EditText Id="clParams{$index}" Text="$Params.Val" Placeholder="—" CssClass="main_row" OnLostFocus="$SetParamStringValue($Params.Id)"/>
+                    </c:VerticalLayout>
+                  </c:DockLayout>
+
+            </s:If>
+        <!--End String Action -->
+
+        <!--Begin Integer Action -->
+            <s:If Test="$Params.Type =='Integer'">
+                <c:DockLayout CssClass="grid">
+                  <c:VerticalLayout CssClass="editable">
+                    <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+                    <c:EditText Id="clParams{$index}" Text="$Params.Val" Placeholder="—"  CssClass="main_row"
+                      Keyboard="numeric" OnLostFocus="$SetParamIntegerValue($Params.Id)"/>
+                  </c:VerticalLayout>
+                </c:DockLayout>
 
 
-      <s:If Test="$Params.Type == 'Snapshot'">
-        <s:Push Id="snapshotPath" Value="$GetSnapShotPath($Params.Val)" />
-        <c:HorizontalLine />
-        <c:DockLayout CssClass="snapshot_grid">
-            <c:TextView Text="$Params.Parameter" />
-        </c:DockLayout>
-              <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
-                      <s:If Test="$SnapshotExists($snapshotPath)">
-                        <c:VerticalLayout OnClickAction="$DoAction(photoView, $Params.Parameter, $snapshotPath)">
-                          <c:Image Source="$snapshotPath" />
-                        </c:VerticalLayout>
-                      </s:If>
-                      <s:Else>
-                        <c:VerticalLayout CssClass="no_image">
-                          <c:Image />
-                          <c:TextView Text="#imageNotAvailable#" CssClass="text"></c:TextView>
-                        </c:VerticalLayout>
-                      </s:Else>
-              </c:SwipeHorizontalLayout>
+
+            </s:If>
+        <!--End Integer Action -->
+
+        <!--Begin Decimal Action -->
+            <s:If Test="$Params.Type == 'Decimal'">
+                <c:DockLayout CssClass="grid">
+
+                  <c:VerticalLayout CssClass="editable">
+                    <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+                    <c:EditText Id="clParams{$index}" Text="$Params.Val" Placeholder="—" CssClass="main_row"
+                      Keyboard="numeric" OnLostFocus="$SetParamDecimalValue($Params.Id)"/>
+                  </c:VerticalLayout>
+                </c:DockLayout>
+
+            </s:If>
+        <!--End Decimal Action -->
+
+        <!--Begin Boolean Action -->
+            <s:If Test="$Params.Type == 'Boolean'">
+                <c:DockLayout CssClass="grid" OnClick="$GetParamBooleanDialog($Params.Id, $Params.ParamRef, clParams{$index})">
+
+                  <c:VerticalLayout CssClass="editable">
+                    <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+                    <c:TextView Id="clParams{$index}" Text="$Params.Val" CssClass="main_row" />
+                  </c:VerticalLayout>
+                </c:DockLayout>
+
+            </s:If>
+        <!--End Boolean Action -->
+
+        <!--Begin DateTime Action -->
+            <s:If Test="$Params.Type == 'DateTime'">
+                <c:DockLayout CssClass="grid"  OnClick="$GetParamDateDialog($Params.Id, $Params.ParamRef, $Params.Val, clParams{$index})">
+
+                  <c:VerticalLayout CssClass="editable">
+                    <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+                    <c:TextView Id="clParams{$index}" Text="$FormatDate($Params.Val)" CssClass="main_row" />
+                  </c:VerticalLayout>
+                </c:DockLayout>
+
+            </s:If>
+        <!--End DateTime Action -->
+
+        <!--Begin ValList Action -->
+            <s:If Test="$Params.Type == 'ValList'">
+                <c:DockLayout CssClass="grid" OnClick="$GetParamValueListDialog($Params.Id, $Params.ParamRef, 1, clParams{$index})">
+
+                  <c:VerticalLayout CssClass="editable">
+                    <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+                    <c:TextView Id="clParams{$index}" Text="$Params.Val" CssClass="main_row" />
+                  </c:VerticalLayout>
+                </c:DockLayout>
+
+            </s:If>
+        <!--End ValList Action -->
+
+        <!--Begin Snapshot Action -->
+             <s:If Test="$Params.Type == 'Snapshot'">
+               <s:Push Id="snapshotPath" Value="$GetSnapShotPath($clientRef, $Params.Val)" />
+                    <c:DockLayout CssClass="snapshot_grid">
+                        <s:If Test="$SnapshotExists($clientRef, $Params.Val)">
+                          <c:Button Text="#delete#" OnClick="$SnapshotDeleteDialog($clientRef, $Params.Id, $Params.Val)"/>
+                          <c:TextView Text="$Params.Parameter" />
+                        </s:If>
+                        <s:Else>
+                          <c:Button Text="#add#" OnClick="$AddSnapshot($clientRef, $Params.Id)"/>
+                          <c:TextView Text="$Params.Parameter" />
+                        </s:Else>
+
+                    </c:DockLayout>
+
+                          <s:If Test="$SnapshotExists($clientRef, $Params.Val)">
+                            <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
+                                <c:VerticalLayout  OnClickAction="$DoAction(photoView, $Params.Parameter, $snapshotPath)">
+                                  <c:Image Source="$GetSnapShotPath($clientRef, $Params.Val)"/>
+                                </c:VerticalLayout>
+                            </c:SwipeHorizontalLayout>
+                          </s:If>
 
 
+
+            </s:If>
+        <!--End Snapshot Action -->
       </s:If>
       <s:Else>
-          <c:HorizontalLine/>
-          <c:HorizontalLayout CssClass="grid">
-          <c:VerticalLayout>
-            <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
-            <c:TextView Text="$Params.Val"  CssClass="main_row"></c:TextView>
-          </c:VerticalLayout>
-          </c:HorizontalLayout>
-      </s:Else>
+
+        <s:If Test="$Params.Type == 'Snapshot'">
+          <s:Push Id="snapshotPath" Value="$GetSnapShotPath($clientRef, $Params.Val)" />
+          <c:DockLayout CssClass="snapshot_grid">
+              <c:TextView Text="$Params.Parameter" />
+          </c:DockLayout>
+                <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
+                        <s:If Test="$SnapshotExists($clientRef, $Params.Val)">
+                          <c:VerticalLayout OnClickAction="$DoAction(photoView, $Params.Parameter, $snapshotPath)">
+                            <c:Image Source="$snapshotPath" />
+                          </c:VerticalLayout>
+                        </s:If>
+                        <s:Else>
+                          <c:VerticalLayout CssClass="no_image">
+                            <c:Image />
+                            <c:TextView Text="#imageNotAvailable#" CssClass="text"></c:TextView>
+                          </c:VerticalLayout>
+                        </s:Else>
+                </c:SwipeHorizontalLayout>
+
+
+        </s:If>
+        <s:Else>
+            <c:HorizontalLayout CssClass="grid">
+            <c:VerticalLayout>
+              <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
+              <c:TextView Text="$Params.Val"  CssClass="main_row"></c:TextView>
+            </c:VerticalLayout>
+            </c:HorizontalLayout>
+        </s:Else>
+    </s:Else>
     </s:Iterator>
     <c:HorizontalLine />
 
