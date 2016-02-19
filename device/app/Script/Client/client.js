@@ -17,23 +17,24 @@ function DoActionAndSave(step, req, cust, outlet) {
 
 // # Begin Parameters
 
-function GetSnapShotPath(fileName) {
-  var q = new Query("SELECT FullFileName" +
-                    " FROM Catalog_Client_Files" +
-                    " WHERE FileName == @fn");
-
-  q.AddParameter("fn", fileName);
-  return q.ExecuteScalar();
-}
+// function GetSnapShotPath(fileName) {
+//   var q = new Query("SELECT FullFileName" +
+//                     " FROM Catalog_Client_Files" +
+//                     " WHERE FileName == @fn");
+//
+//   q.AddParameter("fn", fileName);
+//   return q.ExecuteScalar();
+// }
 
 function GetCustParams(custRef) {
-  var q = new Query("SELECT CCO.Description AS Parameter, CCP.Val AS Val, ETDP.Name AS Type " +
+  var q = new Query("SELECT CCP.Id AS Id, CCO.EditingBMA AS Editing, CCO.Id AS ParamRef, CCO.Description AS Parameter, CCP.Val AS Val, " +
+  "ETDP.Name AS Type, length(trim(CCP.Val)) AS VL " +
   "FROM Catalog_Client_Parameters CCP " +
   "LEFT JOIN Catalog_ClientOptions CCO " +
   "ON CCP.Parameter = CCO.Id  " +
   "LEFT JOIN Enum_TypesDataParameters ETDP " +
   "ON CCO.DataTypeParameter = ETDP.ID " +
-  "WHERE CCO.DisplayingBMA = 1 AND CCP.Ref = @custRef AND  CCO.DeletionMark = 0 " +
+  "WHERE CCO.DisplayingBMA = 1 AND CCP.Ref = @custRef AND (VL > 0 OR Editing = 1) AND CCO.DeletionMark = 0 " +
 	"ORDER BY CCP.LineNumber");
 
   q.AddParameter("custRef", custRef);
