@@ -117,7 +117,7 @@
 
                   <c:VerticalLayout CssClass="editable">
                     <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
-                    <c:TextView Id="clParams{$index}" Text="$Params.Val" CssClass="main_row" />
+                    <c:TextView Id="clParams{$index}" Text="$onEmptyValue($Params.Val)" CssClass="main_row" />
                   </c:VerticalLayout>
                 </c:DockLayout>
 
@@ -143,7 +143,7 @@
 
                   <c:VerticalLayout CssClass="editable">
                     <c:TextView Text="$Params.Parameter" CssClass="description_row"></c:TextView>
-                    <c:TextView Id="clParams{$index}" Text="$Params.Val" CssClass="main_row" />
+                    <c:TextView Id="clParams{$index}" Text="$onEmptyValue($Params.Val)" CssClass="main_row" />
                   </c:VerticalLayout>
                 </c:DockLayout>
 
