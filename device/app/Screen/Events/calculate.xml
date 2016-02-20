@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="events.css">
+<!--<s:Push Id="init" Value="$initvalues()"/>
+<s:Push Id="search" Value="$param1"/>
+<s:Push Id="s" Value="$SetListType()"></s:Push> -->
+
+  <c:VerticalLayout>
+
+    <c:DockLayout CssClass="top_navigator">
+      <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+         <c:Image/>
+        <c:TextView Text="#back#"/>
+      </c:HorizontalLayout>
+				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($event)"> <!-- $DoAction(tasks, $event) -->
+				<c:TextView Text="#next#"/>
+				</c:HorizontalLayout>
+      <c:HorizontalLayout>
+        <c:TextView Text="#calculate#" />
+      </c:HorizontalLayout>
+    </c:DockLayout>
+    <!-- Begin Screen swich -->
+    <c:HorizontalLayout CssClass="small_grid">
+		  <s:If Test="$WorM=='work'">
+			<c:HorizontalLayout CssClass="mode_left_button_on">
+			  <c:HorizontalLayout Id="work" CssClass="select_zone" OnClickAction="$ChangeListAndRefresh(work)">
+				<c:TextView Text="#works#"></c:TextView>
+			  </c:HorizontalLayout>
+			</c:HorizontalLayout>
+			<c:HorizontalLayout CssClass="mode_right_button_off">
+			  <c:HorizontalLayout Id="material" CssClass="select_zone" OnClickAction="$ChangeListAndRefresh(material)">
+				<!-- <c:TextView Text="#requestsAll# ({$usv})"></c:TextView> -->
+				<c:TextView Text="#material#"></c:TextView>
+			  </c:HorizontalLayout>
+			</c:HorizontalLayout>
+		  </s:If>
+		  <s:Else>
+			<c:HorizontalLayout CssClass="mode_left_button_off">
+			  <c:HorizontalLayout Id="work" CssClass="select_zone" OnClickAction="$ChangeListAndRefresh(work)">
+				<c:TextView  Text="#works#" ></c:TextView>
+			  </c:HorizontalLayout>
+			</c:HorizontalLayout>
+			<c:HorizontalLayout CssClass="mode_right_button_on">
+			  <c:HorizontalLayout Id="material" CssClass="select_zone" OnClickAction="$ChangeListAndRefresh(material)">
+				<!-- <c:TextView Text="#requestsAll# ({$usv})"></c:TextView> -->
+				<c:TextView Text="#material#"></c:TextView>
+
+			  </c:HorizontalLayout>
+			</c:HorizontalLayout>
+		  </s:Else>
+	</c:HorizontalLayout>
+		<c:HorizontalLine/>
+	<!-- End Screen swich -->
+
+  <!-- Begin Body screen   -->
+		<s:If Test="$WorM=='work'">
+      <c:ScrollView>
+          <c:TextView  Text="#works#" ></c:TextView>
+      </c:ScrollView>
+    </s:If>
+  	<s:Else>
+      <c:ScrollView>
+        <c:TextView Text="#material#"></c:TextView>
+      </c:ScrollView>
+  	</s:Else>
+	<!-- End Body screen   -->
+
+  </c:VerticalLayout>
+
+
+
+</c:Screen>
