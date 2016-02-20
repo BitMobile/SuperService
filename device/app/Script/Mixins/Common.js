@@ -49,6 +49,14 @@ function Inversion(val){
 	}
 }
 
+function onEmptyValue(v) {
+	if (IsNullOrEmpty(v)){
+		return "—";
+	} else {
+		return v;
+	}
+}
+
 //-----------------Dialog handlers-----------------
 
 //Íóæíî ïåðåíåñòè ýòó ïðîâåðêó â ñîáûòèå ïðè ñòàðòå ïðèëîæåíèÿ
