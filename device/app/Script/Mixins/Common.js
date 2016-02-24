@@ -330,7 +330,7 @@ function GetSnapShotPath(objRef,fileName) {
 
 function SnapshotExists(obj, pictname) {
 	if (!IsNullOrEmpty(pictname)){
-		return FileSystem.Exists(GetSnapShotPath(obj,pictname)) //fileFound && fileExists;
+		return FileSystem.Exists(GetSnapShotPath(obj,pictname)); //fileFound && fileExists;
 	} else {
 		return false;
 	}
@@ -361,5 +361,9 @@ function DeleteSnapShot(objRef, itemRef, pictId) {
 //--- # End Snapshots ---
 function FormatDate(datetime) {
 	return String.IsNullOrEmpty(datetime) ? "—" : Format("{0:dd.MM.yyyy HH:mm}", Date(datetime));
+}
+
+function dataExists(val) {
+	return IsNullOrEmpty(val);
 }
 //--- # End Editing parameters ---
