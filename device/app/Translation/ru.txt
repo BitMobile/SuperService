@@ -113,3 +113,4 @@ qDeleteSnapShot		Удалить изображение?
 material		Материалы
 works		Услуги
 calculate		Учет
+imageNotAvailable		В данный момент изображение недоступно
