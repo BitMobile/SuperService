@@ -208,13 +208,13 @@
 	             <s:If Test="$Params.Type == 'Snapshot'">
 	               <s:Push Id="snapshotPath" Value="$GetSnapShotPath($event, $Params.Val)" />
 	                    <c:DockLayout CssClass="snapshot_grid">
-	                        <s:If Test="$SnapshotExists($event, $Params.Val)">
-	                          <c:Button Text="#delete#" OnClick="$SnapshotDeleteDialog($event, $Params.Id, $Params.Val)"/>
-	                          <c:TextView Text="$Params.Parameter" />
+	                        <s:If Test="$dataExists($Params.Val)">
+														<c:Button Text="#add#" OnClick="$AddSnapshot($event, $Params.Id)"/>
+														<c:TextView Text="$Params.Parameter" />
 	                        </s:If>
 	                        <s:Else>
-	                          <c:Button Text="#add#" OnClick="$AddSnapshot($event, $Params.Id)"/>
-	                          <c:TextView Text="$Params.Parameter" />
+														<c:Button Text="#delete#" OnClick="$SnapshotDeleteDialog($event, $Params.Id, $Params.Val)"/>
+														<c:TextView Text="$Params.Parameter" />
 	                        </s:Else>
 
 	                    </c:DockLayout>
@@ -226,6 +226,12 @@
 	                                </c:VerticalLayout>
 	                            </c:SwipeHorizontalLayout>
 	                          </s:If>
+														<s:Else>
+		                          <c:VerticalLayout CssClass="no_image">
+		                            <c:Image />
+		                            <c:TextView Text="#imageNotAvailable#" CssClass="text"></c:TextView>
+		                          </c:VerticalLayout>
+		                        </s:Else>
 
 
 

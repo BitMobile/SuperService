@@ -110,4 +110,8 @@ TryAgain		Повторить
 OnlyInteger		Разрешен ввод только целых чисел.
 delete		Удалить
 qDeleteSnapShot		Удалить изображение?
+material		Материалы
 Empty		Пусто
+works		Услуги
+calculate		Учет
+imageNotAvailable		В данный момент изображение недоступно

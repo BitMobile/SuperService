@@ -8,6 +8,11 @@ function DoActionAndSave(step, req, cust, outlet) {
 }
 
 function DoNextStep(param){
+		if ($.MobileSettings.UsedCalculate){
+			DoAction("calculate", param);
+			return;
+		}
+
 		if ($.MobileSettings.UsedEquipment){
 			DoAction("tasks", param);
 			return;
