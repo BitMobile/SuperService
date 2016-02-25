@@ -110,3 +110,4 @@ TryAgain		Повторить
 OnlyInteger		Разрешен ввод только целых чисел.
 delete		Удалить
 qDeleteSnapShot		Удалить изображение?
+Empty		Пусто
