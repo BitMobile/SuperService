@@ -107,7 +107,7 @@ function GetParamBooleanDialog(sender, param, paramRef, senderId){
 		var arr = [];
     arr.push([true, Translate["#Yes#"]]);
     arr.push([false, Translate["#No#"]]);
-		arr.push(["", Translate["#Empty#"]]);
+		arr.push(["", Translate["—"]]);
     Dialog.Choose(paramRef.Description, arr, SetParamBooleanValue, [param, senderId]);
 }
 
@@ -137,7 +137,7 @@ function GetParamValueListDialog(sender, param, paramRef, index, senderId){
 								"Catalog_EventOptions_ListValues"];
     var q = new Query("SELECT Val, Val FROM " + tbl[index] + " WHERE Ref = @param Union Select \"\" As Val, @p2 As Val");
     q.AddParameter("param", paramRef);
-		q.AddParameter("p2", Translate["#Empty#"]);
+		q.AddParameter("p2", Translate["—"]);
     Dialog.Choose(paramRef.Description, q.Execute(), SetParamValueListValue, [param, senderId]);
 }
 
