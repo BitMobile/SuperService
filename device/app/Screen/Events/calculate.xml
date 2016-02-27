@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="events.css">
-<!--<s:Push Id="init" Value="$initvalues()"/>
-<s:Push Id="search" Value="$param1"/>
-<s:Push Id="s" Value="$SetListType()"></s:Push> -->
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="calculate.css">
 
-  <c:VerticalLayout>
+
+  <c:DockLayout>
 
     <c:DockLayout CssClass="top_navigator">
       <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
          <c:Image/>
         <c:TextView Text="#back#"/>
       </c:HorizontalLayout>
-				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($event)"> <!-- $DoAction(tasks, $event) -->
+				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($param1)"> <!-- $DoAction(tasks, $event) -->
 				<c:TextView Text="#next#"/>
 				</c:HorizontalLayout>
       <c:HorizontalLayout>
@@ -51,20 +49,121 @@
 		<c:HorizontalLine/>
 	<!-- End Screen swich -->
 
+  <!-- Begin Add block -->
+  <c:DockLayout CssClass="grid">
+    <c:Image CssClass="calc"></c:Image>
+    <!-- <c:Button Text="#add#" CssClass="addButton" OnClickAction="$DoAction(AddWork)"/> -->
+    <s:Push Id="Totals" Value="$getTotals()" />
+    <c:VerticalLayout CssClass="totalBlock">
+      <c:DockLayout CssClass="SubTotal">
+        <s:If Test="$WorM=='work'">
+          <c:TextView Text="#services#" CssClass="description_total"></c:TextView>
+          <c:TextView Text="{$Totals.serTotal} #Currency#" CssClass="total_value"></c:TextView>
+        </s:If>
+        <s:Else>
+          <c:TextView Text="#materials#" CssClass="description_total"></c:TextView>
+          <c:TextView Text="{$Totals.matTotal} #Currency#" CssClass="total_value"></c:TextView>
+        </s:Else>
+      </c:DockLayout>
+      <c:DockLayout CssClass="Total">
+        <c:TextView Text="#Total#" CssClass="description_total"></c:TextView>
+        <c:TextView Text="{$Totals.TotalSumm} #Currency#" CssClass="total_value"></c:TextView>
+      </c:DockLayout>
+    </c:VerticalLayout>
+    <!--
+    <c:VerticalLayout CssClass="CountAndPrice">
+      <c:TextView Text="$itemWork.AmountPlan" CssClass="description_row"></c:TextView>
+      <c:TextView Text="$SumPresent($itemWork.Price, $itemWork.AmountPlan)" CssClass="price"></c:TextView>
+    </c:VerticalLayout> -->
+  </c:DockLayout>
+  <!-- End Add block -->
+
+  <!-- Begin Add button block -->
+  <c:DockLayout CssClass="footer">
+      <c:HorizontalLine/>
+      <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$DoAction(AddWork)">
+        <c:TextView Text="#add#" />
+      </c:DockLayout>
+  </c:DockLayout>
+  <!-- End Add button block -->
+
+
   <!-- Begin Body screen   -->
+  <c:ScrollView>
+
 		<s:If Test="$WorM=='work'">
-      <c:ScrollView>
-          <c:TextView  Text="#works#" ></c:TextView>
-      </c:ScrollView>
+      <s:Push Id="LastVal" Value="1" />
+
+      <c:HorizontalLayout CssClass="caption_grid">
+          <c:TextView Text="#PlanWork#"></c:TextView>
+      </c:HorizontalLayout>
+        <s:Iterator Id="itemWork" Value="$getRIM(1)">
+          <s:If Test="$LastVal != $itemWork.Ord">
+              <s:Push Id="LastVal" Value="$itemWork.Ord" />
+              <c:HorizontalLayout CssClass="caption_grid">
+                  <c:TextView Text="#OutPlanWork#"></c:TextView>
+              </c:HorizontalLayout>
+          </s:If>
+          <c:HorizontalLine/>
+          <c:SwipeHorizontalLayout Id="swipe_layout2" CssClass="swipe_layout">
+            <c:DockLayout CssClass="grid" OnClick="$editCountSKU($itemWork.Id)">
+              <c:VerticalLayout>
+                <c:TextView Text="$itemWork.Description" CssClass="description_row"></c:TextView>
+              </c:VerticalLayout>
+              <c:VerticalLayout CssClass="CountAndPrice">
+                <c:TextView Text="$itemWork.Amount" CssClass="description_row"></c:TextView>
+                <c:TextView Text="{$itemWork.Summ} #Currency#" CssClass="price"></c:TextView>
+              </c:VerticalLayout>
+            </c:DockLayout>
+            <s:If Test="$itemWork.Ord == 0">
+            <c:HorizontalLayout CssClass="red_swipe" OnClick="$deleteSKU($itemWork.Id)">
+								<c:VerticalLayout>
+									<c:Image></c:Image>
+									<c:TextView Text="#delete#"></c:TextView>
+								</c:VerticalLayout>
+						</c:HorizontalLayout>
+            </s:If>
+        </c:SwipeHorizontalLayout>
+        </s:Iterator>
     </s:If>
   	<s:Else>
-      <c:ScrollView>
-        <c:TextView Text="#material#"></c:TextView>
-      </c:ScrollView>
-  	</s:Else>
+      <s:Push Id="LastVal" Value="1" />
+      <c:HorizontalLayout CssClass="caption_grid">
+          <c:TextView Text="#PlanMaterial#"></c:TextView>
+      </c:HorizontalLayout>
+      <s:Iterator Id="itemWork" Value="$getRIM(0)">
+        <s:If Test="$LastVal != $itemWork.Ord">
+            <s:Push Id="LastVal" Value="$itemWork.Ord" />
+            <c:HorizontalLayout CssClass="caption_grid">
+                <c:TextView Text="#OutPlanMaterial#"></c:TextView>
+            </c:HorizontalLayout>
+        </s:If>
+        <c:HorizontalLine/>
+        <c:SwipeHorizontalLayout Id="swipe_layout2" CssClass="swipe_layout">
+          <c:DockLayout CssClass="grid" OnClick="$editCountSKU($itemWork.Id)">
+            <c:VerticalLayout>
+              <c:TextView Text="$itemWork.Description" CssClass="description_row"></c:TextView>
+            </c:VerticalLayout>
+            <c:VerticalLayout CssClass="CountAndPrice">
+              <c:TextView Text="$itemWork.Amount" CssClass="description_row"></c:TextView>
+              <c:TextView Text="{$itemWork.Summ} #Currency#" CssClass="price"></c:TextView>
+            </c:VerticalLayout>
+          </c:DockLayout>
+          <s:If Test="$itemWork.Ord == 0">
+          <c:HorizontalLayout CssClass="red_swipe" OnClick="$deleteSKU($itemWork.Id)">
+              <c:VerticalLayout>
+                <c:Image></c:Image>
+                <c:TextView Text="#delete#"></c:TextView>
+              </c:VerticalLayout>
+          </c:HorizontalLayout>
+        </s:If>
+      </c:SwipeHorizontalLayout>
+    </s:Iterator>
+  </s:Else>
 	<!-- End Body screen   -->
+</c:ScrollView>
 
-  </c:VerticalLayout>
+  </c:DockLayout>
 
 
 

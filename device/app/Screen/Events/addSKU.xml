@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" xmlns:d="DefaultScope" StyleSheet="addSKU.css">
+  <c:DockLayout>
+    <c:DockLayout CssClass="top_navigator">
+      <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+         <c:Image/>
+        <c:TextView Text="#back#"/>
+      </c:HorizontalLayout>
+				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClick="$SaveCount($param1)"> <!-- $DoAction(tasks, $event) -->
+				<c:TextView Text="#add#"/>
+				</c:HorizontalLayout>
+        <c:HorizontalLayout>
+          <s:If Test="$WorM=='work'">
+            <c:TextView Text="#service#" />
+          </s:If>
+          <s:Else>
+            <c:TextView Text="#material#"/>
+          </s:Else>
+        </c:HorizontalLayout>
+    </c:DockLayout>
+
+    <c:HorizontalLine/>
+
+    <c:HorizontalLayout CssClass="caption_grid">
+      <s:If Test="$WorM=='work'">
+        <c:TextView Text="#service#" />
+      </s:If>
+      <s:Else>
+        <c:TextView Text="#material#"/>
+      </s:Else>
+    </c:HorizontalLayout>
+
+      <c:DockLayout CssClass="parameter_grid">
+        <c:TextView Text="$param1.SKU.Description" />
+        <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
+      </c:DockLayout>
+
+      <c:HorizontalLayout CssClass="caption_grid">
+      </c:HorizontalLayout>
+
+      <c:DockLayout CssClass="parameter_grid">
+        <c:TextView Text="#count#" />
+        <c:EditText Id="SKUCount" Text="$CheckEmpty($param1.AmountFact)" Keyboard="numeric" CssClass="value"></c:EditText>
+      </c:DockLayout>
+      <c:HorizontalLine/>
+      <c:DockLayout CssClass="parameter_grid">
+        <c:TextView Text="#Unit#" />
+        <c:TextView Text="$param1.SKU.Unit" CssClass="value"></c:TextView>
+      </c:DockLayout>
+      <c:HorizontalLayout CssClass="graybackground">
+      </c:HorizontalLayout>
+  </c:DockLayout>
+</c:Screen>

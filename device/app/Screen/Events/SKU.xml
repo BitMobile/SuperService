@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" xmlns:d="DefaultScope" StyleSheet="SKU.css">
+  <c:DockLayout>
+    <c:DockLayout CssClass="top_navigator">
+			<c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+         <c:Image/>
+        <c:TextView Text="#back#"/>
+      </c:HorizontalLayout>
+			<c:HorizontalLayout>
+        <s:If Test="$WorM=='work'">
+          <c:TextView Text="#services#" />
+          <s:Push Id="SKUs" Value="$getServices(1)"/>
+        </s:If>
+        <s:Else>
+          <c:TextView Text="#materials#"/>
+          <s:Push Id="SKUs" Value="$getServices(0)"/>
+        </s:Else>
+			</c:HorizontalLayout>
+		</c:DockLayout>
+    <c:HorizontalLine/>
+
+    <c:DockLayout CssClass="search">
+      <c:Button Id="btnSearch" Text="#search#" OnClick="$findSKU($edtSearch.Text)"></c:Button>
+      <c:DockLayout >
+			<c:Image />
+			<c:EditText Id="edtSearch"  Placeholder="#search#"></c:EditText>
+		  </c:DockLayout>
+		</c:DockLayout>
+		<c:HorizontalLayout CssClass="shadowLine"></c:HorizontalLayout>
+
+    <c:HorizontalLayout CssClass="caption_grid">
+    </c:HorizontalLayout>
+
+    <c:ScrollView>
+    <s:Iterator Id="ItemSKU" Value="$SKUs">
+      <c:DockLayout CssClass="parameter_grid" onClick="$CreateAndNext($ItemSKU.Id)">
+        <c:TextView Text="$ItemSKU.Description" />
+        <c:TextView Text="{$ItemSKU.Price} р." CssClass="value"></c:TextView>
+      </c:DockLayout>
+      <c:HorizontalLine/>
+
+    </s:Iterator>
+  </c:ScrollView>
+  </c:DockLayout>
+</c:Screen>

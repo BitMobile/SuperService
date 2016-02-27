@@ -315,7 +315,7 @@ function isSnapShotInEventExists(s){
 function GetSnapShotPath(objRef,fileName) {
 	if (!IsNullOrEmpty(fileName)){
 		if (FileSystem.Exists(GetPrivateImagePath(objRef, fileName, ".jpg"))){
-	    return GetPrivateImagePath(objRef, fileName, ".jpg");
+			return GetPrivateImagePath(objRef, fileName, ".jpg");
 	  }
 
 	  if (FileSystem.Exists(GetSharedImagePath(objRef, fileName, ".jpg"))){
@@ -329,6 +329,7 @@ function GetSnapShotPath(objRef,fileName) {
 
 
 function SnapshotExists(obj, pictname) {
+		
 	if (!IsNullOrEmpty(pictname)){
 		return FileSystem.Exists(GetSnapShotPath(obj,pictname)); //fileFound && fileExists;
 	} else {
