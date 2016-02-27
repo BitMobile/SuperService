@@ -1171,6 +1171,51 @@ MemoEdit {
   color: #e6891b;}
 
 .CountAndPrice {
-  width: 20%;
+  width: 25mm;
   height: 100%;
+  padding-left: 0mm;
+  padding-right: 2mm;
+}
+
+.swipe_layout {
+	height: 13.8mm;
+}
+
+.red_swipe {
+	height: 13.8mm;
+	width: 13.8mm;
+	background-color: #f74747;
+}
+
+.red_swipe vl {
+	height: 100%;
+	width: 100%;
+}
+
+.red_swipe vl img {
+	background-image: url(Trashbox.png);
+	height: 40.1%;
+	margin-top: 21%;
+	horizontal-align: central;
+}
+
+.red_swipe vl TextView {
+	height: 15%;
+	width: 100%;
+	margin-top: 10%;
+	text-align: center;
+	color: #fff;
+	font: 100% Arial;
+}
+
+.shadowLine {
+	width: 100%;
+	height: 2px;
+	background-image: url(shadow_line.png);
+}
+
+.graybackground {
+    width: 100%;
+    height: 100%;
+    background-color: #efeff4; 
 }

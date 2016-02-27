@@ -34,14 +34,6 @@ function DoNextStep(param){
 }
 
 // # Begin Parameters
-// function GetSnapShotPath(fileName) {
-//   var q = new Query("SELECT FullFileName" +
-//                     " FROM Document_Event_Files" +
-//                     " WHERE FileName == @fn");
-//
-//   q.AddParameter("fn", fileName);
-//   return q.ExecuteScalar();
-// }
 
 function GetEventParams(custRef) {
   var q = new Query("SELECT DEP.Id AS Id, CEO.EditingBMA AS Editing, CEO.Id AS ParamRef, CEO.Description AS Parameter, " +

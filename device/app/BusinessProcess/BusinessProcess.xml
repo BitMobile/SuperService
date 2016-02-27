@@ -49,8 +49,10 @@
 
         <bp:Step Name="calculate" Screen="Events\calculate.xml" Controller="Events\calculate.js">
            <bp:Action Name="Total" NextStep="Total"></bp:Action>
-           <bp:Action Name="task" NextStep="task"></bp:Action>
+           <bp:Action Name="tasks" NextStep="task"></bp:Action>
            <bp:Action Name="checklist" NextStep="checklist" />
+           <bp:Action Name="AddWork" NextStep="SKUList"></bp:Action>
+           <bp:Action Name="AddSKU" NextStep="AddSKU" />
        </bp:Step>
 
 
@@ -98,9 +100,16 @@
 
         <bp:Step Name="Map" Screen="Common\mapview.xml" Controller="Common\mapview.js">
         </bp:Step>
+
+        <bp:Step Name="SKUList" Screen="Events\SKU.xml" Controller="Events\SKU.js">
+          <bp:Action Name="AddSKU" NextStep="AddSKU" />
+        </bp:Step>
+
+        <bp:Step Name="AddSKU" Screen="Events\addSKU.xml" Controller="Events\SKU.js">
+        </bp:Step>
    </bp:Workflow>
 
-  <bp:Workflow Name="Client" Controller="Client\main.js">
+    <bp:Workflow Name="Client" Controller="Client\main.js">
 
     <bp:Step Name="Main" Screen="Client\main.xml" Controller="Client\main.js">
       <bp:Action Name="EditFilter" NextStep="EditFilter"></bp:Action>
