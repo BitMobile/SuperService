@@ -107,19 +107,27 @@ function GetParamBooleanDialog(sender, param, paramRef, senderId){
 		var arr = [];
     arr.push([true, Translate["#Yes#"]]);
     arr.push([false, Translate["#No#"]]);
-
+		arr.push(["", Translate["—"]]);
     Dialog.Choose(paramRef.Description, arr, SetParamBooleanValue, [param, senderId]);
 }
 
 function SetParamBooleanValue(state, args){
     var res = undefined;
-    if (args.Result) {
-      res = Translate["#Yes#"];
-    } else {
+    if (args.Result == "") {
+			res = "—";
+    } else if (args.Result) {
+			res = Translate["#Yes#"];
+    }
+		else if(args.Result == false)
+		{
       res = Translate["#No#"];
     }
-
-    SetForAllParameters(state[0], res);
+		if (args.Result == "") {
+			SetForAllParameters(state[0], undefined);
+		}
+		else {
+			SetForAllParameters(state[0], res);
+		}
     Variables[state[1]].Text = res;
 }
 
@@ -127,16 +135,21 @@ function GetParamValueListDialog(sender, param, paramRef, index, senderId){
 		var tbl = ["Catalog_EquipmentOptions_ListValues",
 								"Catalog_ClientOptions_ListValues",
 								"Catalog_EventOptions_ListValues"];
-    var q = new Query("SELECT Val, Val FROM " + tbl[index] + " WHERE Ref = @param");
+    var q = new Query("SELECT Val, Val FROM " + tbl[index] + " WHERE Ref = @param Union Select \"\" As Val, @p2 As Val");
     q.AddParameter("param", paramRef);
+		q.AddParameter("p2", Translate["—"]);
     Dialog.Choose(paramRef.Description, q.Execute(), SetParamValueListValue, [param, senderId]);
 }
 
 function SetParamValueListValue(state, args){
 
     SetForAllParameters(state[0], args.Result);
-    Variables[state[1]].Text = args.Result;
-
+		if (args.Result == "") {
+			Variables[state[1]].Text = "—";
+		}
+		else {
+			Variables[state[1]].Text = args.Result;
+		}
 }
 
 
