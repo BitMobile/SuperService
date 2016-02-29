@@ -111,16 +111,15 @@ TryAgain		Повторить
 OnlyInteger		Разрешен ввод только целых чисел.
 delete		Удалить
 qDeleteSnapShot		Удалить изображение?
-material		Материалы
 Empty		Пусто
 works		Услуги
 calculate		Учет
 imageNotAvailable		В данный момент изображение недоступно
 Total		Итоговая сумма
-PlanWork		ЗАПЛАНИРОВАННЫЕ РАБОТЫ
-OutPlanWork		ВНЕПЛАНОВЫЕ РАБОТЫ
+PlanWork		ЗАПЛАНИРОВАННЫЕ УСЛУГИ
+OutPlanWork		ВНЕПЛАНОВЫЕ УСЛУГИ
 PlanMaterial		ЗАПЛАНИРОВАННЫЕ МАТЕРИАЛЫ
-OutPlanMaterial		ВНЕПЛАНОВЫЕ МАТЕРИАЛЫ		
+OutPlanMaterial		ВНЕПЛАНОВЫЕ МАТЕРИАЛЫ
 services		Услуги
 materials		Материалы
 Currency		р.
