@@ -9,6 +9,7 @@ function getServices(isService) {
     var queryText = "SELECT Id, Description, Price " +
                     "FROM Catalog_RIM " +
                     "WHERE Service = 1 " +
+                    "AND IsFolder = 0 " +
                     "AND NOT Id in (SELECT SKU " +
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
@@ -16,6 +17,7 @@ function getServices(isService) {
     var queryText = "SELECT Id, Description, Price " +
                     "FROM Catalog_RIM " +
                     "WHERE Service = 0 " +
+                    "AND IsFolder = 0 " + 
                     "AND NOT Id in (SELECT SKU " +
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
