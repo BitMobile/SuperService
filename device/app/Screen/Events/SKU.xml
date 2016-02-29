@@ -35,7 +35,16 @@
     <s:Iterator Id="ItemSKU" Value="$SKUs">
       <c:DockLayout CssClass="parameter_grid" onClick="$CreateAndNext($ItemSKU.Id)">
         <c:TextView Text="$ItemSKU.Description" />
-        <c:TextView Text="{$ItemSKU.Price} р." CssClass="value"></c:TextView>
+        <s:If Test="$WorM=='work'">
+          <s:If Test="$MobileSettings.UsedCalculateService">
+            <c:TextView Text="{$ItemSKU.Price} р." CssClass="value"></c:TextView>
+          </s:If>
+        </s:If>
+        <s:Else>
+          <s:If Test="$MobileSettings.UsedCalculateMaterials">
+            <c:TextView Text="{$ItemSKU.Price} р." CssClass="value"></c:TextView>
+          </s:If>
+        </s:Else>
       </c:DockLayout>
       <c:HorizontalLine/>
 

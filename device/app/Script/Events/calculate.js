@@ -26,9 +26,24 @@ function DoNextStep(param){
 		DoAction("Total", param);
 }
 
-function editCountSKU(sender, id) {
-  var obj = id.GetObject();
-  Workflow.Action('AddSKU', [obj]);
+function editCountSKU(sender, id, isInPlan) {
+  if (isInPlan == 1){
+      if ($.WorM == 'work'){
+        if ($.MobileSettings.EditPlanService){
+          var obj = id.GetObject();
+          Workflow.Action('AddSKU', [obj]);
+        }
+      } else {
+        if ($.MobileSettings.EditPlanMaterials){
+          var obj = id.GetObject();
+          Workflow.Action('AddSKU', [obj]);
+        }
+      }
+  } else {
+    var obj = id.GetObject();
+    Workflow.Action('AddSKU', [obj]);
+  }
+
 }
 
 function getRIM(servises) {

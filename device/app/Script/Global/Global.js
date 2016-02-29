@@ -56,8 +56,24 @@ function SetMobileSettings(){
   $.MobileSettings.Add("UsedCheckLists", UsedCL.ExecuteScalar());
   var UsedEquipment = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'AllowGalery'");
   $.MobileSettings.Add("AllowGalery", UsedEquipment.ExecuteScalar());
-  var UsedCalculate = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedCalculateService'");
+  var UsedGpsFix = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedGpsFix'");
+  $.MobileSettings.Add("UsedGpsFix", UsedGpsFix.ExecuteScalar());
+
+  var UsedCalculate = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedCalculate'");
   $.MobileSettings.Add("UsedCalculate", UsedCalculate.ExecuteScalar());
+  var AddUnPlanMaterials = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'AddUnPlanMaterials'");
+  $.MobileSettings.Add("AddUnPlanMaterials", AddUnPlanMaterials.ExecuteScalar());
+  var AddUnPlanService = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'AddUnPlanService'");
+  $.MobileSettings.Add("AddUnPlanService", AddUnPlanService.ExecuteScalar());
+  var EditPlanMaterials = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'EditPlanMaterials'");
+  $.MobileSettings.Add("EditPlanMaterials", EditPlanMaterials.ExecuteScalar());
+  var EditPlanService = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'EditPlanService'");
+  $.MobileSettings.Add("EditPlanService", EditPlanService.ExecuteScalar());
+  var UsedCalculateMaterials = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedCalculateMaterials'");
+  $.MobileSettings.Add("UsedCalculateMaterials", UsedCalculateMaterials.ExecuteScalar());
+  var UsedCalculateService = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedCalculateService'");
+  $.MobileSettings.Add("UsedCalculateService", UsedCalculateService.ExecuteScalar());
+
   var PictureSize = new Query("SELECT NumericValue FROM Catalog_SettingMobileApplication WHERE Description = 'PictureSize'");
   var resPS = PictureSize.ExecuteScalar();
   if (isNaN(parseInt(resPS))){

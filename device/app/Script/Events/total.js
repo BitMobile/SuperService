@@ -103,12 +103,16 @@ function CommitEvent(state, args){
 		Dialog.Message(Translate["#ToLongText1000#"] + " " +  StrLen($.ExecutiveComment.Text));
 		return;
 	}
-	var location = GPS.CurrentLocation;
-	if(ActualLocation(location)) {
-		SaveEvent(state, location);
-		Workflow.Commit();
+	if ($.MobileSettings.UsedGpsFix){
+		var location = GPS.CurrentLocation;
+		if(ActualLocation(location)) {
+			SaveEvent(state, location);
+			Workflow.Commit();
+		} else {
+			Dialog.Choose(Translate["#noVisitCoordinats#"], [[1, Translate["#Commit#"]], [2, Translate["#TryAgain#"]], [0, Translate["#Abort#"]],], NoCoordinatVariats, state);
+		}
 	} else {
-		Dialog.Choose(Translate["#noVisitCoordinats#"], [[1, Translate["#Commit#"]], [2, Translate["#TryAgain#"]], [0, Translate["#Abort#"]],], NoCoordinatVariats, state);
+			SaveEvent(state, undefined);
 	}
 }
 
