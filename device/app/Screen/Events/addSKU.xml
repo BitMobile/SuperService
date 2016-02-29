@@ -20,8 +20,6 @@
     </c:DockLayout>
 
     <c:HorizontalLine/>
-    <s:If Test="$WorM=='work'">
-      <s:If Test="$MobileSettings.UsedCalculateService">
         <c:HorizontalLayout CssClass="caption_grid">
           <s:If Test="$WorM=='work'">
             <c:TextView Text="#service#" />
@@ -31,29 +29,19 @@
           </s:Else>
         </c:HorizontalLayout>
 
-          <c:DockLayout CssClass="parameter_grid">
-            <c:TextView Text="$param1.SKU.Description" />
-            <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
-          </c:DockLayout>
-      </s:If>
-    </s:If>
-    <s:Else>
-      <s:If Test="$MobileSettings.UsedCalculateMaterials">
-        <c:HorizontalLayout CssClass="caption_grid">
+        <c:DockLayout CssClass="parameter_grid">
+          <c:TextView Text="$param1.SKU.Description" />
           <s:If Test="$WorM=='work'">
-            <c:TextView Text="#service#" />
+            <s:If Test="$MobileSettings.UsedCalculateService">
+                <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
+            </s:If>
+            <s:Else>
+              <s:If Test="$MobileSettings.UsedCalculateMaterials">
+                <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
+              </s:If>
+            </s:Else>
           </s:If>
-          <s:Else>
-            <c:TextView Text="#material#"/>
-          </s:Else>
-        </c:HorizontalLayout>
-
-          <c:DockLayout CssClass="parameter_grid">
-            <c:TextView Text="$param1.SKU.Description" />
-            <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
-          </c:DockLayout>
-      </s:If>
-    </s:Else>
+        </c:DockLayout>
 
       <c:HorizontalLayout CssClass="caption_grid">
       </c:HorizontalLayout>
