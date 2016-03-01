@@ -113,6 +113,7 @@ function CommitEvent(state, args){
 		}
 	} else {
 			SaveEvent(state, undefined);
+			Workflow.Commit();
 	}
 }
 
