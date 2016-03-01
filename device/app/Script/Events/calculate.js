@@ -52,7 +52,7 @@ function getRIM(servises) {
                     "CRIM.Description AS Description, " +
 	                  "CRIM.Service AS isService, " +
 	                  "DERIM.Price AS Price, " +
-	                  "CASE WHEN DERIM.AmountPlan > 0 THEN DERIM.AmountPlan ELSE DERIM.AmountFact END AS Amount, " +
+	                  "CASE WHEN DERIM.AmountFact > 0 THEN DERIM.AmountFact ELSE DERIM.AmountPlan END AS Amount, " +
                     "CASE WHEN DERIM.SumFact > 0 THEN DERIM.SumFact ELSE DERIM.SumPlan END AS Summ, " +
                     "CASE WHEN AmountPlan > 0 THEN 1 ELSE 0 END AS Ord " +
                     "FROM Document_Event_ServicesMaterials DERIM " +
@@ -63,7 +63,6 @@ function getRIM(servises) {
                     "ORDER BY Ord DESC, Line");
   q.AddParameter("isService", servises);
   q.AddParameter("event", Vars.getEvent());
-  q.AddParameter("inPlan", inPlan);
   return q.Execute();
 }
 

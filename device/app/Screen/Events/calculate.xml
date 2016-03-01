@@ -27,7 +27,7 @@
 			<c:HorizontalLayout CssClass="mode_right_button_off">
 			  <c:HorizontalLayout Id="material" CssClass="select_zone" OnClickAction="$ChangeListAndRefresh(material)">
 				<!-- <c:TextView Text="#requestsAll# ({$usv})"></c:TextView> -->
-				<c:TextView Text="#material#"></c:TextView>
+				<c:TextView Text="#materials#"></c:TextView>
 			  </c:HorizontalLayout>
 			</c:HorizontalLayout>
 		  </s:If>
@@ -40,7 +40,7 @@
 			<c:HorizontalLayout CssClass="mode_right_button_on">
 			  <c:HorizontalLayout Id="material" CssClass="select_zone" OnClickAction="$ChangeListAndRefresh(material)">
 				<!-- <c:TextView Text="#requestsAll# ({$usv})"></c:TextView> -->
-				<c:TextView Text="#material#"></c:TextView>
+				<c:TextView Text="#materials#"></c:TextView>
 
 			  </c:HorizontalLayout>
 			</c:HorizontalLayout>

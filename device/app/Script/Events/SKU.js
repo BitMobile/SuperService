@@ -48,6 +48,8 @@ function findSKU(sender, key){
 function CreateAndNext(sender, refSKU) {
   var obj = DB.Create("Document.Event_ServicesMaterials");
   obj.Ref = Vars.getEvent();
+  obj.AmountPlan = 0;
+  obj.SumPlan = 0;
   obj.Price = refSKU.Price;
   obj.SKU = refSKU;
   Workflow.Action('AddSKU', [obj]);
@@ -67,8 +69,6 @@ function CheckEmpty(val) {
 function SaveCount(sender, obj) {
   if (!IsNullOrEmpty($.SKUCount.Text)){
     if (Converter.ToDecimal($.SKUCount.Text) > 0){
-      obj.AmountPlan = 0;
-      obj.SumPlan = 0;
       obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
       obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
       obj.Save();
