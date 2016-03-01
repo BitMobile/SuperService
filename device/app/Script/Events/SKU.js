@@ -17,7 +17,7 @@ function getServices(isService) {
     var queryText = "SELECT Id, Description, Price " +
                     "FROM Catalog_RIM " +
                     "WHERE Service = 0 " +
-                    "AND IsFolder = 0 " + 
+                    "AND IsFolder = 0 " +
                     "AND NOT Id in (SELECT SKU " +
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
@@ -66,12 +66,16 @@ function CheckEmpty(val) {
 
 function SaveCount(sender, obj) {
   if (!IsNullOrEmpty($.SKUCount.Text)){
-    obj.AmountPlan = 0;
-    obj.SumPlan = 0;
-    obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
-    obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
-    obj.Save();
-    Workflow.BackTo("calculate");
+    if (Converter.ToDecimal($.SKUCount.Text) > 0){
+      obj.AmountPlan = 0;
+      obj.SumPlan = 0;
+      obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
+      obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
+      obj.Save();
+      Workflow.BackTo("calculate");
+    } else {
+      Dialog.Message(Translate["#ZeroCount#"]);
+    }
   } else {
     Dialog.Message(Translate["#EmptyCount#"]);
   }

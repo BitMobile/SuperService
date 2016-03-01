@@ -123,7 +123,8 @@ OutPlanMaterial		ВНЕПЛАНОВЫЕ МАТЕРИАЛЫ
 services		Услуги
 materials		Материалы
 Currency		р.
-service		УСЛУГА
+service		Услуга
 material		Материал
 count		Количество
 Unit		Единицы измерения
+ZeroCount		Количество должно быть больше 0.
