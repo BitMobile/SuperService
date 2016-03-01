@@ -40,12 +40,12 @@
             <s:If Test="$MobileSettings.UsedCalculateService">
                 <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
             </s:If>
-            <s:Else>
-              <s:If Test="$MobileSettings.UsedCalculateMaterials">
-                <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
-              </s:If>
-            </s:Else>
           </s:If>
+          <s:Else>
+            <s:If Test="$MobileSettings.UsedCalculateMaterials">
+              <c:TextView Text="{$param1.SKU.Price} #Currency#" CssClass="value"></c:TextView>
+            </s:If>
+          </s:Else>
         </c:DockLayout>
 
       <c:HorizontalLayout CssClass="caption_grid">
