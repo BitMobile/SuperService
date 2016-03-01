@@ -31,17 +31,17 @@ function editCountSKU(sender, id, isInPlan) {
       if ($.WorM == 'work'){
         if ($.MobileSettings.EditPlanService){
           var obj = id.GetObject();
-          Workflow.Action('AddSKU', [obj]);
+          Workflow.Action('AddSKU', [obj, 1]);
         }
       } else {
         if ($.MobileSettings.EditPlanMaterials){
           var obj = id.GetObject();
-          Workflow.Action('AddSKU', [obj]);
+          Workflow.Action('AddSKU', [obj, 1]);
         }
       }
   } else {
     var obj = id.GetObject();
-    Workflow.Action('AddSKU', [obj]);
+    Workflow.Action('AddSKU', [obj, 1]);
   }
 
 }

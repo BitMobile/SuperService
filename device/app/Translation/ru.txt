@@ -115,7 +115,7 @@ Empty		Пусто
 works		Услуги
 calculate		Учет
 imageNotAvailable		В данный момент изображение недоступно
-Total		Итоговая сумма
+Total		Итого
 PlanWork		ЗАПЛАНИРОВАННЫЕ УСЛУГИ
 OutPlanWork		ВНЕПЛАНОВЫЕ УСЛУГИ
 PlanMaterial		ЗАПЛАНИРОВАННЫЕ МАТЕРИАЛЫ
@@ -128,3 +128,4 @@ material		Материал
 count		Количество
 Unit		Единицы измерения
 ZeroCount		Количество должно быть больше 0.
+edit		Изменить

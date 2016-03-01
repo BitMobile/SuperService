@@ -7,7 +7,12 @@
         <c:TextView Text="#back#"/>
       </c:HorizontalLayout>
 				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClick="$SaveCount($param1)"> <!-- $DoAction(tasks, $event) -->
-				<c:TextView Text="#add#"/>
+          <s:If Test="$param2 == 1">
+              <c:TextView Text="#edit#"/>
+          </s:If>
+          <s:Else>
+              <c:TextView Text="#add#"/>
+          </s:Else>
 				</c:HorizontalLayout>
         <c:HorizontalLayout>
           <s:If Test="$WorM=='work'">
