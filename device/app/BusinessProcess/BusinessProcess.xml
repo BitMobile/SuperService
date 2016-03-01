@@ -49,7 +49,7 @@
 
         <bp:Step Name="calculate" Screen="Events\calculate.xml" Controller="Events\calculate.js">
            <bp:Action Name="Total" NextStep="Total"></bp:Action>
-           <bp:Action Name="tasks" NextStep="task"></bp:Action>
+           <bp:Action Name="tasks" NextStep="tasks"></bp:Action>
            <bp:Action Name="checklist" NextStep="checklist" />
            <bp:Action Name="AddWork" NextStep="SKUList"></bp:Action>
            <bp:Action Name="AddSKU" NextStep="AddSKU" />
