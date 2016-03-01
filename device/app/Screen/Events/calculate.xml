@@ -60,16 +60,16 @@
           <c:DockLayout CssClass="SubTotal">
             <s:If Test="$WorM=='work'">
               <c:TextView Text="#services#" CssClass="description_total"></c:TextView>
-              <c:TextView Text="{$Totals.serTotal} #Currency#" CssClass="total_value"></c:TextView>
+              <c:TextView Text="{$isNullsetZero($Totals.serTotal)} #Currency#" CssClass="total_value"></c:TextView>
             </s:If>
             <s:Else>
               <c:TextView Text="#materials#" CssClass="description_total"></c:TextView>
-              <c:TextView Text="{$Totals.matTotal} #Currency#" CssClass="total_value"></c:TextView>
+              <c:TextView Text="{$isNullsetZero($Totals.matTotal)} #Currency#" CssClass="total_value"></c:TextView>
             </s:Else>
           </c:DockLayout>
           <c:DockLayout CssClass="Total">
             <c:TextView Text="#Total#" CssClass="description_total"></c:TextView>
-            <c:TextView Text="{$Totals.TotalSumm} #Currency#" CssClass="total_value"></c:TextView>
+            <c:TextView Text="{$isNullsetZero($Totals.TotalSumm)} #Currency#" CssClass="total_value"></c:TextView>
           </c:DockLayout>
         </c:VerticalLayout>
       </c:DockLayout>
@@ -85,16 +85,16 @@
         <c:DockLayout CssClass="SubTotal">
           <s:If Test="$WorM=='work'">
             <c:TextView Text="#services#" CssClass="description_total"></c:TextView>
-            <c:TextView Text="{$Totals.serTotal} #Currency#" CssClass="total_value"></c:TextView>
+            <c:TextView Text="{$isNullsetZero($Totals.serTotal)} #Currency#" CssClass="total_value"></c:TextView>
           </s:If>
           <s:Else>
             <c:TextView Text="#materials#" CssClass="description_total"></c:TextView>
-            <c:TextView Text="{$Totals.matTotal} #Currency#" CssClass="total_value"></c:TextView>
+            <c:TextView Text="{$isNullsetZero($Totals.matTotal)} #Currency#" CssClass="total_value"></c:TextView>
           </s:Else>
         </c:DockLayout>
         <c:DockLayout CssClass="Total">
           <c:TextView Text="#Total#" CssClass="description_total"></c:TextView>
-          <c:TextView Text="{$Totals.TotalSumm} #Currency#" CssClass="total_value"></c:TextView>
+          <c:TextView Text="{$isNullsetZero($Totals.TotalSumm)} #Currency#" CssClass="total_value"></c:TextView>
         </c:DockLayout>
       </c:VerticalLayout>
     </c:DockLayout>

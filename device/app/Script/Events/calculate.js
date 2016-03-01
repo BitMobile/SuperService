@@ -81,24 +81,39 @@ function SumPresent(price, count) {
   }
 }
 
+function isNullsetZero(val) {
+	if (IsNullOrEmpty(val)){
+		return 0;
+	} else {
+		return val;
+	}
+}
+
+
 function getTotals() {
-  var q = new Query("SELECT SUM(CASE WHEN DES.SumFact > 0 " +
-                              "THEN DES.SumFact " +
-                              "ELSE DES.SumPlan END) AS TotalSumm, " +
-                            "SUM(CASE WHEN RIM.Service = 1 " +
-                                "THEN CASE WHEN DES.SumFact > 0 " +
-                                          "THEN DES.SumFact " +
-                                          "ELSE DES.SumPlan END " +
-                                "ELSE 0 END) AS serTotal, "  +
-                            "SUM(CASE WHEN RIM.Service = 0 " +
-                                "THEN CASE WHEN DES.SumFact > 0 " +
-                                      "THEN DES.SumFact " +
-                                      "ELSE DES.SumPlan END " +
-                                "ELSE 0 END) AS matTotal " +
-                    "FROM Document_Event_ServicesMaterials DES " +
-                    "LEFT JOIN Catalog_RIM RIM " +
-                    "ON DES.SKU = RIM.Id");
+  var q = new Query("SELECT serTotal + matTotal AS TotalSumm, serTotal,  matTotal " +
+                          "FROM (SELECT CASE WHEN @ucs = 1 " +
+                                        "THEN SUM(CASE WHEN RIM.Service = 1 " +
+                                                  "THEN CASE WHEN DES.SumFact > 0 " +
+                                                            "THEN DES.SumFact " +
+                                                            "ELSE DES.SumPlan END " +
+                                                  "ELSE 0 END) " +
+                                        "ELSE 0 END AS serTotal, "  +
+                                  "CASE WHEN @ucm = 1 " +
+                                        "THEN SUM(CASE WHEN RIM.Service = 0 " +
+                                                  "THEN CASE WHEN DES.SumFact > 0 " +
+                                                        "THEN DES.SumFact " +
+                                                        "ELSE DES.SumPlan END " +
+                                                  "ELSE 0 END) " +
+                                        "ELSE 0 END AS matTotal " +
+                          "FROM Document_Event_ServicesMaterials DES " +
+                          "LEFT JOIN Catalog_RIM RIM " +
+                          "ON DES.SKU = RIM.Id " +
+                          "WHERE DES.Ref = @event)");
+  q.AddParameter("event", Vars.getEvent());
+  q.AddParameter("ucs", $.MobileSettings.UsedCalculateService);
+  q.AddParameter("ucm", $.MobileSettings.UsedCalculateMaterials);
   var res = q.Execute();
-  res.Next();
+  res.Next()
   return res;
 }

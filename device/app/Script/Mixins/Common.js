@@ -49,6 +49,7 @@ function Inversion(val){
 	}
 }
 
+
 function onEmptyValue(v) {
 	if (IsNullOrEmpty(v)){
 		return "—";
@@ -342,7 +343,7 @@ function GetSnapShotPath(objRef,fileName) {
 
 
 function SnapshotExists(obj, pictname) {
-		
+
 	if (!IsNullOrEmpty(pictname)){
 		return FileSystem.Exists(GetSnapShotPath(obj,pictname)); //fileFound && fileExists;
 	} else {

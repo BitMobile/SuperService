@@ -263,11 +263,11 @@ background-color: #ffffff;
 
 .price {
       width: 100%;
-      height: 2.2mm;
+      height: 2.5mm;
       margin-top: 1.5mm;
       text-align: right;
       white-space: normal;
-      font: 100% Arial;
+      font: 90% Arial;
       color: #e6891b;
 }
 
@@ -285,7 +285,8 @@ background-color: #ffffff;
   dock-align: right;
   text-align: right;
   white-space: normal;
-  font: 100% Arial;
+  vertical-align: top;
+  font: 90% Arial;
   color: #e6891b;
 }
 
@@ -359,4 +360,12 @@ totalBlock {
 
 .btn_bottom_footer{
   background-color: #ffffff;
+}
+
+.small_grid {
+    height: 6.7mm;
+    width: 100%;
+    selected-color: #bacdce;
+    dock-align: top;
+    horizontal-align: central;
 }
