@@ -1,271 +1,131 @@
-outlet_description	Наименование магазина
-forward		Далее
-back		Назад
-summary		Сводная информация
-caps_summary	СВОДНАЯ ИНФОРМАЦИЯ
-new			Новое
-client		Клиент
-clients		Клиенты
-main		ОСНОВНОЕ
-mainInfo	ОСНОВНЫЕ СВЕДЕНИЯ
-additionally	ДОПОЛНИТЕЛЬНО
-todo		Задачи
-stock		Остатки
-schedule	Расписание
-order		Заказ
-visit		Визит
-visits		Визиты
-incompletedVisits	НЕВЫПОЛНЕННЫЕ ВИЗИТЫ
-completedVisits		ВЫПОЛНЕННЫЕ ВИЗИТЫ
-info		Помощь
-planVisit	Плановые
-unplanned	Внеплановые
-outlets		Магазины
-targets		Цели
-target		Цель
-settings	Настройки
-sync		Синхронизация
-syncPhoto	Обмен фото
-search		Поиск
-outlet		Торговая точка
-outlet_class	Класс торговой точки
-outlet_type	Тип торговой точки
-distributor	Дистрибьютор
-answer		Ответ
-typeanswer	Введите значения..
-username	Имя пользователя
-password	Пароль
-cancel		Отмена
-Ok		Ок
-discard		Сбросить
-apply		Применить
-parameters	Параметры
-parameter	Параметр
-select_answer	ВЫБЕРИТЕ ЗНАЧЕНИЕ..
-save		Сохранить
-no_questions	Вопросов нет
-empty_field	Поле не может быть очищено
-questions	Вопросы
-questAnswers	Ответов в анкете
-commentary	Комментарий
-insert_answer	ВВЕДИТЕ ЗНАЧЕНИЕ..
-amount		Итого
-skuInOrder	ТОВАРЫ В ЗАКАЗЕ
-sku			Номенклатура
-distribution	Дистрибуция
-quantity	Количество
-price		Цена
-edit		Редактирование
-insert_text	Введите текст..
-totalamount	Итого
-orderSum	Сумма заказа
-price2		Цена:
-orderHistory	ИСТОРИЯ ЗАКАЗОВ
-kpi			Отчеты/KPI
-tasks		Задачи
-task		Задача
-todoDone	Задач выполено
-execute		Выполнить
-retrieve	Вернуть
-newTasks	НЕВЫПОЛНЕННЫЕ
-executedtask	ВЫПОЛНЕННЫЕ
-description	Наименование
-result		Результат
-plandate	Плановый срок
-date		Дата
-distributor	Дистрибьютор
-outletType	Тип торговой точки
-outletClass	Класс торговой точки
-available	Доступность
-facing		Фейсинг
-stock		Остатки
-price		Цена
-markUp		Наценка
-outOfStock	Наличие на складе
-false		Нет
-true		Да
-done		Заполнен
-
-pcs			шт.
-orders		Заказы
-newOrder	Создать новый заказ
-add			Добавить
-discount	Скидка
-noNumber	Нет номера
-showImage	Показать фото
-hideImage	Скрыть фото
-markUp		Наценка
-unit		Единица изм.
-baseUnit	Баз. единица изм.
-selectUnit	Выберите единицу измерения:
-logo		logoRu
-packUnit	Ед. упаковки
-refreshScreen	Пересчитать заказ
-no_tasks	Задач нет
-documentSum	Сумма документа
-document	Документ
-receivables	Задолженность
-receivable	Задолженность
-byDocs		ПО ДОКУМЕНТАМ
-encashment	Инкассация
-sum			Сумма
-encashmentSum	Сумма инкассации
-spreadOnDocuments	Распределить на документы
-spread		Распределить
-docNumber	Номер документа
-receivableAmount	СУММА ЗАДОЛЖЕННОСТИ
-encashmentAmount	Сумма инкассации
-nameSurname	ФИО
-maximumAmount	Лимит
-NoLimit		Не ограничен
-deleteItem	Удалить эту строку
-startTime	Время начала
-newOutlet	Создать новую торговую точку
-messageNulls	Все поля на экране должны быть заполнены.
-countPrice	Пересчитать цену
-SelectAnswer	Выбор вариантов
-NoBigEndDate	Дата окончания не может быть больше сегодняшней даты!
-
-description	Наименование
-coordinates	Координаты
-set			Установить
-coordinatesAreSet	Координаты установлены
-setVisitCoordinates		Повторить попытку установить координаты?
-setCoords	Установить координаты
-setCoordinates	Установить координаты по текущему расположению?
-location	Установить координаты торговой точки
-locationSetFailed	Не удалось получить координаты. Повторить?
-saveChanges	Сохранить изменения?
-map			Карта
-showOnMap	Показать на карте
-no_visitPlans		Нет визитов для отображения
-current		Текущие
-couldnt_be_cleaned	Поле не может быть очищено
-priceList	Прайс-лист
-isntSelected	Не выбран
-SKUWillRevised	Заказ пересчитан
-features	Характеристики
-noPriceLists	Для этой торговой точки нет прайс-листов
-emptyList	Список пуст
-impossibleToDelete	Невозможно удалить, заказ уже передан в базу
-valueList	Список значений
-deliveryDate	Дата доставки
-enterDateTime	Введите дату и время
-noImage	Изображение не найдено
-of	из
-information	Информация
-snapshot	Фотоснимок
-noSnapshot	Нет фотоснимка
-snapshotAttached	Снимок прикреплен
-clickToInsert	Нажмите для ввода даты
-itemAlreadyExist	Такая позиция уже есть в заказе. Продолжить редактирование? ("Нет" - не добавлять новую позицию к заказу)
-NO		Нет
-YES		Да
-filter	Фильтр
-clearFilter		Очистить фильтр?
-groups	Группы
-brands	Бренды
-brand	Бренд
-impossibleToCreateVisit		Невозможно создать плановый визит пока не записаны координаты. Повторить попытку получить координаты?
-fillNoOrderReason	 Причина отсутствия заказа должна быть заполнена.
-reasonForEmptyOrder	Причина отсутствия заказа
-fillInVisitReason	Причина визита должна быть заполнена
-visitReason	Причина визита
-debt	Долг
-orderInfo	ИНФОРМАЦИЯ О ЗАКАЗЕ
-visitTotal	Итоги визита
-synchronizationData	СИНХРОНИЗАЦИЯ ДАННЫХ
-synchronizationPhoto	СИНХРОНИЗАЦИЯ ФОТОГРАФИЙ
-lastSync	Последняя синхронизация
-synchronize	Синхронизировать
-vpVisits	заявок
-vpPerformed	выполнено
-further	еще
-scheduled	запланировано
-planned	плановых
-vpUnplanned	внеплановых
-amountOfOrdersForToday	сумма заказов на сегодня
-programmingCollectionForToday	сумма инкассации за сегодня
-accountsReceivables	дебиторская задолженность
-unknown	Нет данных
-list	Список
-DeleteNow	Удалить
-Fair	Уволить
-Factaddress	Фактический адрес
-Uraddress	Юридический адрес
-WEBLogin	Web-логин
-WEBPassword	Web-пароль
-PhoneNumbers	Номера телефонов
-FaxNumbers	Номера факсов
-
-
-requests	Заявки
-ClearFilter	Очистить фильтр
-reqdone	закрыто
-requndone	осталось
-reqmth	за месяц
-request	ЗАЯВКА
-requesttext	Текст заявки
-manager	Менеджер
-clients	Клиенты
-NoAnswer	Отказ
-reports	Отчеты
-Clear	Очистить
-worktimesheets	Лувры
-today	Сегодня
-requestsAll	Все
-donerequests	ВЫПОЛНЕННЫЕ ЗАЯВКИ
-undonerequests	НЕВЫПОЛНЕННЫЕ ЗАЯВКИ
-begin	Начало
-end	Окончание
-period	Период
-customer	Клиент
-next	Далее
-main	Основное
-descriptioncust	Наименование клиента
-address		Адрес
-metro	Метро
-worklist	Список работ
-Bigworklist	СПИСОК РАБОТ
-NoWorks	Работы отсутсвуют
-ready		Готово
-errEmptyProduct	Поле Продукт не может быть пустым
-at	в
-CountPeaple	Кол-во сотрудников
-Yes	Да
-No	Нет
-from0to50	0-50
-from51to100	51-100
-from101to200	101-200
-from201to1000	201-1000
-more1000	Более 1000
-WorkDetail	Описание выполненных работ
-HoursCount	Количество часов
-Product	Продукт
-BaseCount	Кол-во баз
-NewVer	Новая версия
-requeststatus	Статус заявки
-Completed	Закончен
-Processing	В процессе
-Expired	Отменен
-Expected	Распределен
-historyrequests	История заявок
-nonamecontact	Введите Имя или Фамилию
-error	Ошибка
-shorthour	ч
-planning	Планирование
-remainsOfStock	Остатки на складе
-applicationsForMaterials	Заявки на материалы
-applications	Заявки
-application	Заявка
-all	Все
-today	Cегодня
-noApplicationToday	Нет заявок на сегодня
-expected2	Ожидаемые
-noPlans	Нет планов
-call	Вызвать
-Empty		Пусто
-gamingHelpText	<h3>Можно продать доп. продукт:</h3><p>Работа в программе:</p><p>1.Функционал</p><p>2.Ответы на вопросы</p><p>3.Сдача отчетности</p><p>4.Загрузка данных</p><p>5.Настройка обмена</p><p>Структура/работа компании в целом:</p><p>1.Увеличение штата</p><p>2.Изменение структуры</p><p>3.Сайт</p><p>4.Компьютерный парк</p><h3>Угроза потери клиента:</h3><p>Качество облуживания: </p><p>1.Недовольство нашими сотрудниками</p><p>2.Сравнение в обслуживании с другой компанией</p><p>3.Не планирует продлевать договор ИТС</p><p>Конкуренты/рынок:</p><p>1.Предложение работы в обход компании/попытки сведения работ к бесплатным</p><p>2.Наличие ПП/обслуживание у других вендоров/франчайзи</p><p>3.Есть свой методист/программист по 1С/фрилансер</p>
-samuraiHeader	Акция "Путь самурая"
-newcustomerHeader	Новый клиент
-HelpText	<p>Данное приложение используется сотрудниками компании «Первый БИТ», совершающими выезды к клиентам, для повышения качества работы с клиентской базой.</p><p>Приложение поможет Вам:<br/><ul><li>Удобно просматривать контакты клиентов находясь вне офиса;</li><li>Заполнять данные о проделанной работе в пути между клиентами, не тратя на это время при посещении офиса;</li><li>Оперативно передавать информацию в офис.</li></ul></p><p>Заявки в приложении формируются на основании созданных в БД Union нарядов. Т.е. первое, что необходимо сделать для начала работы с приложением – попросить менеджера создать в Union все наряды на месяц обслуживания. Через некоторое время после того как это сделано, нужно зайти в «Меню -> Синхронизация» и нажать кнопку «Синхронизировать».  Когда в МП появятся заявки и данные по клиентам, можно приступать к планированию работы.</p><h3>Планирование работ:</h3><p>Что бы увидеть список своих заявок, необходимо в приложении открыть раздел «Заявки». В данном разделе имеется две вкладки «Сегодня» и «Все». Открыв интересующую Вас заявку (проверить поля: клиент, месяц обслуживания, текст задания), можно посмотреть адрес выезда и другие контакты клиента. После того, как Вы созвонились с клиентом и договорились с ним о встрече на определённое время, необходимо нажать на поле «Начало» и указать дату и время, оговоренное с клиентом. При желании можно так же заполнить поле «Окончание». После этого заявку необходимо закрыть, нажав кнопку «Назад» в левом верхнем углу. Для того, чтобы эти данные попали в Union необходимо зайти в меню «Синхронизация» и нажать кнопку «Синхронизировать». После выгрузки данных в Union они будут отображаться в «наряде» в полях «Плановая дата» и «Плановое время». Таким образом в офисе менеджер сможет оперативно получать данные о том, к какому клиенту, когда Вы планируете осуществить выезд. Планирование работ рекомендуется осуществлять на несколько дней вперёд.</p><h3>Работа по заявкам:</h3><p>После того, как Вы приехали в офис клиента, необходимо в МП найти заявку, соответствующую визиту к данному клиенту. Открыв её, нужно убедиться, что всё заполнено правильно (Контактное лицо, текст заявки), после чего нажать кнопку «Далее» в правом верхнем углу.</p><p>В этот момент приложение зафиксирует время начала работ и откроется страница с параметрами организации. Если все параметры заполнены (количество сотрудников, вид деятельности, наличие финансового директора), то можно в очередной раз нажать кнопку «Далее» в правом верхнем углу приложения. Если какие-то данные не заполнены, необходимо уточнить их в процессе разговора с клиентом, записать ответы в приложение и только после этого нажимать кнопку «Далее». На следующем шаге может появиться дополнительное анкетирование клиента, если оно запущено в Вашем офисе.</p><h3>Окно «Список работ»</h3><p>При следующем нажатии на кнопку «Далее» перед Вами отобразится окно, в котором с помощью кнопки «Добавить» (внизу экрана) можно заполнить список работ, которые были проделаны. При нажатии на кнопку «Добавить» откроется окно в котором нужно указать программу и описать выполненные работы.  Для записи указанных данных по выполненным работам необходимо нажать кнопку «Готово» внизу экрана. При необходимости кнопку «Добавить» можно нажимать несколько раз, каждый раз указывая разные программы и описание работ. Когда описание работ полностью закончено, нужно перейти к завершающему шагу в заполнении заявки, нажав кнопку «Далее» в правом верхнем углу экрана.</p><h3>Окно «Итоги визита»</h3><p>В окне «Итоги визита» нужно указать время окончания работ и нажать кнопку «Готово» в правом верхнем углу.</p><p>Если есть данные о клиенте, которые необходимо оперативно передать в офис, то перед нажатием на кнопку «Готово» следует заполнить поле «Комментарий» и при необходимости нажать на одну из кнопок «Можно продать доп.продукт» или «Угроза потери клиента». Если это сделано, то при ближайшей синхронизации (меню «Синхронизация) данные о нажатых кнопках и заполненном комментарии будут высланы на корпоративные почты менеджеру по ИТС и Вашему руководителю.</p><h3>Кнопка «Новый клиент»</h3><p>Кроме этого в главном меню приложения есть кнопка «Новый клиент». Если Вы узнаете о потенциальном новом клиенте для компании «Первый БИТ», то необходимо выяснить, как можно связаться с контактным лицом этого клиента и, нажав на кнопку «Новый клиент», указать известные Вам данные. Обязательными для заполнения являются поля «Телефон» и «Имя», всю остальную информацию нужно записывать в поле «Дополнительная информация». Все данные которые Вы заполните, при ближайшей синхронизации МП будут отправлены на почту Вашему руководителю и он передаст её в проработку менеджеру по продажам. В свою очередь, менеджер, связавшись с клиентом, нажмёт одну из кнопок «Подтверждаю» или «Не подтверждаю» в зависимости от того как прошёл разговор. Его ответ Вы сможете узнать позже в корпоративной почте.</p><p>Если с приложением возникают проблемы, то отправить запрос в службу поддержки можно через портал https://bitmobile.zendesk.com/hc/ru или на почту support@bitmobile.zendesk.com</p>
+summary		Summary
+requests	Visits
+clients	Customers
+client	Customer
+vpVisits	Quotes
+vpPerformed	Done
+further	More
+scheduled	Scheduled
+planned	Planned
+vpUnplanned	Unplanned
+reqdone	Closed
+requndone	Left
+reqmth	Monthly
+sync	Sync
+info	About
+today	Today
+requestsAll	All
+search		Search
+begin	Start
+end	End
+period	Period
+ClearFilter	Reset Filter
+Clear	Reset
+descriptioncust	Customer Name
+mainContact	Contact
+address	Address
+Author	Author
+eventComment	Comment
+back	Back
+next	Next
+contacts	Contacts
+devices	Equipment
+visit	Visit
+details	Details
+Executor		User
+doDate		Due Date
+ExecutorComment		User's Comment
+CheckList	Checklist
+call	Call
+synchronizationData	Data Sync
+synchronizationPhoto	Sync Photos
+lastSync	Last Sync
+synchronize	Sync
+vpVisits	Quotes
+at	At
+error	Error
+SendLog	Send Log
+visitTotal	Total
+ready	Ready
+comment	Comment
+send	Send
+Terget	Target
+serialNum	Serial Number
+softVersion	OS Version
+remote	Remote Connection
+remoteData	Remote Connection Settings
+history	History
+tasks		Tasks
+task		Tasks
+todoDone	Tasks Performed
+execute		Execute
+retrieve	Retrieve
+newTasks	Incomplete Tasks
+executedtask	Complete Tasks
+device	Device
+Yes	Yes
+deviceHistory	History
+equipment	Equipment
+descriptionEQ	Description
+No	No
+noDescriGiven	Description missing
+enterDateTime	Enter Time and Date
+select_answer	Select an answer
+about	About
+version	Version
+superDescription	SuperService — mobile solution for orders, surveys and merchandising. Employees work-flow control.
+support	Customer Support
+idea	Suggestions
+agreement	License Agreement. 
+icons	Icons powered by icons8.com
+firstBIT	First BIT — effective solutions for your business. Leading 1C Automatization Market since 1998.
+webSite	Website
+others	Other Applications
+developer	Developer
+Snapshots	Pics
+add	Add
+snapshot	Pic
+outletSnapshots	Sales Point Pic
+addFromGallery	Add from Gallery
+makeSnapshot	Take a Pic
+DeleteSnapShot		Delete Pic
+Synchronization_has_not_been_performed	Sync didn't run
+done		Done
+Undone		Undone
+set	Set
+Сoordinates		Coordinates
+success			Data successfully transferred
+noSuccess		An error has occurred while sending. The data is not sent.
+Abort		Cancel
+questionRollback		The status of the task execution will be canceled. Continue?
+OrderNum		Order Number
+NoDate		Not specified
+ExecutiveComment		User comment
+ToLongText500		The text length should not exceed 500 characters . The current text length
+ToLongText1000	The text length should not exceed 1000 characters . The current text length
+ToLongText200		The text length should not exceed 200 characters . The current text length
+noVisitCoordinats		Can not set the current coordinates . Retry or complete without the coordinates ?
+EmptyCount		The field "Amount" must be filled !
+Commit		OK
+TryAgain		Retry
+OnlyInteger		Only integers allowed. 
+delete		Delete
+qDeleteSnapShot		Delete Pic?
+Empty		Empty
+works		Services
+calculate		Accounting
+imageNotAvailable		At the moment, the image is not available.
+Total		Total
+PlanWork		SCHEDULED SERVICES
+OutPlanWork		UNSCHEDULED SERVICES
+PlanMaterial		PLANNED MATERIAL
+OutPlanMaterial		UNPLANNED MATERIAL
+services		Services
+materials		Materials
+Currency		Currency
+service		Service
+material		Material
+count		Amount
+Unit		Units
+ZeroCount		The amount must be greater than 0 .
+edit		Edit

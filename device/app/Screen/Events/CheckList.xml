@@ -129,7 +129,7 @@
                       <s:If Test="$actions.Req">
                     		<c:VerticalLayout Id="marker{$index}" CssClass="$getStatusStyle($actions.Result)"></c:VerticalLayout>
                     	</s:If>
-											<s:If Test="$dataExists($actions.Result)">
+											<s:If Test="$dataNotExists($actions.Result)">
 												<c:Button Text="#add#" OnClick="$AddSnapshot($param1, $actions.Action, $index)"/>
 											</s:If>
 											<s:Else>

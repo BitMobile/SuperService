@@ -149,7 +149,25 @@ function SaveEvent(ref, loc){
 		obj.Longitude = location.Longitude;
 		obj.GPSTime = location.Time;
 	}
+
+	var q = new Query("SELECT Id, AmountPlan AS AP, SumPlan AS SP " +
+										"FROM Document_Event_ServicesMaterials " +
+										"WHERE AmountFact = 0 " + 
+										"AND Ref = @Ref");
+
+	q.AddParameter("Ref", ref);
+	var res = q.Execute();
+	var itemObj = undefined;
+
+	while (res.Next()){
+		itemObj = res.Id.GetObject();
+		itemObj.AmountFact = res.AP;
+		itemObj.SumFact = res.SP;
+		itemObj.Save();
+	}
+
 	obj.Save();
+
 }
 
 function SetExecutiveComment(sender, ref) {
