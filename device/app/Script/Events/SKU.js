@@ -10,6 +10,7 @@ function getServices(isService) {
                     "FROM Catalog_RIM " +
                     "WHERE Service = 1 " +
                     "AND IsFolder = 0 " +
+                    "AND DeletionMark = 0 " +
                     "AND NOT Id in (SELECT SKU " +
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
@@ -18,6 +19,7 @@ function getServices(isService) {
                     "FROM Catalog_RIM " +
                     "WHERE Service = 0 " +
                     "AND IsFolder = 0 " +
+                    "AND DeletionMark = 0 " +
                     "AND NOT Id in (SELECT SKU " +
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
