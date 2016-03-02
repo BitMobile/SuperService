@@ -129,7 +129,13 @@
                       <s:If Test="$actions.Req">
                     		<c:VerticalLayout Id="marker{$index}" CssClass="$getStatusStyle($actions.Result)"></c:VerticalLayout>
                     	</s:If>
-                      <c:Button Text="#add#" OnClick="$AddSnapshot($param1, $actions.Action, $index)"/>
+											<s:If Test="$dataExists($actions.Result)">
+												<c:Button Text="#add#" OnClick="$AddSnapshot($param1, $actions.Action, $index)"/>
+											</s:If>
+											<s:Else>
+												<c:Button Text="#ReShot#" OnClick="$AddSnapshot($param1, $actions.Action, $index)"/>
+											</s:Else>
+
                       <c:TextView Text="$actions.Desc" />
                   </c:DockLayout>
                   <s:If Test="$isSnapShotInEventExists($actions.Result)">

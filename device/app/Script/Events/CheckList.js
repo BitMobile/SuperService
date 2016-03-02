@@ -201,12 +201,15 @@ function FormatDate(datetime) {
 function AddSnapshot(sender, objectRef, eqRef) { // optional: title, path
 		var listChoice = new List;
 		if ($.MobileSettings.AllowGalery) {
+      listChoice.Add([1, Translate["#makeSnapshot#"]]);
 			listChoice.Add([0, Translate["#addFromGallery#"]]);
-		}
+      Dialog.Choose(Translate["#snapshot#"], listChoice, AddSnapshotHandler, [objectRef, eqRef]);
+    } else {
+      MakeSnapshot(objectRef, eqRef);
+    }
 		//listChoice.Add([0, Translate["#addFromGallery#"]]);
-		listChoice.Add([1, Translate["#makeSnapshot#"]]);
 
-		Dialog.Choose(Translate["#snapshot#"], listChoice, AddSnapshotHandler, [objectRef, eqRef]);
+
 }
 
 function AddSnapshotHandler(state, args) {

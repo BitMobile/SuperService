@@ -212,14 +212,14 @@ function SetForAllParameters(param, result) {
 }
 
 function AddParamSnapshot(sender, objectRef, eqRef) { // optional: title, path
-		var listChoice = new List;
-		if ($.MobileSettings.AllowGalery) {
-			listChoice.Add([0, Translate["#addFromGallery#"]]);
-		}
-		//listChoice.Add([0, Translate["#addFromGallery#"]]);
+	var listChoice = new List;
+	if ($.MobileSettings.AllowGalery) {
 		listChoice.Add([1, Translate["#makeSnapshot#"]]);
-
+		listChoice.Add([0, Translate["#addFromGallery#"]]);
 		Dialog.Choose(Translate["#snapshot#"], listChoice, AddSnapshotHandler, [objectRef, eqRef]);
+	} else {
+		MakeSnapshot(objectRef, eqRef);
+	}
 }
 
 
