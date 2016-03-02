@@ -378,7 +378,7 @@ function FormatDate(datetime) {
 	return String.IsNullOrEmpty(datetime) ? "—" : Format("{0:dd.MM.yyyy HH:mm}", Date(datetime));
 }
 
-function dataExists(val) {
+function dataNotExists(val) {
 	return IsNullOrEmpty(val);
 }
 //--- # End Editing parameters ---

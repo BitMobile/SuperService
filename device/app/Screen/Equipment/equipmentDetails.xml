@@ -121,7 +121,7 @@
          <s:If Test="$eqParams.Type == 'Snapshot'">
            <s:Push Id="snapshotPath" Value="$GetSnapShotPath($param1, $eqParams.Val)" />
                 <c:DockLayout CssClass="snapshot_grid">
-                    <s:If Test="$dataExists($eqParams.Val)">
+                    <s:If Test="$dataNotExists($eqParams.Val)">
                       <c:Button Text="#add#" OnClick="$AddSnapshot($param1, $eqParams.Id)"/>
                       <c:TextView Text="$eqParams.Parameter" />
                     </s:If>
@@ -131,7 +131,7 @@
                     </s:Else>
 
                 </c:DockLayout>
-
+	                 <s:If Test="$dataNotExists($eqParams.Val) != True">
                       <s:If Test="$SnapshotExists($param1, $eqParams.Val)">
                         <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
                             <c:VerticalLayout  OnClickAction="$DoAction(photoView, $eqParams.Parameter, $snapshotPath)">
@@ -142,10 +142,10 @@
                       <s:Else>
                         <c:VerticalLayout CssClass="no_image">
                           <c:Image />
-                          <c:TextView Text="#imageNotAvailable#" CssClass="text"></c:TextView>
+                          <c:TextView Text="#imageNotAvailable#"></c:TextView>
                         </c:VerticalLayout>
                       </s:Else>
-
+                    </s:If>
 
 
         </s:If>
@@ -158,19 +158,19 @@
       <c:DockLayout CssClass="snapshot_grid">
           <c:TextView Text="$eqParams.Parameter" />
       </c:DockLayout>
-            <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
                     <s:If Test="$SnapshotExists($param1, $eqParams.Val)">
-                      <c:VerticalLayout OnClickAction="$DoAction(photoView, $eqParams.Parameter, $snapshotPath)">
-                        <c:Image Source="$snapshotPath" />
-                      </c:VerticalLayout>
+                      <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
+                        <c:VerticalLayout OnClickAction="$DoAction(photoView, $eqParams.Parameter, $snapshotPath)">
+                          <c:Image Source="$snapshotPath" />
+                        </c:VerticalLayout>
+                    </c:SwipeHorizontalLayout>
                     </s:If>
                     <s:Else>
                       <c:VerticalLayout CssClass="no_image">
                         <c:Image />
-                        <c:TextView Text="#imageNotAvailable#" CssClass="text"></c:TextView>
+                        <c:TextView Text="#imageNotAvailable#"></c:TextView>
                       </c:VerticalLayout>
                     </s:Else>
-            </c:SwipeHorizontalLayout>
 
 
     </s:If>

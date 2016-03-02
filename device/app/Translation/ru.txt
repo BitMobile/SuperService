@@ -114,7 +114,7 @@ qDeleteSnapShot		Удалить изображение?
 Empty		Пусто
 works		Услуги
 calculate		Учет
-imageNotAvailable		В данный момент изображение недоступно
+imageNotAvailable		Фото отсутствует. Для его получения запустите синхронизацию файлов.
 Total		Итого
 PlanWork		ЗАПЛАНИРОВАННЫЕ УСЛУГИ
 OutPlanWork		ВНЕПЛАНОВЫЕ УСЛУГИ
