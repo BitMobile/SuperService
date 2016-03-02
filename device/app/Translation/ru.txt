@@ -126,7 +126,7 @@ Currency		р.
 service		Услуга
 material		Материал
 count		Количество
-Unit		Единицы измерения
+Unit		Единица измерения
 ZeroCount		Количество должно быть больше 0.
 edit		Изменить
 ReShot		Переснять
