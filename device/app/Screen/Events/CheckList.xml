@@ -138,15 +138,20 @@
 
                       <c:TextView Text="$actions.Desc" />
                   </c:DockLayout>
-                  <s:If Test="$isSnapShotInEventExists($actions.Result)">
-
+                  <s:If Test="$dataNotExists($actions.Result) != True">
                         <s:If Test="$SnapshotExists($param1, $actions.Result)">
                           <c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel" Alignment="Center">
                               <c:VerticalLayout OnClick="$SnapshotActions($param1, $actions.Action, $actions.Result)"><!-- <c:VerticalLayout OnClickAction="$DoAction(photoView, $eqParams.Parameter, $snapshotPath)"> -->
-                                <c:Image Source="$GetPrivateImage($param1, $actions.Result)" />
+                                <c:Image Source="$GetSnapShotPath($param1, $actions.Result)" />
                               </c:VerticalLayout>
                           </c:SwipeHorizontalLayout>
                         </s:If>
+												<s:Else>
+													<c:VerticalLayout CssClass="no_image">
+														<c:Image />
+														<c:TextView Text="#imageNotAvailable#"></c:TextView>
+													</c:VerticalLayout>
+												</s:Else>
 
                   </s:If>
                   <c:HorizontalLine />

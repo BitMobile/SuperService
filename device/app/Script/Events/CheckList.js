@@ -308,16 +308,16 @@ function GetSnapShots(event, eq) {
 		return q.Execute();
 }
 
-function SnapshotExists(event, pictname) {
-		// var q = new Query("Select DEP.UIDPhoto From Document_Event_Photos DEP WHERE DEP.Ref == @event AND DEP.Equipment == @eq AND DEP.UIDPhoto == @pict");
-		// q.AddParameter("event", event);
-		// q.AddParameter("eq", eq);
-		// q.AddParameter("pict", pictId);
-		// var filename = q.ExecuteScalar();
-		//var fileFound = !String.IsNullOrEmpty(filename);
-		//var fileExists = (fileFound ? FileSystem.Exists(GetPrivateImagePath(event, pictId, ".jpg")) : false);
-		return FileSystem.Exists(GetPrivateImagePath(event, pictname, ".jpg")) //fileFound && fileExists;
-}
+// function SnapshotExists(event, pictname) {
+// 		// var q = new Query("Select DEP.UIDPhoto From Document_Event_Photos DEP WHERE DEP.Ref == @event AND DEP.Equipment == @eq AND DEP.UIDPhoto == @pict");
+// 		// q.AddParameter("event", event);
+// 		// q.AddParameter("eq", eq);
+// 		// q.AddParameter("pict", pictId);
+// 		// var filename = q.ExecuteScalar();
+// 		//var fileFound = !String.IsNullOrEmpty(filename);
+// 		//var fileExists = (fileFound ? FileSystem.Exists(GetPrivateImagePath(event, pictId, ".jpg")) : false);
+// 		return FileSystem.Exists(GetPrivateImagePath(event, pictname, ".jpg")) //fileFound && fileExists;
+// }
 
 function SnapshotActions(sender, objectRef, eqRef, pictId) { // optional: title, path
 		var listChoice = new List;
