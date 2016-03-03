@@ -58,11 +58,11 @@ function createReminder(event){
 			reminder.Reminders = event;
 
 			if ($.HungryImageTrue.Visible && !$.AngryImageTrue.Visible){
-				reminder.ViewReminder = DB.Current.Constant.VidRemember.Sale;
+				reminder.ViewReminder = DB.Current.Constant.FoReminders.Sale;
 			}
 
 			if (!$.HungryImageTrue.Visible && $.AngryImageTrue.Visible){
-				reminder.ViewReminder = DB.Current.Constant.VidRemember.Problem;
+				reminder.ViewReminder = DB.Current.Constant.FoReminders.Problem;
 			}
 
 			reminder.Date = DateTime.Now;
@@ -152,7 +152,7 @@ function SaveEvent(ref, loc){
 
 	var q = new Query("SELECT Id, AmountPlan AS AP, SumPlan AS SP " +
 										"FROM Document_Event_ServicesMaterials " +
-										"WHERE AmountFact = 0 " + 
+										"WHERE AmountFact = 0 " +
 										"AND Ref = @Ref");
 
 	q.AddParameter("Ref", ref);
