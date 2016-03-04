@@ -158,15 +158,15 @@ function actionDoSelect(p){
 	Workflow.Action("Task",[]);
 }
 
-function AddSnapshot(sender, objectRef, eqRef) { // optional: title, path
-		var listChoice = new List;
-		if ($.MobileSettings.AllowGalery) {
-			listChoice.Add([0, Translate["#addFromGallery#"]]);
-		}
-		//listChoice.Add([0, Translate["#addFromGallery#"]]);
+function AddSnapshot(sender, objectRef, itemRef) { // optional: title, path
+	var listChoice = new List;
+	if ($.MobileSettings.AllowGalery) {
 		listChoice.Add([1, Translate["#makeSnapshot#"]]);
-
-		Dialog.Choose(Translate["#snapshot#"], listChoice, AddSnapshotHandler, [objectRef,eqRef]);
+		listChoice.Add([0, Translate["#addFromGallery#"]]);
+		Dialog.Choose(Translate["#snapshot#"], listChoice, AddSnapshotHandler, [objectRef, itemRef]);
+	} else {
+		MakeSnapshot(objectRef, itemRef);
+	}
 }
 
 function AddSnapshotHandler(state, args) {
