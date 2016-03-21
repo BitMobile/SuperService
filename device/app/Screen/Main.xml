@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="Main.css">
+  <c:SwipeVerticalLayout Id="swipe_vl" Scrollable="False">
+  		<s:Include File="\Components\Lead.xml"/>
   <c:SwipeHorizontalLayout Id="swipe_layout" Index="1">
     <s:Include File="\Components\sideMenu.xml"/>
     <c:VerticalLayout>
@@ -63,5 +65,6 @@
 
     </c:VerticalLayout>
   </c:SwipeHorizontalLayout>
+</c:SwipeVerticalLayout>
 
 </c:Screen>
