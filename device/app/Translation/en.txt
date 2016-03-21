@@ -76,7 +76,7 @@ version	Version
 superDescription	SuperService — mobile solution for orders, surveys and merchandising. Employees work-flow control.
 support	Customer Support
 idea	Suggestions
-agreement	License Agreement. 
+agreement	License Agreement.
 icons	Icons powered by icons8.com
 firstBIT	First BIT — effective solutions for your business. Leading 1C Automatization Market since 1998.
 webSite	Website
@@ -108,7 +108,7 @@ noVisitCoordinats		Can not set the current coordinates . Retry or complete witho
 EmptyCount		The field "Amount" must be filled !
 Commit		OK
 TryAgain		Retry
-OnlyInteger		Only integers allowed. 
+OnlyInteger		Only integers allowed.
 delete		Delete
 qDeleteSnapShot		Delete Pic?
 Empty		Empty
@@ -129,3 +129,16 @@ count		Amount
 Unit		Units
 ZeroCount		The amount must be greater than 0 .
 edit		Edit
+ReShot		Retake
+name	Name
+phone		Phone
+register	Register
+leadGetPersonalDemoAccess	and get personal demo access
+leadThanks	Thank You for granted data! Our specialists will contact with You in short!
+leadFillDataPlease	Please, fill data
+leadOrderDemo	Order demonstration
+leadPhone	+7-812-320-65-66
+leadMail	mobilespb@1cbit.ru
+leadFail	Connect to network or enter without registration
+enterUnregistered	Enter unregistered
+sending			Sending..

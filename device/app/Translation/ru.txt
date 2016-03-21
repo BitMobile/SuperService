@@ -130,3 +130,15 @@ Unit		Единица измерения
 ZeroCount		Количество должно быть больше 0.
 edit		Изменить
 ReShot		Переснять
+name	Имя
+phone		Телефон
+register	Зарегистрируйтесь
+leadGetPersonalDemoAccess	и получите персональный демо-доступ
+leadThanks	Благодарим Вас за предоставленные данные! Наши специалисты свяжутся с Вами в ближайшее время!
+leadFillDataPlease	Пожалуйста, заполните данные
+leadOrderDemo	Закажите подробную демонстрацию
+leadPhone	+7-812-320-65-66
+leadMail	mobilespb@1cbit.ru
+leadFail	Подключитесь к сети или войдите без регистрации
+enterUnregistered	Войти без регистрации
+sending			Отправка..
