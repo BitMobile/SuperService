@@ -5,6 +5,11 @@ var sendingRequest;
 
 // ------------------------ Main screen module ------------------------
 
+function OnLoad() {
+	sendingRequest = false;
+	$.swipe_vl.Index = GetFirstScreenIndex();
+}
+
 function CloseMenu() {
     var sl = Variables["swipe_layout"];
     if (sl.Index == 1) {
@@ -84,6 +89,11 @@ function GetEndOfCurrentMonth(){
 //----------------End Info Block Visit---------------------------------
 
 // Begin lead generation
+
+function GetFirstScreenIndex() {
+		return (IsDemoUser() && !GetContactsSentFlag() && !entered ? leadScreenIndex : summaryScreenIndex);
+}
+
 function IsDemoUser() {
 var userRef = $.common.UserRef;
 var username = userRef.UserName;
