@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="event.css">
 	<s:Push Id="event" Value="$GetEventDetails($event)"></s:Push>
+	<s:Push Id="StartTime" Value="$GetAndSetStartTime($event)"></s:Push>
   <c:DockLayout>
 
     <c:DockLayout CssClass="top_navigator">
