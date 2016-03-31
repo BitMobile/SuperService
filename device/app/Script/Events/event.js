@@ -3,6 +3,17 @@ function DoBackAndClean(){
 	//DB.Rollback();
 }
 
+function GetAndSetStartTime(event){
+	//Dialog.Message(event);
+	var obj = event.GetObject();
+	//Dialog.Message(obj.ActualStartDate);
+	if (obj.ActualStartDate == '01.01.0001 0:00:00') {
+		obj.ActualStartDate = DateTime.Now;
+		obj.Save();		
+	}
+	//Dialog.Message(ActualStartDate);
+}
+
 function DoActionAndSave(step, req, cust, outlet) {
 
 }
