@@ -1,5 +1,5 @@
 summary		Summary
-requests	Visits
+requests	Work orders
 clients	Customers
 client	Customer
 vpVisits	Quotes
@@ -30,7 +30,7 @@ back	Back
 next	Next
 contacts	Contacts
 devices	Equipment
-visit	Visit
+visit	Work order
 details	Details
 Executor		User
 doDate		Due Date

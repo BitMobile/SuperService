@@ -1,5 +1,5 @@
 summary		Сводная информация
-requests	Визиты
+requests	Наряды
 clients	Клиенты
 client	Клиент
 vpVisits	заявок
@@ -30,7 +30,7 @@ back	Назад
 next	Далее
 contacts	Контакты
 devices	Оборудование
-visit	Визит
+visit	Наряд
 details	Сведения
 Executor		Исполнитель
 doDate		Дата выполнения
