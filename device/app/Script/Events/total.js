@@ -91,9 +91,9 @@ function askCommit(sender, event){
 	q.AddParameter("Ref", event);
 	cnt = q.ExecuteCount();
 	if(cnt == 0){
-		Dialog.Ask("После завершения визита его нельзя будет отредактировать. Вы хотите завершить визит?", CommitEvent, event);
+		Dialog.Ask("После завершения наряда его нельзя будет отредактировать. Вы хотите завершить наряд?", CommitEvent, event);
 	} else {
-		Dialog.Message("Для завершения визита необходимо завершить все задачи.");
+		Dialog.Message("Для завершения наряда необходимо завершить все задачи.");
 	}
 }
 
