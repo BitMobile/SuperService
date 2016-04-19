@@ -27,6 +27,15 @@
       </c:DockLayout>
       <c:HorizontalLine/>
 
+			<c:DockLayout CssClass="$styles.Client">
+        <c:HorizontalLayout OnClickAction="$menuClickAction(Client)">
+          <c:Image CssClass="btn_clients"/>
+      <c:TextView CssClass="menu_text" Text="#Bag#"></c:TextView>
+    </c:HorizontalLayout>
+      </c:DockLayout>
+      <c:HorizontalLine/>
+
+
 	     <c:DockLayout CssClass="$styles.Sync">
         <c:HorizontalLayout OnClickAction="$menuClickAction(Sync)">
           <c:Image CssClass="btn_sync"/>

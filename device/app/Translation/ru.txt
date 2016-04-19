@@ -142,3 +142,4 @@ leadMail	mobilespb@1cbit.ru
 leadFail	Подключитесь к сети или войдите без регистрации
 enterUnregistered	Войти без регистрации
 sending			Отправка..
+Bag	Рюкзак
