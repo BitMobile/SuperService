@@ -1,0 +1,320 @@
+.top_navigator hl TextView {
+    width: 100%;
+    height: 100%;
+    margin-left: 0%;
+    padding-top: 26%;
+    horizontal-align: central;
+    text-align: center;
+    color: #000000;
+    font: 39.5% arial;
+    selected-color: #D3D3D3;
+}
+
+
+body {
+    background-color: #efeff4;
+}
+
+dl {
+	background-color: #efeff4;
+}
+
+.main_row {
+    width: 30% auto;
+    height: 100%;
+    white-space: normal;
+    font: 70% Arial;
+  	margin-top: 10%;
+}
+.main_row_defic {
+    width: 1% auto;
+    height: 100%;
+    white-space: normal;
+    font: 70% Arial;
+  	margin-top: 10%;
+}
+.main_row_green{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #00fc19;
+}
+.main_row_blue{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #4147e7;
+}
+.main_row_yelow{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #dfcd2f;
+}
+.main_row_red{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #e32020;
+}
+.description_row {
+    height: 40%;
+    font: 42% Arial;
+}
+
+.grid_Str{
+  height: 45mm;
+}
+
+.grid {
+  height: 20%;
+}
+.grid vl hl{
+    height: 30%;
+    width: 100%;
+}
+
+.grid vl hl description_row{
+    height: 100%;
+    font: 78% Arial;
+    margin-bottom: 10%;
+    /*background-color: #ccaacc;*/
+}
+
+.parameter_grid{
+	background-color: #ffffff;
+}
+.ClearFilter {
+	width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #FF0000;
+
+}
+
+.emptyRecordSetAllRequest {
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	margin-top: -10%;
+	color: #c0c0c0;
+	padding-top: 80%;
+}
+
+.top_navigator {
+    height: 6.7mm;
+    dock-align: top;
+    background-color: #f8f8f8;
+}
+
+.top_navigator Button {
+    selected-color: #D3D3D3;
+}
+
+.top_navigator hl {
+    width: 100%;
+    height: 100%;
+    dock-align: top;
+    horizontal-align: central;
+}
+
+.top_navigator hl TextView {
+    width: 100%;
+    height: 100%;
+    margin-left: 0%;
+    padding-top: 26%;
+    horizontal-align: central;
+    text-align: center;
+    color: #000000;
+    font: 39.5% arial;
+    selected-color: #D3D3D3;
+}
+
+.top_navigator hl Image {
+    selected-color: #D3D3D3;
+}
+
+.top_navigator dl {
+    width: 16.3mm;
+    height: 100%;
+}
+
+/*
+.top_navigator {
+	background-color:f8f8f8
+}*/
+
+.footer {
+	height: 7.6sp;
+    dock-align: bottom;
+	background-color: #ffffff;
+}
+
+.spacer {
+	width: 100%;
+	height: 50px;
+}
+
+.swipe_layout {
+    height: 87px;
+}
+
+.grey_swipe {
+    height: 87px;
+    width: 174px;
+    background-color: #b7b7b7;
+}
+
+		.grey_swipe vl {
+		        height: 100%;
+		        width: 174px;
+		    }
+
+		.grey_swipe vl TextView {
+		            height: 27%;
+		            width: 174px;
+		            margin-top: 30%;
+		            text-align: center;
+		            color: #fff;
+		            font: 100% Arial;
+		        }
+
+.shadowLine {
+    width: 100%;
+    height: 2px;
+    background-image: url(shadow_line.png);
+}
+
+
+
+.btn_menu {
+    margin-right: 11%;
+    margin-left: 2%;
+}
+
+.description_daterow {
+    width: 100%;
+    height:25%;
+    white-space: normal;
+    font: 80% Arial;
+    color: #e6891b;
+}
+
+
+.bl_description_row{
+    width: 100%;
+    height: 100%;
+    white-space: normal;
+    padding-right: 7%;
+    color: #e6891b;
+    font: 42% Arial;
+    /*background-color: #bbaa00;*/
+}
+
+.periodcaption {
+	 	width: 20%;
+        height: 100%;
+        margin-left: 3.5%;
+        padding-top: 25%;
+        color: #e6891b;
+        font:39.5% arial;
+}
+.withoutarrow{
+ width: 95%;
+}
+.filterarrow {
+    height: 1.9mm;
+    width: 1.3mm;
+    margin-left: 15%;
+    /*margin-top: 30%;*/
+    background-image: url(arrow.png);
+
+    }
+
+.filterarrowOrd {
+    height: 1.9mm;
+    width: 1.3mm;
+    background-image: url(arrow.png);
+    margin-top: 45%;
+    }
+
+.filtervalue {
+	width: 63%;
+    height: 100%;
+    padding-top: 25%;
+    white-space: normal;
+    margin-right: -14%;
+    font: 36% Arial;
+    color: #8e8e93;
+
+    text-align: right;
+}
+
+.parameter_grid TextView {
+        width: 50%;
+        height: 100%;
+        margin-left: 3.5%;
+        padding-top: 30%;
+        color: #e6891b;
+        dock-align: left;
+        font: 36% arial;
+
+    }
+
+.btn_left_footer {
+	width: 40%;
+	height: 100%;
+	dock-align: left;
+	background-color: #ffffff;
+}
+
+	.btn_left_footer TextView {
+            width: 100%;
+            height: 100%;
+            margin-top: 0%;
+            margin-left: 5%;
+            padding-top: 25%;
+            text-align: center;
+            color: #e6891b;
+            font: 38% Arial;
+        }
+
+.btn_right_footer
+{
+width: 40%;
+height: 100%;
+dock-align: right;
+background-color: #ffffff;
+}
+
+	.btn_right_footer TextView {
+            width: 100%;
+            height: 100%;
+            margin-left: 0%;
+            padding-top: 25%;
+            text-align: center;
+            color: #e6891b;
+            font: 38% Arial;
+        }
+
+.high_mark {
+  height: 100%;
+  width: 0.5mm;
+  dock-align: left;
+  background-color: #e6891b;
+}
+
+.critical_mark {
+  height: 100%;
+  width: 0.5mm;
+  dock-align: left;
+  background-color: #ff0000;
+}

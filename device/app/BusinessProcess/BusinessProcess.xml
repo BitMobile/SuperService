@@ -8,8 +8,34 @@
       <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
     </bp:Step>
 
+  </bp:Workflow>
+
+  <bp:Workflow Name="OrderMats" Controller="OrderMats\OrderMats.js">
+
+    <bp:Step Name="Main" Screen="OrderMats\OrderMats.xml" Controller="OrderMats\OrderMats.js">
+
+     <bp:Action Name="Events" NextWorkflow="Events"></bp:Action>
+     <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
+     <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+     <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+     <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+     <bp:Action Name="EditFilter" NextStep="EditFilter"></bp:Action>
+     <bp:Action Name="DoSelect" NextWorkflow="OrderMat"></bp:Action>
+
+    </bp:Step>
+    <bp:Step Name="EditFilter" Screen="filter.xml" Controller="OrderMats\OrderMats.js">
+
+    </bp:Step>
+
+  </bp:Workflow>
+
+  <bp:Workflow Name="OrderMat" Controller="OrderMats\OrderMat.js">
+    <bp:Step Name="Main" Screen="OrderMats\OrderMat.xml" Controller="OrderMats\OrderMat.js">
+      
+    </bp:Step>
   </bp:Workflow>
 
   <bp:Workflow Name="Events" Controller="Events\main.js">
@@ -21,6 +47,7 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Events\main.js">
@@ -118,6 +145,8 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
+
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Client\main.js">
@@ -136,6 +165,8 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
+
     </bp:Step>
 
   </bp:Workflow>
@@ -147,6 +178,8 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
+
     </bp:Step>
 
   </bp:Workflow>

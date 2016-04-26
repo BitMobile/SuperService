@@ -142,3 +142,5 @@ leadMail	mobilespb@1cbit.ru
 leadFail	Connect to network or enter without registration
 enterUnregistered	Enter unregistered
 sending			Sending..
+OrderMats	Заявки
+OrderMat	Заявка

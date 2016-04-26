@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="OrderMat.css">
+
+<c:DockLayout>
+  <c:DockLayout CssClass="top_navigator">
+    <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+      <c:Image/>
+      <c:TextView Text="#back#"/>
+    </c:HorizontalLayout>
+    <c:Button Id="btnForward" Text="" CssClass="btn_forward"/>
+    <c:HorizontalLayout>
+      <c:TextView Text="#OrderMat#" />
+    </c:HorizontalLayout>
+  </c:DockLayout>
+  <c:HorizontalLine/>
+  <c:HorizontalLayout CssClass="grid">
+      <c:TextView Id= "Description" CssClass="main_row_top"></c:TextView>
+  </c:HorizontalLayout>
+<c:HorizontalLine/>
+</c:DockLayout>
+</c:Screen>

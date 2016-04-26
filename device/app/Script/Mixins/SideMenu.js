@@ -6,7 +6,7 @@ function GetItemsStyles(){
 	styles.Add("Client", IsCurrent("Client"));
 	styles.Add("Sync", IsCurrent("Sync"));
 	styles.Add("About", IsCurrent("About"));
-
+	styles.Add("OrderMats", IsCurrent("OrderMats"));
 	return styles;
 }
 

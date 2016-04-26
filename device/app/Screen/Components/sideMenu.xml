@@ -27,10 +27,10 @@
       </c:DockLayout>
       <c:HorizontalLine/>
 
-			<c:DockLayout CssClass="$styles.Client">
-        <c:HorizontalLayout OnClickAction="$menuClickAction(Client)">
-          <c:Image CssClass="btn_clients"/>
-      <c:TextView CssClass="menu_text" Text="#Bag#"></c:TextView>
+			<c:DockLayout CssClass="$styles.OrderMats">
+        <c:HorizontalLayout OnClickAction="$menuClickAction(OrderMats)">
+          <c:Image CssClass="btn_OrderMats"/>
+      <c:TextView CssClass="menu_text" Text="#OrderMats#"></c:TextView>
     </c:HorizontalLayout>
       </c:DockLayout>
       <c:HorizontalLine/>

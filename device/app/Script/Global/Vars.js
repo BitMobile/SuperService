@@ -37,7 +37,14 @@ function getEvent(){
 	return currentEvent;
 }
 // End Current Event ID
-
+var currentOrderMat;
+function setOrderMat(a){
+	currentOrderMat = a;
+}
+function getOrderMat()
+{
+	return currentOrderMat;
+}
 // Begin Current Event ID
 var currentClient;
 
