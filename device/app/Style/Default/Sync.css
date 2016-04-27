@@ -29,7 +29,7 @@ dl {
 
     .grid vl hl Indicator {
         height: 100%;
-        color: #e6891b;
+        color: #e21a1a;
     }
 
     .grid vl hl TextView {
@@ -38,7 +38,7 @@ dl {
         margin-top: 10%;       
         margin-left: 2%;
         font: 80% Arial-ItalicMT;
-        color: #e6891b;
+        color: #e21a1a;
     }
 
 .main_row {
@@ -56,7 +56,7 @@ dl {
             margin-left: 0%;
             padding-top: 25%;
             text-align: center;
-            color: #e6891b;
+            color: #e21a1a;
             font: 38% Arial;
         }
 

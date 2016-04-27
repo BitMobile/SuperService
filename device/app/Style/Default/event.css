@@ -37,7 +37,7 @@
     }
 
 .parameter_grid TextView {
-    color: #e6891b;
+    color: #e21a1a;
     width: 50%;
     height: 100%;
     dock-align: left;
@@ -114,7 +114,7 @@
     white-space: normal;
     font: 21% Arial;
     margin-top: 0%;
-    color: #e6891b;
+    color: #e21a1a;
 }
 
 .main_row_metro_edit{
@@ -123,7 +123,7 @@
     white-space: normal;
     font: 35% Arial;
     margin-top: 0%;
-    color: #e6891b;
+    color: #e21a1a;
 }
 
 .main_row_metro_disabled{
@@ -156,7 +156,7 @@ dock-align: left;
             margin-left: 0%;
             padding-top: 25%;
             text-align: center;
-            color: #b96f18;
+            color: #e21a1a;
             font: 38% Arial;
         }
 
@@ -173,7 +173,7 @@ dock-align: right;
             margin-left: 0%;
             padding-top: 25%;
             text-align: center;
-            color: #b96f18;
+            color: #e21a1a;
             font: 38% Arial;
         }
 

@@ -76,7 +76,7 @@ TextView {
 }
 
 Button {
-    color: #e6891b;
+    color: #e21a1a;
 }
 
 MemoEdit {
@@ -151,7 +151,7 @@ MemoEdit {
 }
 
     .menu {
-    background-color: #555351;
+    background-color: #545050;
     width: 90%;
     padding-top: 2%;
 }
@@ -160,7 +160,7 @@ MemoEdit {
         width: 100%;
         height: 1px;
         margin-left: 2.8%;
-        background-color: #736a60;
+        background-color: #656262;
     }
 
     .menu img {
@@ -215,7 +215,7 @@ MemoEdit {
     height: 8sp;
     width: 100%;
     margin-left: 0mm;
-    background-color: #e6891b;
+    background-color: #ee3124;
 }
 
 .btn_item{
@@ -237,6 +237,19 @@ MemoEdit {
     vertical-align: central;
     background-image: url(task.png);
 }
+.Label_in_bottom{
+  vertical-align: bottom;
+  height: 100%;
+}
+.Label_in_bottom img{
+  height: 15%;
+  width: 40%;
+  margin-left: 8.5%;
+  margin-bottom: 5.3%;
+  vertical-align: bottom;
+  background-image: url(rzdmenu.png);
+}
+
 .btn_samurai {
     height: 44%;
     margin-left: 1%;
@@ -328,7 +341,7 @@ MemoEdit {
     padding-top: 26%;
     text-align: left;
     dock-align: left;
-        color: #b96f18;
+        color: #e21a1a;
     font: 39.5% arial;
 }
 
@@ -354,7 +367,7 @@ MemoEdit {
 		margin-left: 0%;
 		padding-top: 25%;
 		text-align: center;
-		color: #e6891b;
+		color: #e21a1a;
 		font: 38% Arial;
 	}
 .btn_forward {
@@ -370,7 +383,7 @@ MemoEdit {
     padding-top: 26%;
     text-align: right;
     dock-align: right;
-    color: #b96f18;
+    color: #e21a1a;
     font: 39.5% arial;
 }
 
@@ -396,7 +409,7 @@ MemoEdit {
     padding-top: 26%;
     text-align: left;
     dock-align: left;
-    color: #b96f18;
+    color: #e21a1a;
     font: 39.5% arial;
 }
 
@@ -418,7 +431,7 @@ MemoEdit {
 }
 
 .mode_left_button_on select_zone {
-    selected-color: #b96f18;
+    selected-color: #e21a1a;
 }
 
 .mode_left_button_on select_zone TextView {
@@ -434,7 +447,7 @@ MemoEdit {
 }
 
 .mode_right_button_off select_zone TextView {
-    color: #b96f18;
+    color: #e21a1a;
 }
 
 .mode_right_button_on {
@@ -446,7 +459,7 @@ MemoEdit {
 }
 
 .mode_right_button_on select_zone {
-    selected-color: #b96f18;
+    selected-color: #e21a1a;
 }
 
 .mode_right_button_on select_zone TextView {
@@ -463,7 +476,7 @@ MemoEdit {
 }
 
 .mode_left_button_off select_zone TextView {
-    color: #b96f18;
+    color: #e21a1a;
 }
 
 .small_grid {
@@ -510,7 +523,9 @@ MemoEdit {
     border-radius: 1mm;
     background-color: #ffffff;
 }
-
+.GreyLine{
+  color: #e5e5e5;
+}
 .search dl img {
     background-image: url(search.png);
     height: 46.4%;
@@ -528,7 +543,7 @@ MemoEdit {
     width: 10mm;
     height: 65%;
     dock-align: right;
-    background-color: #e6891b;
+    background-color: #e21a1a;
     color: #f8f8f8;
     border-style: solid;
     border-width: 1px;
@@ -704,9 +719,9 @@ MemoEdit {
     margin-top: 0%;
     border-style: solid;
     border-width: 1px;
-    border-color: #e6891b;
+    border-color: #e21a1a;
     border-radius: 5px;
-    color: #e6891b;
+    color: #e21a1a;
     text-align: center;
     font: 65% arial;
 }
@@ -796,7 +811,7 @@ MemoEdit {
     height: 100%;
     margin-left: 2.7mm;
     padding-top: 30%;
-    color: #b96f18;
+    color: #e21a1a;
     dock-align: left;
     font: 36% arial;
 }
@@ -1010,7 +1025,7 @@ MemoEdit {
             width: 100%;
             margin-left: 0%;
             font: 12% Arial;
-            color: #b96f18;
+            color: #e21a1a;
         }
 
 .btn_bottom_footer {
@@ -1025,7 +1040,7 @@ MemoEdit {
         margin-left: 0%;
         padding-top: 25%;
         text-align: center;
-        color: #e6891b;
+        color: #e21a1a;
         font: 38% Arial;
     }
 
@@ -1056,7 +1071,7 @@ MemoEdit {
     	margin-top: 25.9%;
     	border-style : solid;
     	border-width: 1px;
-    	border-color: #e6891b;
+    	border-color: #e21a1a;
     	border-radius: 5px;
     	text-align: center;
     	font: 60% arial;
@@ -1168,7 +1183,7 @@ MemoEdit {
 }
 
 .editable main_row{
-  color: #e6891b;}
+  color: #e21a1a;}
 
 .CountAndPrice {
   width: 25mm;
@@ -1217,5 +1232,5 @@ MemoEdit {
 .graybackground {
     width: 100%;
     height: 100%;
-    background-color: #efeff4; 
+    background-color: #efeff4;
 }

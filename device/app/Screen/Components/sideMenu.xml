@@ -1,5 +1,5 @@
 <c:Component xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack">
-	    <c:VerticalLayout CssClass="menu">
+			<c:VerticalLayout CssClass="menu">
 			<s:Push Id="styles" Value="$GetItemsStyles()"></s:Push>
 
 			<c:DockLayout CssClass="$styles.Summary">
@@ -43,6 +43,8 @@
         <c:TextView CssClass="menu_text" Text="ver. 1.6.10.50"></c:TextView>
       </c:DockLayout>
       <c:HorizontalLine/>
-
+			<c:HorizontalLayout CssClass="Label_in_bottom">
+				<c:Image/>
+			</c:HorizontalLayout>
     </c:VerticalLayout>
 </c:Component>
