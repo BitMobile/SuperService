@@ -1,7 +1,7 @@
 summary		Сводная информация
-requests	Визиты
-clients	Клиенты
-client	Клиент
+requests	Наряды ППР
+clients	Объекты
+client	Объект
 vpVisits	заявок
 vpPerformed	выполнено
 further	еще
@@ -21,7 +21,7 @@ end	Окончание
 period	Период
 ClearFilter	Очистить фильтр
 Clear	Очистить
-descriptioncust	Наименование клиента
+descriptioncust	Наименование объекта
 mainContact	Контакт
 address	Адрес
 Author	Автор
@@ -29,7 +29,7 @@ eventComment	Комментарий
 back	Назад
 next	Далее
 contacts	Контакты
-devices	Оборудование
+devices	Здания (строения)
 visit	Визит
 details	Сведения
 Executor		Исполнитель
@@ -65,7 +65,7 @@ executedtask	ВЫПОЛНЕННЫЕ
 device	Прибор
 Yes	Да
 deviceHistory	История
-equipment	Оборудование
+equipment	Здание (строение)
 descriptionEQ	Наименование
 No	Нет
 noDescriGiven	Описание отсутсвует
@@ -85,7 +85,7 @@ developer	Разработчик
 Snapshots	Фотографии
 add	Добавить
 snapshot	Изображение
-outletSnapshots	Фотографии торговой точки
+outletSnapshots	Фотографии объекта
 addFromGallery	Выбрать из галереи
 makeSnapshot	Сделать снимок
 DeleteSnapShot		Удалить изображение
