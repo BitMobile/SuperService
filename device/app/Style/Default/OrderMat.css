@@ -1,8 +1,85 @@
 .main_row_top {
     width: 100%;
-    height: 20%;
+    height: 25%;
     white-space: normal;
-    font: 90% Arial;
+    font: 100% Arial;
     text-align: center;
-    margin-top: 5%;
+    vertical-align: center;
+}
+.head_mat {
+  height: 10.8mm;
+}
+.stat {
+  height: 9.8mm;
+  width: 100%;
+}
+.listofmat{
+  width: 100%;
+}
+.main_row_green{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #388E3C;
+}
+.main_row_blue{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #1976D2;
+}
+.main_row_yelow{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #FBC02D;
+}
+.main_row_red{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #D32F2F;
+}
+.main_row {
+    width: 30% auto;
+    height: 100%;
+    white-space: normal;
+    font: 70% Arial;
+  	margin-top: 10%;
+}
+.MatDesc{
+  height: 100%;
+  width: 50% auto;
+  horizontal-align: left;
+  background-color: #FBC02D;
+
+}
+.MatCount{
+  height: 100%;
+  width: 50% auto;
+  horizontal-align: right;
+  background-color: #FBC02D;
+
+}
+.grid vl hl{
+    height: 40%;
+    width: 100%;
+    vertical-align: center;
+    margin-top: 21.5%;
+}
+
+.grid vl hl description_row{
+    height: 100%;
+    width: 50% ;
+    font: 72% Arial;
+    text-align: center;
+/*    background-color: #ccaacc;*/
 }

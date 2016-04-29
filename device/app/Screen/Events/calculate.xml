@@ -16,6 +16,13 @@
         <c:TextView Text="#calculate#" />
       </c:HorizontalLayout>
     </c:DockLayout>
+    <c:DockLayout CssClass="footer">
+      <c:HorizontalLine/>
+      <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$actionDoSelect()">
+        <c:TextView Text="#add#" />
+      </c:DockLayout>
+    </c:DockLayout>
+
     <!-- Begin Screen swich -->
     <c:HorizontalLayout CssClass="small_grid">
 		  <s:If Test="$WorM=='work'">

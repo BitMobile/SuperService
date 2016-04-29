@@ -4,6 +4,11 @@ function ChangeListAndRefresh(control) {
     Workflow.Refresh([$.param1]);
 }
 
+function actionDoSelect(){
+  Dialog.Message("Hi");
+  Workflow.Action("CreateOrderMat",[Vars.getEvent()]);
+}
+
 function DoNextStep(param){
 
 		if ($.MobileSettings.UsedEquipment){

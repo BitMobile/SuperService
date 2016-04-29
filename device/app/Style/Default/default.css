@@ -87,7 +87,6 @@ MemoEdit {
 .footer {
 	height: 7.6sp;
   dock-align: bottom;
-	background-color: #ffffff;
 }
 
 /*.top_navigator {
@@ -728,7 +727,6 @@ MemoEdit {
     height: 23%;
     white-space: normal;
     font: 62% Arial;
-    color: #8e8e93;
 }
 
 .yellow_mark {

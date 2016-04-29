@@ -135,6 +135,6 @@ function GetNumberOfMat(ordermatid){
 	return strans;
 }
 function actionDoSelect(a,p){
-	Vars.setOrderMat(p);
+	Vars.setOrderMat(p,false);
 	Workflow.Action("DoSelect",[]);
 }

@@ -17,6 +17,7 @@
         </s:Else>
 			</c:HorizontalLayout>
 		</c:DockLayout>
+
     <c:HorizontalLine/>
 
     <c:DockLayout CssClass="search">

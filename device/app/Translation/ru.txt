@@ -145,3 +145,6 @@ sending			Отправка..
 Bag	Рюкзак
 OrderMats	Заявки
 OrderMat	Заявка
+Status	Статус
+addMAt	Добавить материалы
+formed	Оформить

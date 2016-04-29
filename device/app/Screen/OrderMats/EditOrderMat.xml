@@ -6,22 +6,20 @@
       <c:Image/>
       <c:TextView Text="#back#"/>
     </c:HorizontalLayout>
-    <c:Button Id="btnForward" Text="" CssClass="btn_forward"/>
+    <c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$ActionDoCommit()">
+      <c:TextView Text="#formed#"/>
+    </c:HorizontalLayout>
     <c:HorizontalLayout>
       <c:TextView Text="#OrderMat#" />
     </c:HorizontalLayout>
   </c:DockLayout>
-  <c:HorizontalLine/>
+  <c:DockLayout CssClass="footer">
+    <c:HorizontalLine/>
+    <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$actionDoSelect()">
+      <c:TextView Text="#add#" />
+    </c:DockLayout>
+  </c:DockLayout>
 
-  <c:HorizontalLayout CssClass="head_mat">
-      <c:TextView Id= "Description" CssClass="main_row_top"></c:TextView>
-  </c:HorizontalLayout>
-  <c:HorizontalLine/>
-  <c:HorizontalLayout CssClass="stat">
-
-      <c:TextView Id= "StatDesv" Text="#Status#" CssClass="main_row"></c:TextView>
-
-  </c:HorizontalLayout>
   <c:HorizontalLine/>
 
   <c:ScrollView>

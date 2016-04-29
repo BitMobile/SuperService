@@ -48,14 +48,24 @@ function findSKU(sender, key){
 }
 
 function CreateAndNext(sender, refSKU) {
-  var obj = DB.Create("Document.Event_ServicesMaterials");
-  obj.Ref = Vars.getEvent();
-  obj.AmountPlan = 0;
-  obj.SumPlan = 0;
-  obj.Price = refSKU.Price;
-  obj.SKU = refSKU;
+  if ($.workflow.name=="CreateOrderMat" || Vars.getOrderMatEnable()) {
+    var obj = DB.Create("Document.NeedMat_Matireals");
+    obj.Ref = Vars.getOrderMat();
+  //  obj.AmountPlan = 0;
+  //  obj.SumPlan = 0;
+  //  obj.Price = refSKU.Price;
+    obj.SKU = refSKU;
+  }else {
+    var obj = DB.Create("Document.Event_ServicesMaterials");
+    obj.Ref = Vars.getEvent();
+    obj.AmountPlan = 0;
+    obj.SumPlan = 0;
+    obj.Price = refSKU.Price;
+    obj.SKU = refSKU;
+  }
   Workflow.Action('AddSKU', [obj]);
 }
+
 
 function CheckEmpty(val) {
   if (IsNullOrEmpty(val)) {
@@ -71,10 +81,21 @@ function CheckEmpty(val) {
 function SaveCount(sender, obj) {
   if (!IsNullOrEmpty($.SKUCount.Text)){
     if (Converter.ToDecimal($.SKUCount.Text) > 0){
-      obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
-      obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
-      obj.Save();
+      if ($.workflow.name=="CreateOrderMat" || Vars.getOrderMatEnable()) {
+        obj.Count = Converter.ToDecimal($.SKUCount.Text);
+        obj.Save();
+        Global.FindTwinAndUnite(obj);
+        if ($.workflow.name=="Event") {
+          Workflow.BackTo("CreateOrderMat");
+        }else {
+          Workflow.BackTo("Main");          
+        }
+      }else{
+        obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
+        obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
+        obj.Save();
       Workflow.BackTo("calculate");
+    }
     } else {
       Dialog.Message(Translate["#ZeroCount#"]);
     }
