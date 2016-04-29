@@ -25,6 +25,9 @@
   <c:HorizontalLine/>
 
   <c:ScrollView>
+    <c:HorizontalLayout CssClass="caption_grid">
+        <c:TextView Text="#materials#"></c:TextView>
+    </c:HorizontalLayout>
       <s:Iterator Id="OrderMat" Value="$GetAllMat()">
         <c:DockLayout CssClass="grid">
           <c:VerticalLayout>

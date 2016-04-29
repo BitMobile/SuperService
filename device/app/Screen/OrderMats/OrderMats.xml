@@ -35,8 +35,8 @@
           <c:Image CssClass="filterarrowOrd" />
           <c:VerticalLayout CssClass="withoutarrow">
           <c:HorizontalLayout CssClass="grid" >
-              <c:TextView Text="$DocOrderMat.Number" CssClass="main_row"></c:TextView>
-              <c:TextView Text="-" CssClass="main_row_defic"></c:TextView>
+              <c:TextView Text="$ConvertEmptyNumber($DocOrderMat.Number)" CssClass="main_row"></c:TextView>
+              <c:TextView Text="– " CssClass="main_row_defic"></c:TextView>
               <s:If Test="$DocOrderMat.Status.Description == 'Новая'">
                 <c:TextView Text="$DocOrderMat.Status.Description" CssClass="main_row_green"></c:TextView>
               </s:If>

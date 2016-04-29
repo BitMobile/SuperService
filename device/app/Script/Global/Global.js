@@ -92,7 +92,7 @@ function SetMobileSettings(){
   $.MobileSettings.Add("UsedCalculateMaterials", UsedCalculateMaterials.ExecuteScalar());
   var UsedCalculateService = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedCalculateService'");
   $.MobileSettings.Add("UsedCalculateService", UsedCalculateService.ExecuteScalar());
-  var UsedBag = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'Used service bag'");
+  var UsedBag = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedServiceBag'");
   $.MobileSettings.Add("UsedServiceBag", UsedBag.ExecuteScalar());
 
   var PictureSize = new Query("SELECT NumericValue FROM Catalog_SettingMobileApplication WHERE Description = 'PictureSize'");

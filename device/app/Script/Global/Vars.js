@@ -39,10 +39,19 @@ function getEvent(){
 // End Current Event ID
 var currentOrderMat;
 var editenableOrd;
+var nextAdd;
 function setOrderMat(a,b){
 	currentOrderMat = a;
 	editenableOrd = b;
 }
+function setNextAdd(a){
+	nextAdd = a;
+}
+
+function getNextAdd(a){
+	return nextAdd;
+}
+
 function getOrderMat()
 {
 	return currentOrderMat;

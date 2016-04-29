@@ -148,3 +148,7 @@ OrderMat	Заявка
 Status	Статус
 addMAt	Добавить материалы
 formed	Оформить
+AddOrderMat	Добавить заявку
+AskFill	Хотите заполнить заявку по норме?
+NoNumber	Без номера
+addComment	Добавить комментарий

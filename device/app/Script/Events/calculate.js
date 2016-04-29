@@ -5,7 +5,7 @@ function ChangeListAndRefresh(control) {
 }
 
 function actionDoSelect(){
-  Dialog.Message("Hi");
+  Vars.setNextAdd(false);
   Workflow.Action("CreateOrderMat",[Vars.getEvent()]);
 }
 

@@ -30,6 +30,18 @@ sv {
 	horizontal-align: center;
 }
 
+.top_navigator hl TextView {
+    width: 100% auto;
+    height: 100%;
+    margin-left: 0%;
+    padding-top: 26%;
+    horizontal-align: central;
+    text-align: center;
+    color: #000000;
+    font: 39.5% arial;
+    selected-color: #D3D3D3;
+}
+
 .lead {
 	height: 100%;
 	width: 45mm;
@@ -482,4 +494,5 @@ svl vl {
 
 .btn_forward {
     margin-left: 0%;
+		width: 14.3%;
 }

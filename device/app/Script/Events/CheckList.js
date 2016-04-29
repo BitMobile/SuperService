@@ -136,6 +136,7 @@ function SetStringValue(sender, event, act, index){
     }
 
     SetForAllActions(event, act, sender.Text, index);
+    CanForward(event);
 }
 
 function SetIntegerValue(sender, event, act, index){

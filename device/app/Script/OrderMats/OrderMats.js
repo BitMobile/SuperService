@@ -13,7 +13,13 @@ function OpenMenu() {
         sl.Index = 1;
     }
 }
-
+function ConvertEmptyNumber(number){
+	if (number==null) {
+		return Translate["#NoNumber#"];
+	}else {
+		return "#"+number;
+	}
+}
 function GetAllOrderMat(){
 
 var q = new Query("SELECT Ord.Id As IdT, strftime('%d/%m/%Y',Ord.Date) AS Date, Ord.Number As Number,Ord.StatsNeed As Status FROM Document_NeedMat Ord WHERE DeletionMark = 0 ");
@@ -136,5 +142,6 @@ function GetNumberOfMat(ordermatid){
 }
 function actionDoSelect(a,p){
 	Vars.setOrderMat(p,false);
+	Vars.setNextAdd(false);
 	Workflow.Action("DoSelect",[]);
 }
