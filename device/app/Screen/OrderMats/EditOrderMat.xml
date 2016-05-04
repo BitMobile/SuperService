@@ -2,7 +2,7 @@
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="OrderMat.css">
 <c:DockLayout>
   <c:DockLayout CssClass="top_navigator">
-    <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
+    <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$ActionDoBack()">
       <c:Image/>
       <c:TextView Text="#back#"/>
     </c:HorizontalLayout>
@@ -15,25 +15,41 @@
   </c:DockLayout>
   <c:DockLayout CssClass="footer">
     <c:HorizontalLine/>
-    <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$actionDoSelect()">
-      <c:TextView Text="#add#" />
+    <c:DockLayout CssClass="footer">
+        <c:HorizontalLine/>
+
+        <c:DockLayout CssClass="btn_left_footer" OnClickAction="$DoAction(AddComment)">
+          <c:TextView Text="#addComment#" />
+        </c:DockLayout>
+
+          <c:DockLayout CssClass="btn_right_footer" OnClickAction="$actionDoSelect()">
+            <c:TextView Text="#addMAt#" />
+          </c:DockLayout>
     </c:DockLayout>
+
   </c:DockLayout>
 
   <c:HorizontalLine/>
 
   <c:ScrollView>
       <s:Iterator Id="OrderMat" Value="$GetAllMat()">
-        <c:DockLayout CssClass="grid">
-          <c:VerticalLayout>
-          <c:HorizontalLayout>
-            <c:TextView Id="viewDesc" Text="$OrderMat.Matireals.Description" CssClass="description_row"></c:TextView>
-            <c:TextView Id="viewCount" Text="$OrderMat.Count" CssClass="description_row"></c:TextView>
+        <c:SwipeHorizontalLayout Id="swipe_layout2" CssClass="swipe_layout" Index="0">
+          <c:DockLayout CssClass="grid">
+            <c:VerticalLayout>
+            <c:HorizontalLayout>
+              <c:TextView Id="viewDesc" Text="$OrderMat.Matireals.Description" CssClass="description_row"></c:TextView>
+              <c:TextView Id="viewCount" Text="$PostCountAndUnit($OrderMat)" CssClass="description_row"></c:TextView>
+            </c:HorizontalLayout>
+          </c:VerticalLayout>
+          </c:DockLayout>
+          <c:HorizontalLayout CssClass="red_swipe" OnClick="$deleteSKU($OrderMat.Id)">
+              <c:VerticalLayout>
+                <c:Image></c:Image>
+                <c:TextView Text="#delete#"></c:TextView>
+              </c:VerticalLayout>
           </c:HorizontalLayout>
-        </c:VerticalLayout>
-        </c:DockLayout>
-        <c:HorizontalLine/>
-
+      </c:SwipeHorizontalLayout>
+      <c:HorizontalLine/>
       </s:Iterator>
   </c:ScrollView>
 

@@ -5,7 +5,7 @@ function ChangeListAndRefresh(control) {
 }
 
 function actionDoSelect(){
-  Vars.setNextAdd(false);
+  Vars.setNextAdd(true);
   Workflow.Action("CreateOrderMat",[Vars.getEvent()]);
 }
 

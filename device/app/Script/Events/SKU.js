@@ -1,4 +1,5 @@
 function OnLoad(){
+    Vars.setNextAdd(true);
   if ($.Exists("searchSKU")) {
 		$.edtSearch.Text = $.searchSKU;
   }

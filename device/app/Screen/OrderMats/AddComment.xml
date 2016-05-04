@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="OrderMat.css">
   <c:DockLayout>
-  <c:DockLayout>
-      <c:EditText Id="Comment" CssClass="LargeView"></c:EditText>
-  </c:DockLayout>
 
     <c:DockLayout CssClass="top_navigator">
       <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBack()">
@@ -11,17 +8,25 @@
         <c:TextView Text="#back#"/>
       </c:HorizontalLayout>
 				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($param1)"> <!-- $DoAction(tasks, $event) -->
-				<c:TextView Text="#next#"/>
+				<c:TextView Text=""/>
 				</c:HorizontalLayout>
       <c:HorizontalLayout>
         <c:TextView Text="#eventComment#" />
       </c:HorizontalLayout>
     </c:DockLayout>
+    <c:HorizontalLine/>
     <c:DockLayout CssClass="footer">
-      <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$DoAction(AddWork)">
+      <c:HorizontalLine/>
+      <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$actionDoSelect()">
         <c:TextView Text="#add#" />
       </c:DockLayout>
     </c:DockLayout>
+    <c:HorizontalLine/>
+    <c:HorizontalLayout CssClass="memo_block">
+       <c:VerticalLayout>
+           <c:MemoEdit Id="RemindComment"  CssClass="main_row"></c:MemoEdit>
+       </c:VerticalLayout>
+   </c:HorizontalLayout>
 
 
 

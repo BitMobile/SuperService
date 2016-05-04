@@ -15,7 +15,7 @@
     </c:DockLayout>
     <c:DockLayout CssClass="footer">
       <c:HorizontalLine/>
-      <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$DoAction(CreateOrderMat)">
+      <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$ActionDoAction(CreateOrderMat)">
         <c:TextView Text="#add#" />
       </c:DockLayout>
     </c:DockLayout>

@@ -31,7 +31,8 @@ if (!IsNullOrEmpty(recvStopPeriod)) {
 q.Text = q.Text + "AND Date < @recvStopPeriod ";
 q.AddParameter("recvStopPeriod",recvStopPeriod);
 }
-q.Text = q.Text + "ORDER BY Date"
+q.Text = q.Text + "ORDER BY Ord.Date DESC";
+//Dialog.Message(q.Text);
 return q.Execute();
 }
 function ConvertEmptyDate(date) {
@@ -128,6 +129,9 @@ function GetNumberOfMat(ordermatid){
 	q.AddParameter("OrdId",ordermatid);
 	var strans = q.ExecuteCount();
 	var strplus = "";
+	if (strans == 0) {
+		strans = "по норме";
+	}
 	if (strans == 1) {
 		strplus = " материал";
 	}
@@ -144,4 +148,8 @@ function actionDoSelect(a,p){
 	Vars.setOrderMat(p,false);
 	Vars.setNextAdd(false);
 	Workflow.Action("DoSelect",[]);
+}
+function ActionDoAction(){
+	Vars.setNextAdd(false);
+	DoAction("CreateOrderMat");
 }

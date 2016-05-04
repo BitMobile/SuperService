@@ -17,23 +17,26 @@
       <c:TextView Id= "Description" CssClass="main_row_top"></c:TextView>
   </c:HorizontalLayout>
   <c:HorizontalLine/>
-  <c:HorizontalLayout CssClass="stat">
+  <c:DockLayout CssClass="grid">
 
-      <c:TextView Id= "StatDesv" Text="#Status#" CssClass="main_row"></c:TextView>
+      <c:TextView Id= "StatDesc" Text="#Status#" CssClass="main_row_stat"></c:TextView>
 
-  </c:HorizontalLayout>
+      <c:TextView Id= "StatDesv" Text="#Status#" CssClass="$GetStatStyle()"></c:TextView>
+
+  </c:DockLayout>
   <c:HorizontalLine/>
 
   <c:ScrollView>
     <c:HorizontalLayout CssClass="caption_grid">
         <c:TextView Text="#materials#"></c:TextView>
     </c:HorizontalLayout>
+    <c:HorizontalLine/>
       <s:Iterator Id="OrderMat" Value="$GetAllMat()">
         <c:DockLayout CssClass="grid">
           <c:VerticalLayout>
           <c:HorizontalLayout>
-            <c:TextView Id="viewDesc" Text="$OrderMat.Matireals.Description" CssClass="description_row"></c:TextView>
-            <c:TextView Id="viewCount" Text="$OrderMat.Count" CssClass="description_row"></c:TextView>
+            <c:TextView Id="viewDesc" Text="$OrderMat.Matireals.Description" CssClass="description_row_desc"></c:TextView>
+            <c:TextView Id="viewCount" Text="$PostCountAndUnit($OrderMat)" CssClass="description_row"></c:TextView>
           </c:HorizontalLayout>
         </c:VerticalLayout>
         </c:DockLayout>
