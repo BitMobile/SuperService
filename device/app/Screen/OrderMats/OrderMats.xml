@@ -53,7 +53,7 @@
           </c:HorizontalLayout>
 
           <c:HorizontalLayout CssClass="grid" >
-            <c:TextView Text="$ConvertEmptyDate($DocOrderMat.Date)" CssClass="bl_description_row"></c:TextView>
+            <c:TextView Text="$GetDateString($DocOrderMat.Date)" CssClass="bl_description_row"></c:TextView>
           </c:HorizontalLayout>
           <c:HorizontalLayout CssClass="grid" >
             <c:TextView Text="$GetNumberOfMat($DocOrderMat.IdT)" CssClass="bl_description_row"></c:TextView>

@@ -150,6 +150,28 @@ function actionDoSelect(a,p){
 	Workflow.Action("DoSelect",[]);
 }
 function ActionDoAction(){
-	Vars.setNextAdd(false);
-	DoAction("CreateOrderMat");
+	//Vars.setNextAdd(true);
+	var items = [];
+	var row1 = [];
+	var row2 = [];
+	row1.push(0);
+	row1.push("По норме");
+	items.push(row1);
+	row2.push(1);
+	row2.push(Translate["Выбрать вручную"]);
+	items.push(row2);
+	Dialog.Choose("Создать заявку",items,TakeOrderDB);
 }
+function TakeOrderDB(state, args){
+	//Dialog.Message(args.Result);
+	if (args.Result == 1) {
+		Vars.setFill(false);
+		DoAction("CreateOrderMat");
+	}
+	if (args.Result == 0) {
+		Vars.setFill(true);
+		DoAction("CreateOrderMat");
+	}
+}
+
+//DoAction("CreateOrderMat");

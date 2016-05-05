@@ -16,6 +16,8 @@ function GetOrderMatDetails() {
       $.Description.Text = "#" + OrderMat.Number;
     }
     $.StatDesv.Text = OrderMat.StatsNeed.Description;
+
+    $.DateDesv.Text = GetDateString(OrderMat.Date);
     //Dialog.Message(OrderMat.StatsNeed.Name);
 
 

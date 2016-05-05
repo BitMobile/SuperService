@@ -52,8 +52,8 @@ function CreateOMat(){
   }
   var q1 = new Query("Select Id FROM Enum_StatsNeedNum WHERE Name = 'New'");
   OrderMat.StatsNeed = q1.ExecuteScalar();
-  var q2 = new Query("Select Id From Catalog_User Where Role <> 'Admin' AND UserName <> 'demo'");
-  OrderMat.SR = q2.ExecuteScalar();
+  //var q2 = new Query("Select Id From Catalog_User Where Role <> 'Admin' AND UserName <> 'demo'");
+  OrderMat.SR = $.common.UserRef;
   OrderMat.FillFull = 0;
   OrderMat.DeletionMark = 0;
   OrderMat.Save();
@@ -61,15 +61,15 @@ function CreateOMat(){
   Vars.setOrderMat(ref,true);
 }
 function OnLoad(){
-  if (Vars.getNextAdd()) {
-  }else{
-    Dialog.Ask("#AskFill#", FillOnNorm, ref);
+  if (Vars.getFill()) {
+    Vars.setFill(false);
+    Dialog.Ask("#AskFill#", FillOnNorm, ref,ActionDoBack);
   }
 }
 function FillOnNorm(state, args){
-  state = state.GetObject();
-  state.FillFull = 1;
-  state.Save();
+  var obj = state.GetObject();
+  obj.FillFull = 1;
+  obj.Save();
   ActionDoCommit();
 }
 function deleteSKU(sender,id) {

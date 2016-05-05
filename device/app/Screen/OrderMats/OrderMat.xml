@@ -16,7 +16,7 @@
   <c:HorizontalLayout CssClass="head_mat">
       <c:TextView Id= "Description" CssClass="main_row_top"></c:TextView>
   </c:HorizontalLayout>
-  <c:HorizontalLine/>
+  <c:HorizontalLine CssClass="GreyLine"/>
   <c:DockLayout CssClass="grid">
 
       <c:TextView Id= "StatDesc" Text="#Status#" CssClass="main_row_stat"></c:TextView>
@@ -24,12 +24,21 @@
       <c:TextView Id= "StatDesv" Text="#Status#" CssClass="$GetStatStyle()"></c:TextView>
 
   </c:DockLayout>
-  <c:HorizontalLine/>
+  <c:HorizontalLine CssClass="GreyLine"/>
+  <c:DockLayout CssClass="grid">
+
+      <c:TextView Id= "DateDesc" Text="#DateCreate#" CssClass="main_row_stat"></c:TextView>
+
+      <c:TextView Id= "DateDesv" Text="#DateCreate#" CssClass="main_row_right"></c:TextView>
+
+  </c:DockLayout>
+  <c:HorizontalLine CssClass="GreyLine"/>
+
+  <c:HorizontalLayout CssClass="caption_grid">
+      <c:TextView Text="#materials#"></c:TextView>
+  </c:HorizontalLayout>
 
   <c:ScrollView>
-    <c:HorizontalLayout CssClass="caption_grid">
-        <c:TextView Text="#materials#"></c:TextView>
-    </c:HorizontalLayout>
     <c:HorizontalLine/>
       <s:Iterator Id="OrderMat" Value="$GetAllMat()">
         <c:DockLayout CssClass="grid">

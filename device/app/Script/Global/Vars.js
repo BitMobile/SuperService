@@ -40,6 +40,7 @@ function getEvent(){
 var currentOrderMat;
 var editenableOrd;
 var nextAdd;
+var Fill;
 function setOrderMat(a,b){
 	currentOrderMat = a;
 	editenableOrd = b;
@@ -47,7 +48,13 @@ function setOrderMat(a,b){
 function setNextAdd(a){
 	nextAdd = a;
 }
-
+function setFill(a)
+{
+	Fill = a;
+}
+function getFill(){
+	return Fill;
+}
 function getNextAdd(a){
 	return nextAdd;
 }

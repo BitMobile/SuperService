@@ -17,13 +17,28 @@
   width: 100%;
 }
 
-
+.main_row_right
+{
+  width: 50% auto;
+  height: 49%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  margin-right: 5%;
+  dock-align: right;
+  text-align: right;
+  color: #a6a6a6;
+}
+.GreyLine{
+  width: 100%;
+  background-color: #a6a6a6;
+}
 .main_row_stat{
   width: 30% auto;
   height: 50%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 25%;
+  font: 55% Arial;
+  margin-top: 30%;
   margin-left: 5%;
   dock-align: left;
 }
@@ -34,8 +49,8 @@
   width: 55% auto;
   height: 50%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 25%;
+  font: 55% Arial;
+  margin-top: 30%;
   color: #388E3C;
   dock-align: right;
   margin-right: 5%;
@@ -45,8 +60,8 @@
   width: 55% auto;
   height: 50%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 25%;
+  font: 55% Arial;
+  margin-top: 30%;
   color: #1976D2;
   margin-right: 5%;
   dock-align: right;
@@ -56,8 +71,8 @@
   width: 55% auto;
   height: 50%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 25%;
+  font: 55% Arial;
+  margin-top: 30%;
   color: #FBC02D;
   margin-right: 5%;
   dock-align: right;
@@ -67,8 +82,8 @@
   width: 55% auto;
   height: 50%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 25%;
+  font: 55% Arial;
+  margin-top: 30%;
   color: #D32F2F;
   margin-right: 5%;
   dock-align: right;
@@ -82,40 +97,40 @@
   width: 30% auto;
   height: 100%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 10%;
+  font: 55% Arial;
+  margin-top: 12%;
   color: #388E3C;
 }
 .main_row_blue{
   width: 30% auto;
   height: 100%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 10%;
+  font: 55% Arial;
+  margin-top: 12%;
   color: #1976D2;
 }
 .main_row_yelow{
   width: 30% auto;
   height: 100%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 10%;
+  font: 55% Arial;
+  margin-top: 12%;
   color: #FBC02D;
 }
 .main_row_red{
   width: 30% auto;
   height: 100%;
   white-space: normal;
-  font: 70% Arial;
-  margin-top: 10%;
+  font: 55% Arial;
+  margin-top: 12%;
   color: #D32F2F;
 }
 .main_row {
     width: 30% auto;
     height: 100%;
     white-space: normal;
-    font: 70% Arial;
-  	margin-top: 10%;
+    font: 55% Arial;
+  	margin-top: 12%;
 }
 .MatDesc{
   height: 100%;
