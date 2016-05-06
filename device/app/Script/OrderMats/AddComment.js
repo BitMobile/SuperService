@@ -10,10 +10,10 @@ function actionDoSelect(){
     if (StrLen($.RemindComment.Text) > 1000) {
       Dialog.Message(Translate["#ToLongText1000#"]  + " " +  StrLen($.RemindComment.Text));
       return;
+    }else {
+      obj.SRComment = $.RemindComment.Text;
+      obj.Save();
+      DoBack();
     }
-  }else {
-    obj.SRComment = $.RemindComment.Text;
-    obj.Save();
-    DoBack();
   }
 }
