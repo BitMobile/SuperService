@@ -91,9 +91,9 @@ function askCommit(sender, event){
 	q.AddParameter("Ref", event);
 	cnt = q.ExecuteCount();
 	if(cnt == 0 || !$.MobileSettings.UsedEquipment){
-		Dialog.Ask("После завершения наряда его нельзя будет отредактировать. Вы хотите завершить наряд?", CommitEvent, event);
+		Dialog.Ask(Translate["#ConfirmeEndReg#"], CommitEvent, event);
 	} else {
-		Dialog.Message("Для завершения наряда необходимо завершить все задачи.");
+		Dialog.Message(Translate["#CompliteAllTask#"]);
 	}
 }
 

@@ -15,7 +15,7 @@
        </c:HorizontalLayout>
       <c:Button Id="btnForward" Text="" CssClass="btn_forward"/>
       <c:HorizontalLayout>
-        <c:TextView Text="Контакты" />
+        <c:TextView Text="#contacts#" />
       </c:HorizontalLayout>
     </c:DockLayout>
 
@@ -38,7 +38,7 @@
 	          <c:HorizontalLine/>
 	          <c:DockLayout CssClass="grid">
               <s:If Test="$PhoneExists($allClientsItem.Tel)">
-  							<c:HorizontalLayout CssClass="phone"  OnClickAction="$MoreMakeContactCall($allClientsItem.Tel)"> 
+  							<c:HorizontalLayout CssClass="phone"  OnClickAction="$MoreMakeContactCall($allClientsItem.Tel)">
   								<c:Image CssClass="iphone" />
   							</c:HorizontalLayout>
   						</s:If>
@@ -63,7 +63,7 @@
 
     </s:If>
       <s:Else>
-				<c:TextView Text="Нет контактов" CssClass="emptyRecordSetAllRequest"/>
+				<c:TextView Text="#NoContacts#" CssClass="emptyRecordSetAllRequest"/>
 		</s:Else>
 
 	<!-- End Body screen   -->

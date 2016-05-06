@@ -56,7 +56,7 @@ remote	Remote Connection
 remoteData	Remote Connection Settings
 history	History
 tasks		Tasks
-task		Tasks
+task		Task
 todoDone	Tasks Performed
 execute		Execute
 retrieve	Retrieve
@@ -142,5 +142,3 @@ leadMail	mobilespb@1cbit.ru
 leadFail	Connect to network or enter without registration
 enterUnregistered	Enter unregistered
 sending			Sending..
-OrderMats	Заявки
-OrderMat	Заявка

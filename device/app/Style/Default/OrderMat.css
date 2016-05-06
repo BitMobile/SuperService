@@ -179,7 +179,7 @@
 
 .btn_right_footer
 {
-width: 40%;
+width: 50%;
 height: 100%;
 dock-align: right;
 background-color: #ffffff;
@@ -215,3 +215,31 @@ background-color: #ffffff;
     text-align: left;
 /*    background-color: #ccaacc;*/
 }
+
+.memo_block {
+    height: 48sp;
+}
+
+
+    .memo_block vl {
+        width: 100%;
+        height: 100%;
+        margin-top: -5mm;
+        margin-left: 0%;
+        padding-left: 0%;
+    }
+
+.memo_block vl main_row {
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    font: 2.2mm Arial;
+}
+
+        .memo_block vl MemoEdit {
+            height: 100%;
+            width: 100%;
+            margin-left: 0%;
+            font: 4.4mm Arial;
+            color: #b96f18;
+        }

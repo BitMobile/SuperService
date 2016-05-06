@@ -90,11 +90,14 @@
 
         <bp:Step Name="CreateOrderMat" Screen="OrderMats\EditOrderMat.xml" Controller="OrderMats\OrderMatEdit.js">
           <bp:Action Name="AddOrderMat" NextStep="SKUListOrd"></bp:Action>
+          <bp:Action Name="AddComment" NextStep="AddComment"></bp:Action>
         </bp:Step>
         <bp:Step Name="SKUListOrd" Screen="Events\SKU.xml" Controller="Events\SKU.js">
           <bp:Action Name="AddSKU" NextStep="AddSKU" />
         </bp:Step>
 
+        <bp:Step Name="AddComment" Screen="OrderMats\AddComment.xml" Controller="OrderMats\AddComment.js">
+        </bp:Step>
 
         <bp:Step Name="photoView" Screen="Common\photoView.xml" Controller="Common\photoView.js"></bp:Step>
 

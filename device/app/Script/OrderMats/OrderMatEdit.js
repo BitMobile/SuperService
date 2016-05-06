@@ -34,6 +34,7 @@ function ActionDoBack(){
 
   if($.workflow.name == "Event")
   {
+    Vars.setNextAdd(false);
     Vars.setOrderMat(null,false);
     Workflow.BackTo("calculate");
   }else{
@@ -83,6 +84,9 @@ function GetAllMat(){
   return q1.Execute();
 }
 function actionDoSelect(){
+  $.Remove("WorM");
+  $.AddGlobal("WorM", "material");
+  Vars.setNextAdd(true);
 	Workflow.Action("AddOrderMat",[]);
 }
 function ActionDoCommit(){
@@ -98,6 +102,7 @@ function ActionDoCommit(){
 
   if($.workflow.name == "Event")
   {
+    Vars.setNextAdd(false);
     Vars.setOrderMat(null,false);
     Workflow.BackTo("calculate");
   }else{

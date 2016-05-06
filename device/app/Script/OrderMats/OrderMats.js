@@ -130,18 +130,20 @@ function GetNumberOfMat(ordermatid){
 	var strans = q.ExecuteCount();
 	var strplus = "";
 	if (strans == 0) {
-		strans = "по норме";
+		strans = Translate["#OnFull#"];
+	}else {
+		strplus = Translate["#MatCount#"] + ": ";
 	}
-	if (strans == 1) {
-		strplus = " материал";
-	}
-	if (strans > 1 & strans < 5) {
-		strplus = " материала";
-	}
-	if (strans > 4) {
-		strplus = " материалов";
-	}
-	strans = strans + strplus;
+//	if (strans == 1) {
+//		strplus = " материал";
+//	}
+//	if (strans > 1 & strans < 5) {
+//		strplus = " материала";
+//	}
+//	if (strans > 4) {
+//		strplus = " материалов";
+//	}
+	strans = strplus + strans;
 	return strans;
 }
 function actionDoSelect(a,p){
@@ -154,12 +156,13 @@ function ActionDoAction(){
 	var items = [];
 	var row1 = [];
 	var row2 = [];
-	row1.push(0);
-	row1.push("По норме");
-	items.push(row1);
 	row2.push(1);
 	row2.push(Translate["Выбрать вручную"]);
 	items.push(row2);
+	row1.push(0);
+	row1.push("По норме");
+	items.push(row1);
+
 	Dialog.Choose("Создать заявку",items,TakeOrderDB);
 }
 function TakeOrderDB(state, args){

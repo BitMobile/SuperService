@@ -1,0 +1,175 @@
+summary		Přehled
+requests	Návštěvy
+clients	Klienti
+client	Klient
+vpVisits	Návštěvy
+vpPerformed	Vyřízeno
+further	Více
+scheduled	Plánované
+planned	Plánované
+vpUnplanned	Neplánované
+reqdone	Vyřízené
+requndone	Nevyřízené
+reqmth	Měsíčně
+sync	Synchronizace
+info	O produktu
+today	Dnes
+requestsAll	Vše
+search		Hledat
+begin	Začátek
+end	Konec
+period	Období
+ClearFilter	Zrušit filtr
+Clear	Zrušit
+descriptioncust	Jméno klienta
+mainContact	Kontakt
+address	Adresa
+Author	Autor
+eventComment	Poznámky
+back	Zpět
+next	Dále
+contacts	Kontakty
+devices	Zařízení
+visit	Návštěva
+details	Podrobnosti
+Executor		Uživatel
+doDate		Konec
+ExecutorComment		Poznámka uživatele
+CheckList	Checklist
+call	Hovor
+synchronizationData	Synchronizace dat
+synchronizationPhoto	Synchronizace fotek
+lastSync	Poslední synchronizace
+synchronize	Synchronizace
+vpVisits	Limity
+at	v
+error	Chyba
+SendLog	Žurnál
+visitTotal	Celkem
+ready	Hotov
+comment	Poznámky
+send	Odeslat
+Terget	Cíl
+serialNum	Sériové číslo
+softVersion	Verze OS
+remote	Vzdálené připojení
+remoteData	Nastavení vzdáleného připojení
+history	Historie
+tasks		Úkoly
+task		Úkol
+todoDone	Vyřízené úkoly
+execute		Splnit
+retrieve	Získat
+newTasks	Nevyřízené úkoly
+executedtask	Vyřízené úkoly
+device	Zařízení
+Yes	Ano
+deviceHistory	Historie
+equipment	Zařízení
+descriptionEQ	Popis
+No	Ne
+noDescriGiven	Žádný popis
+enterDateTime	Zadejte datum a čas
+select_answer	Zvolit odpověď
+about	O produktu
+version	Verze OS
+superDescription	SuperService - - mobilní aplikace na řízení objednávek, dotazování a merchandising, řízení personálu.
+support	Podpora
+idea	Návrhy
+agreement	Licenční ujednání.
+icons	Aplikace používá ikony Icons8. Web icons8.com
+firstBIT	První BIT - spolehlivý dodavatel softwarů pro váš byznys od roku 1998.
+webSite	Web stránka
+others	Jiné aplikace
+developer	Výrobce
+Snapshots	Obrázky
+add	Nový
+snapshot	Obrázek
+outletSnapshots	Foto prodejního místa
+addFromGallery	Přidat z nabídky
+makeSnapshot	Pořídit foto
+DeleteSnapShot		Smazat foto
+Synchronization_has_not_been_performed	Synchronizaci se nepodařilo spustit
+done		Splněno
+Undone		Zrušit splnění
+set	Nastavit
+Сoordinates		Souřadnice
+success			Data byla přeposlána úspěšně
+noSuccess		Během odesílání došlo k chybě. Data nebyla odeslána.
+Abort		Zrušit
+questionRollback		Úkol bude převeden do stavu "Nevyřízený". Pokračovat?
+OrderNum		Číslo objednávky
+NoDate		Není uvedeno
+ExecutiveComment		Poznámka uživatele
+ToLongText500		Délka textu nesmí přesahovat 500 znaků. Aktuální délka má
+ToLongText1000		Délka textu nesmí přesahovat 1000 znaků. Aktuální délka má
+ToLongText200		Délka textu nesmí přesahovat 200 znaků. Aktuální délka má
+noVisitCoordinats		Nelze načíst aktuální polohu. Zopakovat nebo uložit bez zjištění polohy?
+EmptyCount		Pole "Množství" nesmí být prázdné.
+Commit		OK
+TryAgain		Zopakovat
+OnlyInteger		Pouze číslice jsou povoleny.
+delete		Smazat
+qDeleteSnapShot		Smazat obrázek?
+Empty		Prázdné
+works		Služby
+calculate		Kalkulace
+imageNotAvailable		Momentálně foto je nedostupné.
+Total		Celkem
+PlanWork		PLÁNOVANÉ SLUŽBY
+OutPlanWork		NEPLÁNOVANÉ SLUŽBY
+PlanMaterial		PLÁNOVANÉ MATERIÁLY
+OutPlanMaterial		NEPLÁNOVANÉ MATERIÁLY
+services		Služby
+materials		Materiály
+Currency		Měna
+service		Služba
+material		Materiál
+count		Množství
+Unit		MJ
+ZeroCount		Hodnota musí být větší než nula.
+edit		Upravit
+ReShot		Zopakovat
+name	Jméno
+phone		Telefon
+register	Zaregistrujte se
+leadGetPersonalDemoAccess	a získejte vlastní zkušební verzi
+leadThanks	Děkujeme za informace. Naši konzultanti Vás budou co nejdříve kontaktovat.
+leadFillDataPlease	Vyplňte prosím údaje
+leadOrderDemo	Potřebuji ukázku
+leadPhone	+7-812-320-65-66
+leadMail	mobilespb@1cbit.ru
+leadFail	Připojte se k síti nebo se přihlaste bez registrace
+enterUnregistered	Přihlásit se bez registrace
+sending			Odesílání…
+Bag	Рюкзак
+OrderMats	Заявки
+OrderMat	Заявка
+Status	Статус
+addMAt	Материалы
+formed	Оформить
+AddOrderMat	Добавить заявку
+AskFill	Будет отправлена заявка по норме. Отправить?
+NoNumber	Без номера
+addComment	Комментарий
+DateCreate	Дата создания
+01	января
+02	февраля
+03	марта
+04	апреля
+05	мая
+06	июня
+07	июля
+08	августа
+09	сентября
+10	октября
+11	ноября
+12	декабря
+NoContacts	Нет контактов
+NoRegToday	Нет заявок на сегодня
+NoReg	Нет заявок
+Apply	Применить
+CompliteAllTask	Для завершения наряда необходимо завершить все задачи.
+ConfirmeEndReg	После завершения наряда его нельзя будет отредактировать. Вы хотите завершить наряд?
+OnFull	по норме
+MatCount	материалов

@@ -7,7 +7,7 @@
          <c:Image/>
         <c:TextView Text="#back#"/>
       </c:HorizontalLayout>
-				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($param1)"> <!-- $DoAction(tasks, $event) -->
+				<c:HorizontalLayout CssClass="btn_forward"> <!-- $DoAction(tasks, $event) -->
 				<c:TextView Text=""/>
 				</c:HorizontalLayout>
       <c:HorizontalLayout>
@@ -27,8 +27,6 @@
            <c:MemoEdit Id="RemindComment"  CssClass="main_row"></c:MemoEdit>
        </c:VerticalLayout>
    </c:HorizontalLayout>
-
-
 
   </c:DockLayout>
 </c:Screen>

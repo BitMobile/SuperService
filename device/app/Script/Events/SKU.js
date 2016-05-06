@@ -1,5 +1,4 @@
 function OnLoad(){
-    Vars.setNextAdd(true);
   if ($.Exists("searchSKU")) {
 		$.edtSearch.Text = $.searchSKU;
   }
@@ -16,7 +15,7 @@ function getServices(isService) {
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
   } else {
-    if ($.MobileSettings.UsedServiceBag) {
+    if ($.MobileSettings.UsedServiceBag && (Vars.getNextAdd()==null || !Vars.getNextAdd())) {
       var queryText = "SELECT RM.Id AS Id, RM.Description AS Description, RM.Price AS Price, BG.Id AS BId " +
                       "FROM Catalog_User_Bag BG LEFT JOIN " +
                       "Catalog_RIM RM ON BG.Materials = RM.Id "+
@@ -98,10 +97,8 @@ function SaveCount(sender, obj) {
         obj.Save();
         Global.FindTwinAndUnite(obj);
         if ($.workflow.name=="Event") {
-          Vars.setNextAdd(true);
           Workflow.BackTo("CreateOrderMat");
         }else {
-          Vars.setNextAdd(true);
           Workflow.BackTo("Main");
         }
       }else{
