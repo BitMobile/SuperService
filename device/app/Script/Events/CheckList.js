@@ -188,7 +188,7 @@ function OnChangeStringField(sender, event, index, req, idans) {
     if (IsNullOrEmpty(sender.Text)){
       Variables["marker" + index].CssClass = "red_mark";
       Variables["marker" + index].Refresh();
-      CanForwardNull(event);
+      CanForwardNull(event,idans);
     } else {
       Variables["marker" + index].CssClass = "green_mark";
       Variables["marker" + index].Refresh();
@@ -197,7 +197,7 @@ function OnChangeStringField(sender, event, index, req, idans) {
   }
 }
 
-function CanForwardNull(event){
+function CanForwardNull(event,idans){
   var q = new Query("SELECT length(trim(DEC.Result)) AS Res, DEC.Required AS Req " +
                 "FROM Document_Event_CheckList DEC " +
                 "WHERE DEC.Ref = @event AND DEC.Required = 1 " +
@@ -205,7 +205,13 @@ function CanForwardNull(event){
   q.AddParameter("event", event);
 //  q.AddParameter("idans", idans);
   var cnt =  q.ExecuteCount();
-
+  var q1 = new Query("SELECT length(trim(DEC.Result)) AS Res, DEC.Required AS Req " +
+                "FROM Document_Event_CheckList DEC " +
+                "WHERE DEC.Ref = @event AND DEC.Required = 1 " +
+                "AND Res = 1 AND Id = @idans");
+  q1.AddParameter("event", event);
+  q1.AddParameter("idans", idans);
+  var cnt1 =  q1.ExecuteCount();
 //  if (cnt == 0) {
 //    $.nextButton.Refresh();
 //    $.nextButton.CssClass = "forward_orange";
@@ -213,7 +219,10 @@ function CanForwardNull(event){
 //    $.nextButton.Text = Translate["#next#"];
 //    return true;
 //  } else {
-    cnt = cnt+1;
+if (cnt1==0) {
+}else {
+  cnt = cnt+1;  
+}
     $.nextButton.Refresh();
     $.nextButton.CssClass = "forward_gray";
     $.nextButton.Refresh();
