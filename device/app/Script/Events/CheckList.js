@@ -181,6 +181,7 @@ function SetForAllActions(event, act, result, index) {
       obj.Save(false);
 
   }
+  CanForward(event);
 
 }
 function OnChangeStringField(sender, event, index, req, idans) {
@@ -221,7 +222,7 @@ function CanForwardNull(event,idans){
 //  } else {
 if (cnt1==0) {
 }else {
-  cnt = cnt+1;  
+  cnt = cnt+1;
 }
     $.nextButton.Refresh();
     $.nextButton.CssClass = "forward_gray";
