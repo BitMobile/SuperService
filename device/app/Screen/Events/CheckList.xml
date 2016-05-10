@@ -39,7 +39,7 @@
               	</s:If>
         				<c:VerticalLayout>
         					<c:TextView Text="$actions.Desc" CssClass="description_row"></c:TextView>
-        					<c:EditText Id="action{$index}" Text="$actions.Result" Placeholder="—" CssClass="main_row" onChange="$OnChangeField($param1, $index, $actions.Req)" OnLostFocus="$SetStringValue($param1, $actions.Action, $index)"/>
+        					<c:EditText Id="action{$index}" Text="$actions.Result" Placeholder="—" CssClass="main_row" onChange="$OnChangeStringField($param1, $index, $actions.Req, $actions.IDESC)" OnLostFocus="$SetStringValue($param1, $actions.Action, $index)"/>
         				</c:VerticalLayout>
         			</c:DockLayout>
         			<c:HorizontalLine />

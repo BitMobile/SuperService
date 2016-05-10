@@ -9,7 +9,7 @@ function GetAndSetStartTime(event){
 	//Dialog.Message(obj.ActualStartDate);
 	if (obj.ActualStartDate == '01.01.0001 0:00:00') {
 		obj.ActualStartDate = DateTime.Now;
-		obj.Save();		
+		obj.Save();
 	}
 	//Dialog.Message(ActualStartDate);
 }
