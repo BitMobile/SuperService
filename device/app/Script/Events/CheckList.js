@@ -181,7 +181,7 @@ function SetForAllActions(event, act, result, index) {
       obj.Save(false);
 
   }
-  CanForward(event);
+  //CanForward(event);
 
 }
 function OnChangeStringField(sender, event, index, req, idans) {
@@ -193,7 +193,9 @@ function OnChangeStringField(sender, event, index, req, idans) {
     } else {
       Variables["marker" + index].CssClass = "green_mark";
       Variables["marker" + index].Refresh();
-      CanForwardWithoutAns(event,idans);
+      if (StrLen(sender.Text)==1) {
+        CanForwardWithoutAns(event,idans);
+      }
     }
   }
 }
@@ -206,10 +208,10 @@ function CanForwardNull(event,idans){
   q.AddParameter("event", event);
 //  q.AddParameter("idans", idans);
   var cnt =  q.ExecuteCount();
-  var q1 = new Query("SELECT length(trim(DEC.Result)) AS Res, DEC.Required AS Req " +
+  var q1 = new Query("SELECT length(DEC.Result) AS Res, DEC.Required AS Req " +
                 "FROM Document_Event_CheckList DEC " +
                 "WHERE DEC.Ref = @event AND DEC.Required = 1 " +
-                "AND Res = 1 AND Id = @idans");
+                "AND Res > 0 AND Id = @idans");
   q1.AddParameter("event", event);
   q1.AddParameter("idans", idans);
   var cnt1 =  q1.ExecuteCount();
@@ -220,6 +222,7 @@ function CanForwardNull(event,idans){
 //    $.nextButton.Text = Translate["#next#"];
 //    return true;
 //  } else {
+//Dialog.Message(cnt1);
 if (cnt1==0) {
 }else {
   cnt = cnt+1;
