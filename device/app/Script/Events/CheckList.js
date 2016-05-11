@@ -191,9 +191,9 @@ function OnChangeStringField(sender, event, index, req, idans) {
       Variables["marker" + index].Refresh();
       CanForwardNull(event,idans);
     } else {
+      if (StrLen(sender.Text)==1) {
       Variables["marker" + index].CssClass = "green_mark";
       Variables["marker" + index].Refresh();
-      if (StrLen(sender.Text)==1) {
         CanForwardWithoutAns(event,idans);
       }
     }
