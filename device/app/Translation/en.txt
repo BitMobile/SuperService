@@ -142,3 +142,34 @@ leadMail	mobilespb@1cbit.ru
 leadFail	Connect to network or enter without registration
 enterUnregistered	Enter unregistered
 sending			Sending..
+Bag	Bag
+OrderMats	Orders
+OrderMat	Order
+Status	Status
+addMAt	Materials
+formed	Create
+AddOrderMat	New order
+AskFill	Orders will be send according to quotas. Send?
+NoNumber	No number
+addComment	Comment
+DateCreate	Date of creation
+01	January
+02	February
+03	March
+04	April
+05	May
+06	June
+07	July
+08	August
+09	September
+10	October
+11	November
+12	December
+NoContacts	No contacts
+NoRegToday	Today, not orders
+NoReg	No orders
+Apply	Apply
+CompliteAllTask	To complete the request need to complete all the tasks.
+ConfirmeEndReg	After completion of the request can not be edited. Do you want complete?
+OnFull	by quota
+MatCount	materials
