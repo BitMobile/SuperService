@@ -173,3 +173,12 @@ CompliteAllTask	Pro dokončení potřebujete splnit všechny úkoly.
 ConfirmeEndReg	Ukončený výjezd nebude možné editovat. Pokračovat?
 OnFull	dle kvóty
 MatCount	materiály
+AfterSync	Оповещение будет отправлено при следующей синхронизации!
+PostComment	Оставьте комментарий
+SetStat	Укажите один из статусов оповещения
+SelectByHand	Выбрать вручную
+CreateOrder	Создать заявку
+SucsessSend	Отправлено
+Refresh	Обновить
+Copy	Скопировать
+CantGetCoord	Не удалось получить координаты

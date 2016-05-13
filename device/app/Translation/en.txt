@@ -173,3 +173,12 @@ CompliteAllTask	To complete the request need to complete all the tasks.
 ConfirmeEndReg	After completion of the request can not be edited. Do you want complete?
 OnFull	by quota
 MatCount	materials
+AfterSync	The message will be sent during the next sync!
+PostComment	Leave a comment
+SetStat	Choose one of the status notification
+SelectByHand	Select manually
+CreateOrder	Add order
+SucsessSend	Sent
+Refresh	Update
+Copy	Copy
+CantGetCoord	Unable to get the coordinates

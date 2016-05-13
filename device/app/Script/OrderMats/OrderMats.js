@@ -157,13 +157,13 @@ function ActionDoAction(){
 	var row1 = [];
 	var row2 = [];
 	row2.push(1);
-	row2.push(Translate["Выбрать вручную"]);
+	row2.push(Translate["#SelectByHand#"]);
 	items.push(row2);
 	row1.push(0);
-	row1.push("По норме");
+	row1.push("#OnFull#");
 	items.push(row1);
 
-	Dialog.Choose("Создать заявку",items,TakeOrderDB);
+	Dialog.Choose("#CreateOrder#",items,TakeOrderDB);
 }
 function TakeOrderDB(state, args){
 	//Dialog.Message(args.Result);

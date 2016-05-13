@@ -128,8 +128,8 @@ function SendLog() {
 	var result = Application.SendDatabase();
 
 	if (result)
-		Dialog.Message("Отправлено");
+		Dialog.Message("#SucsessSend#");
 	else
-		Dialog.Message("Произошла ошибка во время отправки. Данные не отправлены");
+		Dialog.Message("#noSuccess#");
 
 }

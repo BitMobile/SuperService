@@ -71,17 +71,17 @@ function createReminder(event){
 
 			reminder.Save(false);
 
-			Dialog.Message("Оповещение будет отправлено при следующей синхронизации!");
+			Dialog.Message("#AfterSync#");
 			$.AngryImageTrue.Visible = false;
 			$.AngryImageFalse.Visible = true;
 			$.HungryImageTrue.Visible = false;
 			$.HungryImageFalse.Visible = true;
 			$.RemindComment.Text = "";
 		} else {
-			Dialog.Message("Оставьте комментарий");
+			Dialog.Message("#PostComment#");
 		}
 	} else {
-		Dialog.Message("Укажите один из статусов оповещения");
+		Dialog.Message("#SetStat#");
 	}
 }
 

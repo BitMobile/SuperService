@@ -103,7 +103,7 @@ function setCoordinats(sender, outlet, param1){
 }
 
 function updateCoordinats(outlet, param1) {
-	Dialog.Choose("Координаты", [["update", "Обновить"],["copy", "Скопировать"], ["cut", "Удалить"]] , coordinatsCallBack, [outlet, param1]);
+	Dialog.Choose("Координаты", [["update", "#Refresh#"],["copy", "#Copy#"], ["cut", "#delete#"]] , coordinatsCallBack, [outlet, param1]);
 }
 
 function coordinatsCallBack(state, args){
