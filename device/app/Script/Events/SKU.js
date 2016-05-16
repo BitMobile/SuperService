@@ -15,6 +15,16 @@ function getServices(isService) {
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
   } else {
+    if ($.MobileSettings.UsedServiceBag && (Vars.getNextAdd()==null || !Vars.getNextAdd())) {
+      var queryText = "SELECT RM.Id AS Id, RM.Description AS Description, RM.Price AS Price, BG.Id AS BId " +
+                      "FROM Catalog_User_Bag BG LEFT JOIN " +
+                      "Catalog_RIM RM ON BG.Materials = RM.Id "+
+                      "WHERE Service = 0 " +
+                      "AND IsFolder = 0 " +
+                      "AND DeletionMark = 0 ";
+
+    }
+    else{
     var queryText = "SELECT Id, Description, Price " +
                     "FROM Catalog_RIM " +
                     "WHERE Service = 0 " +
@@ -23,6 +33,7 @@ function getServices(isService) {
                     "AND NOT Id in (SELECT SKU " +
                               "FROM Document_Event_ServicesMaterials WHERE " +
                               "Ref = @event)";
+          }
   }
 
   q.AddParameter("event", Vars.getEvent());
@@ -48,14 +59,24 @@ function findSKU(sender, key){
 }
 
 function CreateAndNext(sender, refSKU) {
-  var obj = DB.Create("Document.Event_ServicesMaterials");
-  obj.Ref = Vars.getEvent();
-  obj.AmountPlan = 0;
-  obj.SumPlan = 0;
-  obj.Price = refSKU.Price;
-  obj.SKU = refSKU;
+  if ($.workflow.name=="CreateOrderMat" || Vars.getOrderMatEnable()) {
+    var obj = DB.Create("Document.NeedMat_Matireals");
+    obj.Ref = Vars.getOrderMat();
+  //  obj.AmountPlan = 0;
+  //  obj.SumPlan = 0;
+  //  obj.Price = refSKU.Price;
+    obj.SKU = refSKU;
+  }else {
+    var obj = DB.Create("Document.Event_ServicesMaterials");
+    obj.Ref = Vars.getEvent();
+    obj.AmountPlan = 0;
+    obj.SumPlan = 0;
+    obj.Price = refSKU.Price;
+    obj.SKU = refSKU;
+  }
   Workflow.Action('AddSKU', [obj]);
 }
+
 
 function CheckEmpty(val) {
   if (IsNullOrEmpty(val)) {
@@ -71,10 +92,21 @@ function CheckEmpty(val) {
 function SaveCount(sender, obj) {
   if (!IsNullOrEmpty($.SKUCount.Text)){
     if (Converter.ToDecimal($.SKUCount.Text) > 0){
-      obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
-      obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
-      obj.Save();
+      if ($.workflow.name=="CreateOrderMat" || Vars.getOrderMatEnable()) {
+        obj.Count = Converter.ToDecimal($.SKUCount.Text);
+        obj.Save();
+        Global.FindTwinAndUnite(obj);
+        if ($.workflow.name=="Event") {
+          Workflow.BackTo("CreateOrderMat");
+        }else {
+          Workflow.BackTo("Main");
+        }
+      }else{
+        obj.AmountFact = Converter.ToDecimal($.SKUCount.Text);
+        obj.SumFact = Converter.ToDecimal($.SKUCount.Text) * obj.Price;
+        obj.Save();
       Workflow.BackTo("calculate");
+    }
     } else {
       Dialog.Message(Translate["#ZeroCount#"]);
     }

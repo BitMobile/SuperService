@@ -16,6 +16,7 @@
         <c:TextView Text="#calculate#" />
       </c:HorizontalLayout>
     </c:DockLayout>
+
     <!-- Begin Screen swich -->
     <c:HorizontalLayout CssClass="small_grid">
 		  <s:If Test="$WorM=='work'">
@@ -114,14 +115,41 @@
     </s:If>
   </s:If>
   <s:Else>
+
     <s:If Test="$MobileSettings.AddUnPlanMaterials">
       <c:DockLayout CssClass="footer">
           <c:HorizontalLine/>
-          <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$DoAction(AddWork)">
-            <c:TextView Text="#add#" />
-          </c:DockLayout>
+          <s:If Test="$MobileSettings.UsedServiceBag">
+
+            <c:DockLayout CssClass="btn_left_footer" OnClickAction="$actionDoSelect()">
+              <c:TextView Text="#AddOrderMat#" />
+            </c:DockLayout>
+
+
+            <c:DockLayout CssClass="btn_right_footer" OnClickAction="$DoAction(AddWork)">
+              <c:TextView Text="#add#" />
+            </c:DockLayout>
+
+          </s:If>
+          <s:Else>
+
+            <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$DoAction(AddWork)">
+              <c:TextView Text="#add#" />
+            </c:DockLayout>
+
+          </s:Else>
       </c:DockLayout>
     </s:If>
+    <s:Else>
+      <s:If Test="$MobileSettings.UsedServiceBag">
+        <c:DockLayout CssClass="footer">
+          <c:HorizontalLine/>
+          <c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$actionDoSelect()">
+            <c:TextView Text="#AddOrderMat#" />
+          </c:DockLayout>
+        </c:DockLayout>
+      </s:If>
+    </s:Else>
   </s:Else>
   <!-- End Add button block -->
 

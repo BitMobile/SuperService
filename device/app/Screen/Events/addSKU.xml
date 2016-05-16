@@ -43,7 +43,9 @@
           </s:If>
           <s:Else>
             <s:If Test="$MobileSettings.UsedCalculateMaterials">
-              <c:TextView Text="{$param1.Price} #Currency#" CssClass="value"></c:TextView>
+              <s:If Test="$param1.Price!=null">
+                <c:TextView Text="{$param1.Price} #Currency#" CssClass="value"></c:TextView>
+              </s:If>
             </s:If>
           </s:Else>
         </c:DockLayout>

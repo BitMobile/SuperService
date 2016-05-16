@@ -18,6 +18,13 @@ function test(a){
 	return a;
 }
 
+function GetDateString(date){
+	var day = Left(""+date ,2);
+	var month = Right(Left(""+date ,5),2);
+	var year = Right(Left(""+date ,10),4);
+	return day + " " + Translate["#"+month+"#"] + " " + year;
+}
+
 function testInDialog(s){
 	Dialog.Debug(s);
 	return s;

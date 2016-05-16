@@ -1,5 +1,5 @@
 summary		Сводная информация
-requests	Визиты
+requests	Наряды
 clients	Клиенты
 client	Клиент
 vpVisits	заявок
@@ -30,7 +30,7 @@ back	Назад
 next	Далее
 contacts	Контакты
 devices	Оборудование
-visit	Визит
+visit	Наряд
 details	Сведения
 Executor		Исполнитель
 doDate		Дата выполнения
@@ -142,3 +142,43 @@ leadMail	mobilespb@1cbit.ru
 leadFail	Подключитесь к сети или войдите без регистрации
 enterUnregistered	Войти без регистрации
 sending			Отправка..
+Bag	Рюкзак
+OrderMats	Заявки
+OrderMat	Заявка
+Status	Статус
+addMAt	Материалы
+formed	Оформить
+AddOrderMat	Добавить заявку
+AskFill	Будет отправлена заявка по норме. Отправить?
+NoNumber	Без номера
+addComment	Комментарий
+DateCreate	Дата создания
+01	января
+02	февраля
+03	марта
+04	апреля
+05	мая
+06	июня
+07	июля
+08	августа
+09	сентября
+10	октября
+11	ноября
+12	декабря
+NoContacts	Нет контактов
+NoRegToday	Нет заявок на сегодня
+NoReg	Нет заявок
+Apply	Применить
+CompliteAllTask	Для завершения наряда необходимо завершить все задачи.
+ConfirmeEndReg	После завершения наряда его нельзя будет отредактировать. Вы хотите завершить наряд?
+OnFull	По норме
+MatCount	материалов
+AfterSync	Оповещение будет отправлено при следующей синхронизации!
+PostComment	Оставьте комментарий
+SetStat	Укажите один из статусов оповещения
+SelectByHand	Выбрать вручную
+CreateOrder	Создать заявку
+SucsessSend	Отправлено
+Refresh	Обновить
+Copy	Скопировать
+CantGetCoord	Не удалось получить координаты

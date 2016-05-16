@@ -1,3 +1,16 @@
+.top_navigator hl TextView {
+    width: 100%;
+    height: 100%;
+    margin-left: 0%;
+    padding-top: 26%;
+    horizontal-align: central;
+    text-align: center;
+    color: #000000;
+    font: 39.5% arial;
+    selected-color: #D3D3D3;
+}
+
+
 body {
     background-color: #efeff4;
 }
@@ -7,25 +20,72 @@ dl {
 }
 
 .main_row {
-    width: 100%;
-    height: 23%;
+    width: 30% auto;
+    height: 100%;
     white-space: normal;
-    font: 80% Arial;
+    font: 70% Arial;
+  	margin-top: 10%;
 }
-
+.main_row_defic {
+    width: 1% auto;
+    height: 100%;
+    white-space: normal;
+    font: 70% Arial;
+  	margin-top: 10%;
+}
+.main_row_green{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #388E3C;
+}
+.main_row_blue{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #1976D2;
+}
+.main_row_yelow{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #FBC02D;
+}
+.main_row_red{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 70% Arial;
+  margin-top: 10%;
+  color: #D32F2F;
+}
 .description_row {
-    height: 13mm;
-    font: 30% Arial;
+    height: 40%;
+    font: 42% Arial;
 }
 
+.grid_Str{
+  height: 45mm;
+}
+
+.grid {
+  height: 20%;
+}
 .grid vl hl{
-    height: 40%;
+    height: 30%;
     width: 100%;
 }
 
 .grid vl hl description_row{
     height: 100%;
-    font: 42% Arial;
+    font: 78% Arial;
+    margin-bottom: 10%;
     /*background-color: #ccaacc;*/
 }
 
@@ -103,6 +163,10 @@ dl {
 	height: 50px;
 }
 
+.swipe_layout {
+    height: 87px;
+}
+
 .grey_swipe {
     height: 87px;
     width: 174px;
@@ -146,7 +210,7 @@ dl {
 
 
 .bl_description_row{
-    width: 15% auto;
+    width: 100%;
     height: 100%;
     white-space: normal;
     padding-right: 7%;
@@ -163,15 +227,23 @@ dl {
         color: #e6891b;
         font:39.5% arial;
 }
-
+.withoutarrow{
+ width: 95%;
+}
 .filterarrow {
     height: 1.9mm;
     width: 1.3mm;
     margin-left: 15%;
     /*margin-top: 30%;*/
-    horizontal-align: central;
     background-image: url(arrow.png);
 
+    }
+
+.filterarrowOrd {
+    height: 1.9mm;
+    width: 1.3mm;
+    background-image: url(arrow.png);
+    margin-top: 45%;
     }
 
 .filtervalue {
@@ -198,7 +270,7 @@ dl {
     }
 
 .btn_left_footer {
-	width: 50%;
+	width: 40%;
 	height: 100%;
 	dock-align: left;
 	background-color: #ffffff;
@@ -245,127 +317,4 @@ background-color: #ffffff;
   width: 0.5mm;
   dock-align: left;
   background-color: #ff0000;
-}
-
-.grid vl {
-  padding-top: 4mm;
-  width: 70%;
-  height: 100%;
-}
-
-.CountAndPrice description_row {
-  height: 30%;
-  width: 100%;
-  text-align: right;
-  color: #000000;
-  font: 80% Arial;
-}
-
-.price {
-      width: 100%;
-      height: 2.5mm;
-      margin-top: 1.5mm;
-      text-align: right;
-      white-space: normal;
-      font: 90% Arial;
-      color: #e6891b;
-}
-
-.calc {
-  background-image: url(calc.png);
-  width: 8mm;
-  height: 8mm;
-  margin-left: 2mm;
-  dock-align: left;
-}
-
-.total_value {
-  width: 100%;
-  height: 100%;
-  dock-align: right;
-  text-align: right;
-  white-space: normal;
-  vertical-align: top;
-  font: 90% Arial;
-  color: #e6891b;
-}
-
-.description_total {
-  width: 100%;
-  height: 100%;
-  dock-align: left;
-  text-align: left;
-  color: #8e8e93;
-  font: 90% Arial;
-  margin-bottom: 0.5mm;
-}
-
-totalBlock {
-  width: 100%;
-  height: 100%;
-  dock-align: left;
-  padding-top: 2.5mm;
-  margin-left: -4mm;
-}
-
-.SubTotal {
-  height: 4mm;
-  width: 90%;
-  background-color: #ffffff;
-}
-
-.Total {
-  height: 3.5mm;
-  width: 90%;
-  background-color: #ffffff;
-}
-
-.SubTotal TextView {
-  width: 50%;
-  height: 100%;
-}
-
-.Total TextView {
-  width: 50%;
-  height: 100%;
-}
-
-
-.addButton {
-  width: 15mm;
-  height: 8mm;
-  dock-align: right;
-  margin-left: 3mm;
-  margin-right: 2mm;
-  margin-top: 2.5mm;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #e6891b;
-  border-radius: 5px;
-  color: #e6891b;
-  text-align: center;
-  font: 30% arial;
-}
-
-.caption_grid TextView {
-    width: 100%;
-    height: 50%;
-    text-align: left;
-    margin-left: 3.5%;
-    margin-top: 50%;
-    white-space: nowrap;
-    font: 80% arial;
-    color: #4d4d4d;
-}
-
-.btn_bottom_footer{
-  background-color: #ffffff;
-}
-
-.small_grid {
-    height: 6.7mm;
-    width: 100%;
-    selected-color: #bacdce;
-    dock-align: top;
-    horizontal-align: central;
 }

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="events.css">
-<s:Push Id="tmp" Value="$MakeFilterSettingsBackUp()"/>	
-	
+<s:Push Id="tmp" Value="$MakeFilterSettingsBackUp()"/>
+
   <c:DockLayout>
 	    <c:DockLayout CssClass="top_navigator">
-	            
+
 	      <c:HorizontalLayout>
 	        <c:TextView Text="#period#" />
 	      </c:HorizontalLayout>
 	      <c:HorizontalLine/>
-	      
+
 	    </c:DockLayout>
-	<c:HorizontalLine/>   
-	    
+	<c:HorizontalLine/>
+
 	 <c:DockLayout CssClass="footer">
 	<c:HorizontalLine/>
-	
+
 		<c:DockLayout CssClass="btn_left_footer" OnClickAction="$RollBackAndBack()">
-			<c:TextView Text="Отмена" />
+			<c:TextView Text="#Abort#" />
 		</c:DockLayout>
-		
+
 		<c:DockLayout CssClass="btn_right_footer" OnEvent="Back" OnClickAction="$DoBack()" >
-			<c:TextView Text="Применить" />
-		</c:DockLayout>		
+			<c:TextView Text="#Apply#" />
+		</c:DockLayout>
 	</c:DockLayout>
 	 <c:HorizontalLayout CssClass="spacer">
 	 </c:HorizontalLayout>
@@ -32,7 +32,7 @@
         <c:TextView Id="beginDate" Text="$filterDate(@recvStartPeriod)"   CssClass="value"></c:TextView>
     </c:DockLayout>
     <c:HorizontalLine/>
-    
+
     <c:DockLayout CssClass="parameter_grid" OnClickAction="$SetEndDate()">
         <c:TextView Text="#end#"></c:TextView>
         <c:TextView Id="endDate" Text="$filterDate(@recvStopPeriod)"  CssClass="value"></c:TextView>
@@ -43,9 +43,9 @@
 	 <c:HorizontalLine/>
 	<c:DockLayout CssClass="parameter_grid" OnClickAction="$clearmyfilter()">
 	        <c:TextView Text="#ClearFilter#" CssClass="ClearFilter"></c:TextView>
-        
+
     </c:DockLayout>
     <c:HorizontalLine/>
-    
+
 </c:DockLayout>
 </c:Screen>

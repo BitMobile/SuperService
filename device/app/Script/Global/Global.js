@@ -17,6 +17,25 @@ function checkUsr(){
 	return isInDepartment(mskCO, userObject.Department);
 }
 
+function FindTwinAndUnite(orderitem) {
+
+	var q = new Query(
+			"SELECT Id FROM Document_NeedMat_Matireals WHERE Ref=@ref AND SKU=@sku AND Id<>@id LIMIT 1"); // AND
+																																								// Id<>@id
+	q.AddParameter("ref", orderitem.Ref);
+	q.AddParameter("sku", orderitem.SKU);
+	q.AddParameter("id", orderitem.Id);
+	var rst = q.ExecuteCount();
+	if (parseInt(rst) != parseInt(0)) {
+		var twin = q.ExecuteScalar();
+		twin = twin.GetObject();
+		twin.Count += orderitem.Count;
+		twin.Save();
+		DB.Delete(orderitem.Id);
+	} else
+		orderitem.Save();
+}
+
 function isInDepartment(valCheck, val){
 	if (val != valCheck){
 		if (val.Parent !=  DB.EmptyRef("Catalog_Departments")){
@@ -73,6 +92,8 @@ function SetMobileSettings(){
   $.MobileSettings.Add("UsedCalculateMaterials", UsedCalculateMaterials.ExecuteScalar());
   var UsedCalculateService = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedCalculateService'");
   $.MobileSettings.Add("UsedCalculateService", UsedCalculateService.ExecuteScalar());
+  var UsedBag = new Query("SELECT LogicValue FROM Catalog_SettingMobileApplication WHERE Description = 'UsedServiceBag'");
+  $.MobileSettings.Add("UsedServiceBag", UsedBag.ExecuteScalar());
 
   var PictureSize = new Query("SELECT NumericValue FROM Catalog_SettingMobileApplication WHERE Description = 'PictureSize'");
   var resPS = PictureSize.ExecuteScalar();

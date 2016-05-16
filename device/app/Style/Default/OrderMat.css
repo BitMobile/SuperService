@@ -1,0 +1,245 @@
+.main_row_top {
+    width: 100%;
+    height: 25%;
+    white-space: normal;
+    font: 100% Arial;
+    text-align: center;
+    vertical-align: center;
+}
+.head_mat {
+  height: 10.8mm;
+}
+.stat {
+  height: 9.8mm;
+  width: 100%;
+}
+.listofmat{
+  width: 100%;
+}
+
+.main_row_right
+{
+  width: 50% auto;
+  height: 49%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  margin-right: 5%;
+  dock-align: right;
+  text-align: right;
+  color: #a6a6a6;
+}
+.GreyLine{
+  width: 100%;
+  background-color: #a6a6a6;
+}
+.main_row_stat{
+  width: 30% auto;
+  height: 50%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  margin-left: 5%;
+  dock-align: left;
+}
+
+
+
+.main_row_green_stat{
+  width: 55% auto;
+  height: 50%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  color: #388E3C;
+  dock-align: right;
+  margin-right: 5%;
+  text-align: right;
+}
+.main_row_blue_stat{
+  width: 55% auto;
+  height: 50%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  color: #1976D2;
+  margin-right: 5%;
+  dock-align: right;
+  text-align: right;
+}
+.main_row_yelow_stat{
+  width: 55% auto;
+  height: 50%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  color: #FBC02D;
+  margin-right: 5%;
+  dock-align: right;
+  text-align: right;
+}
+.main_row_red_stat{
+  width: 55% auto;
+  height: 50%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 30%;
+  color: #D32F2F;
+  margin-right: 5%;
+  dock-align: right;
+  text-align: right;
+}
+
+
+
+
+.main_row_green{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 12%;
+  color: #388E3C;
+}
+.main_row_blue{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 12%;
+  color: #1976D2;
+}
+.main_row_yelow{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 12%;
+  color: #FBC02D;
+}
+.main_row_red{
+  width: 30% auto;
+  height: 100%;
+  white-space: normal;
+  font: 55% Arial;
+  margin-top: 12%;
+  color: #D32F2F;
+}
+.main_row {
+    width: 30% auto;
+    height: 100%;
+    white-space: normal;
+    font: 55% Arial;
+  	margin-top: 12%;
+}
+.MatDesc{
+  height: 100%;
+  width: 50% auto;
+  horizontal-align: left;
+  background-color: #FBC02D;
+
+}
+.MatCount{
+  height: 100%;
+  width: 50% auto;
+  horizontal-align: right;
+  background-color: #FBC02D;
+
+}
+.grid{
+  height: 9.8mm;
+  width: 100%;
+}
+.grid vl hl{
+    height: 40%;
+    width: 100%;
+    vertical-align: center;
+    margin-top: 21.5%;
+}
+
+.btn_left_footer {
+	width: 50%;
+	height: 100%;
+	dock-align: left;
+	background-color: #ffffff;
+}
+.swipe_layout {
+	height: 9.8mm;
+}
+	.btn_left_footer TextView {
+            width: 100%;
+            height: 100%;
+            margin-top: 0%;
+            margin-left: 0%;
+            padding-top: 25%;
+            text-align: center;
+            color: #e6891b;
+            font: 38% Arial;
+        }
+
+.btn_right_footer
+{
+width: 50%;
+height: 100%;
+dock-align: right;
+background-color: #ffffff;
+}
+
+	.btn_right_footer TextView {
+            width: 100%;
+            height: 100%;
+            margin-left: 0%;
+            padding-top: 25%;
+            text-align: center;
+            color: #e6891b;
+            font: 38% Arial;
+        }
+
+.LargeView{
+  width: 100%;
+  height: 100%;
+}
+.grid vl hl description_row{
+    height: 100%;
+    width: 50%;
+    font: 72% Arial;
+    white-space: nowrap;
+    text-align: center;
+/*    background-color: #ccaacc;*/
+}
+.grid vl hl description_row_desc{
+    height: 100%;
+    width: 50%;
+    font: 72% Arial;
+    white-space: nowrap;
+    text-align: left;
+/*    background-color: #ccaacc;*/
+}
+
+.memo_block {
+    height: 48sp;
+}
+
+
+    .memo_block vl {
+        width: 100%;
+        height: 100%;
+        margin-top: -5mm;
+        margin-left: 0%;
+        padding-left: 0%;
+    }
+
+.memo_block vl main_row {
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    font: 2.2mm Arial;
+}
+
+        .memo_block vl MemoEdit {
+            height: 100%;
+            width: 100%;
+            margin-left: 0%;
+            font: 4.4mm Arial;
+            color: #b96f18;
+        }

@@ -3,6 +3,17 @@ function DoBackAndClean(){
 	//DB.Rollback();
 }
 
+function GetAndSetStartTime(event){
+	//Dialog.Message(event);
+	var obj = event.GetObject();
+	//Dialog.Message(obj.ActualStartDate);
+	if (obj.ActualStartDate == '01.01.0001 0:00:00') {
+		obj.ActualStartDate = DateTime.Now;
+		obj.Save();
+	}
+	//Dialog.Message(ActualStartDate);
+}
+
 function DoActionAndSave(step, req, cust, outlet) {
 
 }
@@ -92,7 +103,7 @@ function setCoordinats(sender, outlet, param1){
 }
 
 function updateCoordinats(outlet, param1) {
-	Dialog.Choose("Координаты", [["update", "Обновить"],["copy", "Скопировать"], ["cut", "Удалить"]] , coordinatsCallBack, [outlet, param1]);
+	Dialog.Choose("Координаты", [["update", "#Refresh#"],["copy", "#Copy#"], ["cut", "#delete#"]] , coordinatsCallBack, [outlet, param1]);
 }
 
 function coordinatsCallBack(state, args){

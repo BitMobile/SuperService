@@ -8,7 +8,48 @@
       <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
     </bp:Step>
+
+  </bp:Workflow>
+
+  <bp:Workflow Name="OrderMats" Controller="OrderMats\OrderMats.js">
+
+    <bp:Step Name="Main" Screen="OrderMats\OrderMats.xml" Controller="OrderMats\OrderMats.js">
+
+     <bp:Action Name="Events" NextWorkflow="Events"></bp:Action>
+     <bp:Action Name="Client" NextWorkflow="Client"></bp:Action>
+     <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
+     <bp:Action Name="About" NextWorkflow="About"></bp:Action>
+     <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+     <bp:Action Name="EditFilter" NextStep="EditFilter"></bp:Action>
+     <bp:Action Name="DoSelect" NextStep="OrderMat"></bp:Action>
+     <bp:Action Name="CreateOrderMat" NextWorkflow="CreateOrderMat"></bp:Action>
+    </bp:Step>
+    <bp:Step Name="EditFilter" Screen="filter.xml" Controller="OrderMats\OrderMats.js">
+    </bp:Step>
+    <bp:Step Name="OrderMat" Screen="OrderMats\OrderMat.xml" Controller="OrderMats\OrderMat.js">
+    </bp:Step>
+
+  </bp:Workflow>
+
+  <bp:Workflow Name="CreateOrderMat" Controller="OrderMats\OrderMatEdit.js">
+
+    <bp:Step Name="Main" Screen="OrderMats\EditOrderMat.xml" Controller="OrderMats\OrderMatEdit.js">
+      <bp:Action Name="AddOrderMat" NextStep="SKUList"></bp:Action>
+      <bp:Action Name="AddComment" NextStep="AddComment"></bp:Action>
+
+    </bp:Step>
+    <bp:Step Name="SKUList" Screen="Events\SKU.xml" Controller="Events\SKU.js">
+      <bp:Action Name="AddSKU" NextStep="AddSKU" />
+    </bp:Step>
+
+    <bp:Step Name="AddSKU" Screen="Events\addSKU.xml" Controller="Events\SKU.js">
+    </bp:Step>
+
+    <bp:Step Name="AddComment" Screen="OrderMats\AddComment.xml" Controller="OrderMats\AddComment.js">
+    </bp:Step>
+
 
   </bp:Workflow>
 
@@ -21,6 +62,7 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Events\main.js">
@@ -43,6 +85,18 @@
            <bp:Action Name="calculate" NextStep="calculate" />
            <bp:Action Name="showClient" NextWorkflow="ClentView"></bp:Action>
            <bp:Action Name="Total" NextStep="Total"></bp:Action>
+
+        </bp:Step>
+
+        <bp:Step Name="CreateOrderMat" Screen="OrderMats\EditOrderMat.xml" Controller="OrderMats\OrderMatEdit.js">
+          <bp:Action Name="AddOrderMat" NextStep="SKUListOrd"></bp:Action>
+          <bp:Action Name="AddComment" NextStep="AddComment"></bp:Action>
+        </bp:Step>
+        <bp:Step Name="SKUListOrd" Screen="Events\SKU.xml" Controller="Events\SKU.js">
+          <bp:Action Name="AddSKU" NextStep="AddSKU" />
+        </bp:Step>
+
+        <bp:Step Name="AddComment" Screen="OrderMats\AddComment.xml" Controller="OrderMats\AddComment.js">
         </bp:Step>
 
         <bp:Step Name="photoView" Screen="Common\photoView.xml" Controller="Common\photoView.js"></bp:Step>
@@ -53,6 +107,7 @@
            <bp:Action Name="checklist" NextStep="checklist" />
            <bp:Action Name="AddWork" NextStep="SKUList"></bp:Action>
            <bp:Action Name="AddSKU" NextStep="AddSKU" />
+           <bp:Action Name="CreateOrderMat" NextStep="CreateOrderMat"></bp:Action>
        </bp:Step>
 
 
@@ -118,6 +173,8 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
+
     </bp:Step>
 
     <bp:Step Name="EditFilter" Screen="filter.xml" Controller="Client\main.js">
@@ -136,6 +193,8 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
+
     </bp:Step>
 
   </bp:Workflow>
@@ -147,6 +206,8 @@
       <bp:Action Name="Sync" NextWorkflow="Sync"></bp:Action>
       <bp:Action Name="About" NextWorkflow="About"></bp:Action>
       <bp:Action Name="Summary" NextWorkflow="Main"></bp:Action>
+      <bp:Action Name="OrderMats" NextWorkflow="OrderMats"></bp:Action>
+
     </bp:Step>
 
   </bp:Workflow>

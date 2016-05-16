@@ -1,7 +1,6 @@
 <c:Component xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack">
 	    <c:VerticalLayout CssClass="menu">
 			<s:Push Id="styles" Value="$GetItemsStyles()"></s:Push>
-
 			<c:DockLayout CssClass="$styles.Summary">
 		      <c:HorizontalLayout  OnClickAction="$menuClickAction(Summary)">
 				      <c:Image CssClass="btn_summary"/>
@@ -26,7 +25,17 @@
     </c:HorizontalLayout>
       </c:DockLayout>
       <c:HorizontalLine/>
-
+			<s:If Test="$MobileSettings.UsedCalculate">
+				<s:If Test="$MobileSettings.UsedServiceBag">
+				<c:DockLayout CssClass="$styles.OrderMats">
+	        <c:HorizontalLayout OnClickAction="$menuClickAction(OrderMats)">
+	          <c:Image CssClass="btn_OrderMats"/>
+	      <c:TextView CssClass="menu_text" Text="#OrderMats#"></c:TextView>
+	    </c:HorizontalLayout>
+	      </c:DockLayout>
+	      <c:HorizontalLine/>
+			</s:If>
+		</s:If>
 	     <c:DockLayout CssClass="$styles.Sync">
         <c:HorizontalLayout OnClickAction="$menuClickAction(Sync)">
           <c:Image CssClass="btn_sync"/>

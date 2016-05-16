@@ -71,17 +71,17 @@ function createReminder(event){
 
 			reminder.Save(false);
 
-			Dialog.Message("Оповещение будет отправлено при следующей синхронизации!");
+			Dialog.Message("#AfterSync#");
 			$.AngryImageTrue.Visible = false;
 			$.AngryImageFalse.Visible = true;
 			$.HungryImageTrue.Visible = false;
 			$.HungryImageFalse.Visible = true;
 			$.RemindComment.Text = "";
 		} else {
-			Dialog.Message("Оставьте комментарий");
+			Dialog.Message("#PostComment#");
 		}
 	} else {
-		Dialog.Message("Укажите один из статусов оповещения");
+		Dialog.Message("#SetStat#");
 	}
 }
 
@@ -90,10 +90,10 @@ function askCommit(sender, event){
 	q.AddParameter("newStatus", DB.Current.Constant.ResultEvent.New);
 	q.AddParameter("Ref", event);
 	cnt = q.ExecuteCount();
-	if(cnt == 0){
-		Dialog.Ask("После завершения визита его нельзя будет отредактировать. Вы хотите завершить визит?", CommitEvent, event);
+	if(cnt == 0 || !$.MobileSettings.UsedEquipment){
+		Dialog.Ask(Translate["#ConfirmeEndReg#"], CommitEvent, event);
 	} else {
-		Dialog.Message("Для завершения визита необходимо завершить все задачи.");
+		Dialog.Message(Translate["#CompliteAllTask#"]);
 	}
 }
 
@@ -113,6 +113,7 @@ function CommitEvent(state, args){
 		}
 	} else {
 			SaveEvent(state, undefined);
+
 			Workflow.Commit();
 	}
 }

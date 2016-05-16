@@ -10,7 +10,7 @@ function DoNext(param) {
 
 function GetCheckList(event){
     var q = new Query("SELECT CA. Description AS Desc, " +
-                      "ETDP.Name AS AType, " +
+                      "ETDP.Name AS AType, DEC.Id AS IDESC, " +
                       "MAX(DEC.Required) AS Req, " +
                       "DEC.Result, " +
                       "DEC.Action Action " +
@@ -136,6 +136,9 @@ function SetStringValue(sender, event, act, index){
     }
 
     SetForAllActions(event, act, sender.Text, index);
+  //  CanForward(event);
+    //DoRefresh($.param1);
+    //Workflow.Refresh([$.param1]);
 }
 
 function SetIntegerValue(sender, event, act, index){
@@ -177,6 +180,83 @@ function SetForAllActions(event, act, result, index) {
       obj.Result = result;
       obj.Save(false);
 
+  }
+  //CanForward(event);
+
+}
+function OnChangeStringField(sender, event, index, req, idans) {
+  if (req){
+    if (IsNullOrEmpty(sender.Text)){
+      Variables["marker" + index].CssClass = "red_mark";
+      Variables["marker" + index].Refresh();
+      CanForwardNull(event,idans);
+    } else {
+      if (StrLen(sender.Text)==1) {
+      Variables["marker" + index].CssClass = "green_mark";
+      Variables["marker" + index].Refresh();
+        CanForwardWithoutAns(event,idans);
+      }
+    }
+  }
+}
+
+function CanForwardNull(event,idans){
+  var q = new Query("SELECT length(trim(DEC.Result)) AS Res, DEC.Required AS Req " +
+                "FROM Document_Event_CheckList DEC " +
+                "WHERE DEC.Ref = @event AND DEC.Required = 1 " +
+                "AND Res = 0");
+  q.AddParameter("event", event);
+//  q.AddParameter("idans", idans);
+  var cnt =  q.ExecuteCount();
+  var q1 = new Query("SELECT length(DEC.Result) AS Res, DEC.Required AS Req " +
+                "FROM Document_Event_CheckList DEC " +
+                "WHERE DEC.Ref = @event AND DEC.Required = 1 " +
+                "AND Res > 0 AND Id = @idans");
+  q1.AddParameter("event", event);
+  q1.AddParameter("idans", idans);
+  var cnt1 =  q1.ExecuteCount();
+//  if (cnt == 0) {
+//    $.nextButton.Refresh();
+//    $.nextButton.CssClass = "forward_orange";
+//    $.nextButton.Refresh();
+//    $.nextButton.Text = Translate["#next#"];
+//    return true;
+//  } else {
+//Dialog.Message(cnt1);
+if (cnt1==0) {
+}else {
+  cnt = cnt+1;
+}
+    $.nextButton.Refresh();
+    $.nextButton.CssClass = "forward_gray";
+    $.nextButton.Refresh();
+    $.nextButton.Text = Translate["#next#"] + " (" + cnt + ")";
+    return false;
+
+}
+
+
+function CanForwardWithoutAns(event,idans){
+  var q = new Query("SELECT length(trim(DEC.Result)) AS Res, DEC.Required AS Req " +
+                "FROM Document_Event_CheckList DEC " +
+                "WHERE DEC.Ref = @event AND DEC.Required = 1 " +
+                "AND Res = 0 AND Id <> @idans");
+  q.AddParameter("event", event);
+  q.AddParameter("idans", idans);
+  var cnt =  q.ExecuteCount();
+
+  if (cnt == 0) {
+    $.nextButton.Refresh();
+    $.nextButton.CssClass = "forward_orange";
+    $.nextButton.Refresh();
+    $.nextButton.Text = Translate["#next#"];
+    return true;
+  } else {
+    $.nextButton.Refresh();
+    $.nextButton.CssClass = "forward_gray";
+    $.nextButton.Refresh();
+    $.nextButton.Text = Translate["#next#"] + " (" + cnt + ")";
+    return false;
   }
 
 }
