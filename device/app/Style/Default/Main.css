@@ -324,7 +324,7 @@ svl vl {
 
     .grid vl main_row {
         font: 95% Arial-BoldMT;
-        color: #43acfd;
+        color: #0079c2;
         white-space: nowrap;
     }
 
@@ -351,7 +351,7 @@ svl vl {
         background-color: #f8f8f8;
         border-style: solid;
         border-width: 1px;
-        border-color: #3384b8;
+        border-color: #cecece;
         border-radius: 10px;
     }
 
@@ -416,7 +416,7 @@ svl vl {
         margin-left: 2%;
         text-align: center;
         font: 80% Arial-BoldMT;
-        color: #43acfd;
+        color: #0079c2;
         dock-align: left;
      }
 

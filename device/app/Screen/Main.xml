@@ -10,7 +10,6 @@
         <c:HorizontalLayout CssClass="btn_menu" OnClickAction="$Facade.OpenMenu()">
           <c:Image CssClass="menuIcon"/>
         </c:HorizontalLayout>
-        <c:HorizontalLayout CssClass="btn_forward"/>
         <c:HorizontalLayout>
           <c:TextView Text="#summary#" />
         </c:HorizontalLayout>
@@ -48,7 +47,7 @@
                 <c:TextView Text="#reqmth#" CssClass="description_row"/>
               </c:VerticalLayout>
             </c:DockLayout>
-            <c:HorizontalLine/>
+            <c:HorizontalLine CssClass="GreyLine"/>
             <c:DockLayout CssClass="grid">
               <c:VerticalLayout>
                 <s:Push Id="undonemonth" Value="$GetToMonthUnDoneRequestCount()"/>

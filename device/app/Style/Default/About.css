@@ -1,6 +1,6 @@
 
 .caption_grid{
-	padding-left: 2.7mm;
+	padding-left: 1.7mm;
 }
 
 .main_row {
@@ -73,16 +73,16 @@
 	margin-right: -24.7mm;
 	border-style : solid;
 	border-width: 1px;
-	border-color: #e6891b;
+	border-color: #0079c2;
 	border-radius: 5px;
-	color: #e6891b;
+	color: #0079c2;
 	text-align: center;
 	font: 52% arial;
 }
 
 .sync Indicator {
 	height: 4mm;
-	color: #e6891b;
+	color: #0079c2;
 	vertical-align: central;
 }
 
@@ -99,6 +99,6 @@
 	margin-top: 10%;
 	margin-left: 2mm;
 	font: 30% Arial-ItalicMT;
-	color: #e6891b;
+	color: #0079c2;
 	/*background-color: #ddff66;*/
 }
