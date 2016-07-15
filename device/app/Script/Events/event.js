@@ -14,11 +14,41 @@ function GetAndSetStartTime(event){
 	//Dialog.Message(ActualStartDate);
 }
 
+function FixDateTimeAndCoord(){
+	//$.StartVisit.Visible = false;
+	$.dataSyncLayout.Visible = true;
+	$.dataSyncIndicator.Start();
+	var event = Vars.getEvent();
+	eventInObj = event.GetObject();
+		eventInObj.ActualStartDate = DateTime.Now;
+		var location = GPS.CurrentLocation;
+		if(ActualLocation(location)) {
+				eventInObj.Latitude = location.Latitude;
+				eventInObj.Longitude = location.Longitude;
+				//eventInObj.Save(false);
+				//$.Coordinats = location.Latitude + "; " + location.Longitude;
+				//Workflow.Refresh([param1]);
+		} else {
+			//Dialog.Message("Не удалось получить координаты.");
+		}
+		eventInObj.Save(false);
+		DB.Save();
+		DB.Sync(SyncDataFinish);
+
+//
+}
+function SyncDataFinish(state) {
+	$.dataSyncIndicator.Stop();
+		Workflow.Refresh([]);
+				//$.ftpSyncIndicator.Stop();
+	//Dialog.Message(state);
+}
 function DoActionAndSave(step, req, cust, outlet) {
 
 }
 
 function DoNextStep(param){
+		GetAndSetStartTime(param);
 		if ($.MobileSettings.UsedCalculate){
 			DoAction("calculate", param);
 			return;

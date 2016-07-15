@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <c:Screen xmlns:c="BitMobile.Controls" xmlns:s="BitMobile.ValueStack" StyleSheet="event.css">
 	<s:Push Id="event" Value="$GetEventDetails($event)"></s:Push>
-	<s:Push Id="StartTime" Value="$GetAndSetStartTime($event)"></s:Push>
   <c:DockLayout>
-
     <c:DockLayout CssClass="top_navigator">
       <c:HorizontalLayout CssClass="btn_back" OnEvent="Back" OnClickAction="$DoBackAndClean()">
          <c:Image/>
@@ -39,13 +37,26 @@
 	</s:Else>
 	<c:ScrollView>
 	 <c:HorizontalLine/>
-	  <c:DockLayout CssClass="grid" OnClickAction="$ShowClient($event.Client)">
+	  <c:DockLayout CssClass="grid">
 			<c:Image CssClass="arrow"/>
-		<c:VerticalLayout>
+		<c:VerticalLayout OnClickAction="$ShowClient($event.Client)">
 		  <c:TextView Text="#descriptioncust#" CssClass="description_row"></c:TextView>
 		  <c:TextView Text="$event.Client.Description" CssClass="main_row"></c:TextView>
 		</c:VerticalLayout>
 	  </c:DockLayout>
+		<c:HorizontalLine/>
+
+	<s:If Test="$isEmptyCoordinats($event.Id) &amp;&amp; $event.ActualStartDate == '01.01.0001 0:00:00'">
+		<c:HorizontalLayout CssClass="grid1">
+				<c:VerticalLayout OnClickAction="$FixDateTimeAndCoord()">
+					<c:HorizontalLayout Id="dataSyncLayout" Visible="false">
+						<c:Indicator Id="dataSyncIndicator"/>
+						<c:TextView Text="#sync#..."/>
+					</c:HorizontalLayout>
+					<c:Button Id="StartVisit"  Text="Начать визит" CssClass="coordButton1" />
+				</c:VerticalLayout>
+		</c:HorizontalLayout>
+	</s:If>
 
 	 <c:HorizontalLine/>
 	  <c:DockLayout CssClass="grid">

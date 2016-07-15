@@ -8,6 +8,26 @@
         margin-left: 2.5%;
         background-image: url(arrow.png);
     }
+.grid1 {
+    height: 4.9mm;
+    width: 100%;
+    background-color: #ffffff;
+    selected-color: #bacdce;
+}
+.coordButton1 {
+			width: 25mm;
+			height: 4.1mm;
+			vertical-align: central;
+			margin-left: 30%;
+			margin-top: 0.4mm;
+			border-style : solid;
+			border-width: 2px;
+			border-color: #43acfd;
+			border-radius: 6px;
+			color: #2d89cf;
+			text-align: center;
+			font: 60% arial;
+		}
 
 .arrow {
 		    height: 1.9mm;
@@ -17,7 +37,10 @@
 		    margin-right: 2.4mm;
 		    background-image: url(arrow.png);
 		}
-
+.grid1 vl hl Indicator {
+        height: 100%;
+        color: #e6891b;
+}
 .coord {
 	  width: 10.3mm;
 	  height: 9mm;

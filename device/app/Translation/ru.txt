@@ -1,7 +1,7 @@
 summary		Сводная информация
-requests	Наряды
-clients	Клиенты
-client	Клиент
+requests	Задачи
+clients	Проекты
+client	Проект
 vpVisits	заявок
 vpPerformed	выполнено
 further	еще
@@ -21,7 +21,7 @@ end	Окончание
 period	Период
 ClearFilter	Очистить фильтр
 Clear	Очистить
-descriptioncust	Наименование клиента
+descriptioncust	Наименование проекта
 mainContact	Контакт
 address	Адрес
 Author	Автор
@@ -30,7 +30,7 @@ back	Назад
 next	Далее
 contacts	Контакты
 devices	Оборудование
-visit	Наряд
+visit	Задача
 details	Сведения
 Executor		Исполнитель
 doDate		Дата выполнения
@@ -98,7 +98,7 @@ success			Данные успешно отправлены
 noSuccess		Произошла ошибка во время отправки. Данные не отправлены
 Abort		Отмена
 questionRollback		Статус выполнения задачи будет отменен. Продолжить?
-OrderNum		Номер наряда
+OrderNum		Номер задачи
 NoDate		Не указана
 ExecutiveComment		Комментарий исполнителя
 ToLongText500		Длина текста не должна превышать 500 символов. Текущая длина текста
@@ -169,8 +169,8 @@ NoContacts	Нет контактов
 NoRegToday	Нет заявок на сегодня
 NoReg	Нет заявок
 Apply	Применить
-CompliteAllTask	Для завершения наряда необходимо завершить все задачи.
-ConfirmeEndReg	После завершения наряда его нельзя будет отредактировать. Вы хотите завершить наряд?
+CompliteAllTask	Для завершения задачи необходимо завершить все задачи.
+ConfirmeEndReg	После завершения задачи его нельзя будет отредактировать. Вы хотите завершить задачу?
 OnFull	По норме
 MatCount	материалов
 AfterSync	Оповещение будет отправлено при следующей синхронизации!
