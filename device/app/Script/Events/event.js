@@ -37,6 +37,114 @@ function FixDateTimeAndCoord(){
 
 //
 }
+function AddSnapshotEvent(sender) { // optional: title, path
+	var listChoice = new List;
+	if ($.MobileSettings.AllowGalery) {
+		listChoice.Add([1, Translate["#makeSnapshot#"]]);
+		listChoice.Add([0, Translate["#addFromGallery#"]]);
+		Dialog.Choose(Translate["#snapshot#"], listChoice, AddSnapshotHandlerEvent);
+	} else {
+		MakeSnapshotEvent();
+	}
+}
+function AddSnapshotHandlerEvent(state, args) {
+
+	if (parseInt(args.Result)==parseInt(0)){ 	//Gallery answer
+		ChooseFromGalleryEvent();
+	}
+
+	if (parseInt(args.Result)==parseInt(1)){ 	//SnapshotAnswer
+		MakeSnapshotEvent();
+	}
+
+}
+function MakeSnapshotEvent() {
+	FileSystem.CreateDirectory(String.Format("/private/{0}", GetParentFolderName(Vars.getEvent())));
+
+	var pictId = Global.GenerateGuid();
+	var path = GetPrivateImagePath(Vars.getEvent(), pictId, ".jpg");
+	Camera.Size = $.MobileSettings.PictureSize;
+
+	Camera.Path = path;
+	//Dialog.Message($.MobileSettings.PictureSize);
+	Camera.MakeSnapshot(path, $.MobileSettings.PictureSize, SaveImage, [pictId]);
+}
+
+function SnapshotActionsEvent(sender, pictId) { // optional: title, path
+		var listChoice = new List;
+		listChoice.Add([0, Translate["#DeleteSnapShot#"]]);
+
+		Dialog.Choose(Translate["#snapshot#"], listChoice, SnapshotActionsEventHandler, [pictId]);
+}
+function SnapshotActionsEventHandler(state, args){
+		if (parseInt(args.Result)==parseInt(0)){
+				DeleteSnapShotEvent(state[0]);
+		}
+}
+function DeleteSnapShotEvent(pictId) {
+	q = new Query("SELECT Id FROM Document_Reminder_Photo WHERE Ref == @ref AND IDPhoto == @pict");
+	q.AddParameter("ref", Vars.getEvent());
+	q.AddParameter("pict", pictId);
+	res = q.ExecuteScalar();
+	DB.Delete(res);
+
+	if (FileSystem.Exists(GetPrivateImagePath(Vars.getEvent(), pictId, ".jpg"))){
+	 	FileSystem.Delete(GetPrivateImagePath(Vars.getEvent(), pictId, ".jpg"));
+	}
+
+	Workflow.Refresh([]);
+}
+
+function SnapshotEventExists(pictId) {
+		var q = new Query("Select FilePath From Document_Event_Foto WHERE Ref == @ref AND FilePath == @pict");
+		q.AddParameter("ref", Vars.getEvent());
+		q.AddParameter("pict", pictId);
+		var filename = q.ExecuteScalar();
+		var fileFound = !String.IsNullOrEmpty(filename);
+		var fileExists = (fileFound ? FileSystem.Exists(GetPrivateImagePath(Vars.getEvent(), pictId, ".jpg")) : false);
+		return fileFound && fileExists;
+}
+
+function GetPrivateImage(pictID) {
+	var ref = Vars.getEvent();
+	var objectType = GetParentFolderName(ref);
+	var r = "/private/" + objectType + "/" + ref.Id.ToString() + "/"
+    + pictID + ".jpg";
+//		Dialog.Message(r);
+	return r;
+}
+function SaveImage(state, args){
+		if (args.Result){
+			objSnapShot = DB.Create("Document.Event_Foto");
+			objSnapShot.Ref = Vars.getEvent();
+			objSnapShot.FilePath = state[0];
+			objSnapShot.Save();
+			Workflow.Refresh([]);
+		}
+}
+
+
+function ChooseFromGalleryEvent() {
+	FileSystem.CreateDirectory(String.Format("/private/{0}", GetParentFolderName(Vars.getEvent())));
+
+	var pictId = Global.GenerateGuid();
+	var path = GetPrivateImagePath(Vars.getEvent(), pictId, ".jpg");
+	Gallery.Size = $.MobileSettings.PictureSize;
+
+	Gallery.Copy(path, SaveImage, [pictId]);
+}
+
+function GetPrivateImagePath(objectID, pictID, pictExt) {
+	var objectType = GetParentFolderName(objectID);
+	var r = "/private/" + objectType + "/" + objectID.Id.ToString() + "/"
+    + pictID + pictExt;
+	return r;
+}
+function GetFoto(){
+	var q1 = new Query("SELECT FilePath AS UIDPhoto From Document_Event_Foto WHERE Ref = @ref");
+	q1.AddParameter("ref",Vars.getEvent());
+	return q1.Execute();
+}
 function SyncDataFinish(state) {
 	$.dataSyncIndicator.Stop();
 		Workflow.Refresh([]);

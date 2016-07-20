@@ -284,6 +284,30 @@
 	    </s:Else>
 		</s:Iterator>
 			<c:HorizontalLine />
+			<c:DockLayout CssClass="snapshot_grid">
+					<c:Button Text="#add#" OnClick="$AddSnapshotEvent()"/>
+					<c:TextView Text="#Snapshots#" />
+			</c:DockLayout>
+			<c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel">
+				<s:Iterator Id="snapshot" Value="$GetFoto()" Status="statusCount">
+					<s:Push Id="index" Value="$statusCount.Index" />
+							<s:If Test="$SnapshotEventExists($snapshot.UIDPhoto)">
+								<c:VerticalLayout OnClick="$SnapshotActionsEvent($snapshot.UIDPhoto)">
+									<s:Push Id="path" Value="$GetPrivateImage($snapshot.UIDPhoto)" />
+									<c:Image Source="$path" />
+								</c:VerticalLayout>
+							</s:If>
+							<s:Else>
+								<c:VerticalLayout CssClass="no_image">
+									<c:Image />
+									<c:TextView Text="#imageNotAvailable#" CssClass="text"></c:TextView>
+								</c:VerticalLayout>
+							</s:Else>
+				</s:Iterator>
+			</c:SwipeHorizontalLayout>
+			<c:HorizontalLine />
+
+
 		<!-- End Parameters -->
 
 	</c:ScrollView>
