@@ -57,6 +57,11 @@
 				</c:VerticalLayout>
 		</c:HorizontalLayout>
 	</s:If>
+	<c:HorizontalLayout CssClass="grid1">
+			<c:VerticalLayout OnClickAction="$CancelVisit()">
+				<c:Button Id="CancelVisit"  Text="Отменить визит" CssClass="coordButton1" />
+			</c:VerticalLayout>
+	</c:HorizontalLayout>
 
 	 <c:HorizontalLine/>
 	  <c:DockLayout CssClass="grid">

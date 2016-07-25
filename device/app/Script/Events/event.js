@@ -37,6 +37,19 @@ function FixDateTimeAndCoord(){
 
 //
 }
+function SyncDataFinish(state) {
+	$.dataSyncIndicator.Stop();
+		Workflow.Refresh([]);
+				//$.ftpSyncIndicator.Stop();
+	//Dialog.Message(state);
+}
+function CancelVisit(){
+	var event = Vars.getEvent();
+	eventInObj = event.GetObject();
+	eventInObj.Status = DB.Current.Constant.VisitStatus.Cancel;
+	eventInObj.Save(false);
+	Workflow.Commit();
+}
 function AddSnapshotEvent(sender) { // optional: title, path
 	var listChoice = new List;
 	if ($.MobileSettings.AllowGalery) {
@@ -145,12 +158,7 @@ function GetFoto(){
 	q1.AddParameter("ref",Vars.getEvent());
 	return q1.Execute();
 }
-function SyncDataFinish(state) {
-	$.dataSyncIndicator.Stop();
-		Workflow.Refresh([]);
-				//$.ftpSyncIndicator.Stop();
-	//Dialog.Message(state);
-}
+
 function DoActionAndSave(step, req, cust, outlet) {
 
 }
