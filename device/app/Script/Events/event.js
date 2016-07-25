@@ -46,7 +46,8 @@ function SyncDataFinish(state) {
 function CancelVisit(){
 	var event = Vars.getEvent();
 	eventInObj = event.GetObject();
-	eventInObj.Status = DB.Current.Constant.VisitStatus.Cancel;
+	var q = new Query("Select Id From Enum_StatusyEvents Where Name = 'Cancel'");
+	eventInObj.Status = q.ExecuteScalar();//DB.Current.Constant.VisitStatus.Cancel;
 	eventInObj.Save(false);
 	Workflow.Commit();
 }
