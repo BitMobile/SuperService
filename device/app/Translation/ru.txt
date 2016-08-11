@@ -2,7 +2,7 @@ summary		Сводная информация
 requests	Задачи
 clients	Проекты
 client	Проект
-vpVisits	заявок
+vpVisits	задач
 vpPerformed	выполнено
 further	еще
 scheduled	запланировано
@@ -41,7 +41,7 @@ synchronizationData	СИНХРОНИЗАЦИЯ ДАННЫХ
 synchronizationPhoto	СИНХРОНИЗАЦИЯ ФОТОГРАФИЙ
 lastSync	Последняя синхронизация
 synchronize	Синхронизировать
-vpVisits	заявок
+vpVisits	задач
 at	в
 error	Ошибка
 SendLog	Отправить лог
@@ -166,8 +166,8 @@ DateCreate	Дата создания
 11	ноября
 12	декабря
 NoContacts	Нет контактов
-NoRegToday	Нет заявок на сегодня
-NoReg	Нет заявок
+NoRegToday	Нет задач на сегодня
+NoReg	Нет задач
 Apply	Применить
 CompliteAllTask	Для завершения задачи необходимо завершить все задачи.
 ConfirmeEndReg	После завершения задачи его нельзя будет отредактировать. Вы хотите завершить задачу?
