@@ -251,7 +251,7 @@ function setCoordinats(sender, outlet, param1){
 }
 
 function updateCoordinats(outlet, param1) {
-	Dialog.Choose("Координаты", [["update", "#Refresh#"],["copy", "#Copy#"], ["cut", "#delete#"]] , coordinatsCallBack, [outlet, param1]);
+	Dialog.Choose("Координаты", [["update", Translate["#Refresh#"]],["copy", Translate["#Copy#"]], ["cut", Translate["#delete#"]]] , coordinatsCallBack, [outlet, param1]);
 }
 
 function coordinatsCallBack(state, args){
