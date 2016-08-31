@@ -45,9 +45,10 @@ function SyncDataFinish(state) {
 }
 function CancelVisit(){
 	var event = Vars.getEvent();
-	eventInObj = event.GetObject();
+	var eventInObj = event.GetObject();
 	var q = new Query("Select Id From Enum_StatusyEvents Where Name = 'Cancel'");
 	eventInObj.Status = q.ExecuteScalar();//DB.Current.Constant.VisitStatus.Cancel;
+	Dialog.Message(eventInObj.Status);
 	eventInObj.Save(false);
 	Workflow.Commit();
 }
@@ -96,7 +97,7 @@ function SnapshotActionsEventHandler(state, args){
 		}
 }
 function DeleteSnapShotEvent(pictId) {
-	q = new Query("SELECT Id FROM Document_Reminder_Photo WHERE Ref == @ref AND IDPhoto == @pict");
+	q = new Query("SELECT Id FROM Document_Event_Foto WHERE Ref == @ref AND FilePath == @pict");
 	q.AddParameter("ref", Vars.getEvent());
 	q.AddParameter("pict", pictId);
 	res = q.ExecuteScalar();
