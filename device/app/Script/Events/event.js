@@ -48,7 +48,7 @@ function CancelVisit(){
 	var eventInObj = event.GetObject();
 	var q = new Query("Select Id From Enum_StatusyEvents Where Name = 'Cancel'");
 	eventInObj.Status = q.ExecuteScalar();//DB.Current.Constant.VisitStatus.Cancel;
-	Dialog.Message(eventInObj.Status);
+	//Dialog.Message(eventInObj.Status);
 	eventInObj.Save(false);
 	Workflow.Commit();
 }
