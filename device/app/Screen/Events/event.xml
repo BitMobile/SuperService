@@ -295,6 +295,7 @@
 					<c:TextView Text="#Snapshots#" />
 			</c:DockLayout>
 			<c:SwipeHorizontalLayout Id="snapshotLayout" CssClass="carousel">
+				<s:If Test="$GetCount()">
 				<s:Iterator Id="snapshot" Value="$GetFoto()" Status="statusCount">
 					<s:Push Id="index" Value="$statusCount.Index" />
 							<s:If Test="$SnapshotEventExists($snapshot.UIDPhoto)">
@@ -310,9 +311,14 @@
 								</c:VerticalLayout>
 							</s:Else>
 				</s:Iterator>
+			</s:If>
+			<s:Else>
+				<c:VerticalLayout CssClass="no_imageIn">
+					<c:Image />
+				</c:VerticalLayout>
+			</s:Else>
 			</c:SwipeHorizontalLayout>
 			<c:HorizontalLine />
-
 
 		<!-- End Parameters -->
 

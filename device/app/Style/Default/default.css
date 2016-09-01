@@ -1095,6 +1095,19 @@ MemoEdit {
     	horizontal-align: center;
     }
 
+    .no_imageIn {
+      height: 100%;
+    	width: 100%;
+    }
+    .no_imageIn img {
+    	height: 12mm;
+    	width: 21mm;
+    	background-image: url(Stack_of_Photos.png);
+    	margin-top: 10%;
+    	horizontal-align: center;
+    }
+
+
     .no_single_image {
     	height: 25.6mm;
     	background-color: #ffffff;

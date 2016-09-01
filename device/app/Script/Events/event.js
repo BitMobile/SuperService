@@ -111,7 +111,7 @@ function DeleteSnapShotEvent(pictId) {
 }
 
 function SnapshotEventExists(pictId) {
-		var q = new Query("Select FilePath From Document_Event_Foto WHERE Ref == @ref AND FilePath == @pict");
+		var q = new Query("Select FilePath From Document_Event_Foto WHERE Ref = @ref AND FilePath = @pict");
 		q.AddParameter("ref", Vars.getEvent());
 		q.AddParameter("pict", pictId);
 		var filename = q.ExecuteScalar();
@@ -159,6 +159,15 @@ function GetFoto(){
 	var q1 = new Query("SELECT FilePath AS UIDPhoto From Document_Event_Foto WHERE Ref = @ref");
 	q1.AddParameter("ref",Vars.getEvent());
 	return q1.Execute();
+}
+function GetCount(){
+	var q1 = new Query("SELECT FilePath AS UIDPhoto From Document_Event_Foto WHERE Ref = @ref");
+	q1.AddParameter("ref",Vars.getEvent());
+	if (q1.ExecuteCount() == 0) {
+		return false;
+	}else {
+		return true;
+	}
 }
 
 function DoActionAndSave(step, req, cust, outlet) {
