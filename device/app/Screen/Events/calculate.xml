@@ -9,8 +9,8 @@
          <c:Image/>
         <c:TextView Text="#back#"/>
       </c:HorizontalLayout>
-				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($param1)"> <!-- $DoAction(tasks, $event) -->
-				<c:TextView Text="#next#"/>
+				<c:HorizontalLayout CssClass="btn_forward"  OnClickAction="$askCommit($param1)"> <!-- $DoAction(tasks, $event) -->
+				<c:TextView Text="#ready#"/>
 				</c:HorizontalLayout>
       <c:HorizontalLayout>
         <c:TextView Text="#calculate#" />

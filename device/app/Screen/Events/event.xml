@@ -7,9 +7,16 @@
          <c:Image/>
         <c:TextView Text="#back#"/>
       </c:HorizontalLayout>
+			<c:HorizontalLayout CssClass="btn_forward2" OnEvent="Back" OnClickAction="$DoNextStep($event)"> <!-- $DoAction(tasks, $event) -->
+
+<c:Image/>
+			</c:HorizontalLayout>
 				<c:HorizontalLayout CssClass="btn_forward" OnEvent="Back" OnClickAction="$DoNextStep($event)"> <!-- $DoAction(tasks, $event) -->
+
 				<c:TextView Text="#next#"/>
+
 				</c:HorizontalLayout>
+
       <c:HorizontalLayout>
         <c:TextView Text="#visit#" />
       </c:HorizontalLayout>
@@ -27,14 +34,14 @@
 
 			</c:DockLayout>
 	</s:If>
-	<s:Else>
+	<!-- <s:Else>
 		<c:DockLayout CssClass="footer">
 			<c:HorizontalLine/>
 			<c:DockLayout CssClass="btn_bottom_footer" OnClickAction="$DoAction(ShowContacts, $event.Client)">
 				<c:TextView Text="#contacts#" />
 			</c:DockLayout>
 		</c:DockLayout>
-	</s:Else>
+	</s:Else> -->
 	<c:ScrollView>
 	 <c:HorizontalLine/>
 	  <c:DockLayout CssClass="grid">
@@ -65,23 +72,24 @@
 	</c:HorizontalLayout>
 
 	 <c:HorizontalLine/>
+	 			<s:If Test="$PhoneExists($event.ContactVisiting.Tel)">
 	  <c:DockLayout CssClass="grid">
-						<s:If Test="$PhoneExists($event.ContactVisiting.Tel)">
+
 							<c:HorizontalLayout CssClass="phone"  OnClickAction="$MoreMakeContactCall($event.ContactVisiting.Tel)">
 								<c:Image CssClass="iphone" />
 							</c:HorizontalLayout>
-						</s:If>
 
-					<c:VerticalLayout>
+
+					<!-- <c:VerticalLayout>
 					  <c:TextView Text="#mainContact#" CssClass="description_row"></c:TextView>
 					  <c:TextView Text="$event.ContactVisiting.Description" CssClass="main_row"></c:TextView>
 					  <c:TextView Text="$event.ContactVisiting.Tel" CssClass="main_row"></c:TextView>
-					</c:VerticalLayout>
+					</c:VerticalLayout> -->
 	  </c:DockLayout>
 
 
 		<c:HorizontalLine/>
-
+</s:If>
 				<c:DockLayout CssClass="grid" OnClickAction="$DoAction(fullText,	#address#, $event.Client.Address)">
 				<c:Image CssClass="arrow"/>
 				<c:VerticalLayout>
@@ -113,13 +121,13 @@
 			</c:DockLayout>
 			<c:HorizontalLine />
 
-		<c:HorizontalLayout CssClass="grid">
+		<!-- <c:HorizontalLayout CssClass="grid">
 			<c:VerticalLayout>
 			  <c:TextView Text="#OrderNum#" CssClass="description_row"></c:TextView>
 			  <c:TextView Id="OrderNum" Text="$event.Number" CssClass="main_row"></c:TextView>
 			</c:VerticalLayout>
 	  </c:HorizontalLayout>
-		<c:HorizontalLine />
+		<c:HorizontalLine /> -->
 	  <c:HorizontalLayout CssClass="grid">
 			<c:VerticalLayout>
 			  <c:TextView Text="#Author#" CssClass="description_row"></c:TextView>
@@ -320,6 +328,14 @@
 			</c:SwipeHorizontalLayout>
 			<c:HorizontalLine />
 
+			<c:HorizontalLine/>
+			<c:HorizontalLayout CssClass="memo_block">
+				 <c:VerticalLayout>
+					 <c:TextView Text="#ExecutiveComment#" CssClass="description_row"></c:TextView>
+					 <c:MemoEdit Id="ExecutiveComment" Text="$event.CommentContractor" CssClass="main_row" OnLostFocus="$SetExecutiveComment($event)"></c:MemoEdit>
+				 </c:VerticalLayout>
+		 </c:HorizontalLayout>
+		 <c:HorizontalLine/>
 		<!-- End Parameters -->
 
 	</c:ScrollView>

@@ -98,12 +98,12 @@ function SetMobileSettings(){
   var PictureSize = new Query("SELECT NumericValue FROM Catalog_SettingMobileApplication WHERE Description = 'PictureSize'");
   var resPS = PictureSize.ExecuteScalar();
   if (isNaN(parseInt(resPS))){
-    $.MobileSettings.Add("PictureSize", 300);
+    $.MobileSettings.Add("PictureSize", 1400);
   } else {
     if (parseInt(resPS)> 0) {
         $.MobileSettings.Add("PictureSize", parseInt(PictureSize.ExecuteScalar()));
     } else {
-        $.MobileSettings.Add("PictureSize", 300);
+        $.MobileSettings.Add("PictureSize", 1400);
     }
   }
 }

@@ -102,7 +102,7 @@
         <bp:Step Name="photoView" Screen="Common\photoView.xml" Controller="Common\photoView.js"></bp:Step>
 
         <bp:Step Name="calculate" Screen="Events\calculate.xml" Controller="Events\calculate.js">
-           <bp:Action Name="Total" NextStep="Total"></bp:Action>
+           <!-- <bp:Action Name="Total" NextStep="Total"></bp:Action> -->
            <bp:Action Name="tasks" NextStep="tasks"></bp:Action>
            <bp:Action Name="checklist" NextStep="checklist" />
            <bp:Action Name="AddWork" NextStep="SKUList"></bp:Action>

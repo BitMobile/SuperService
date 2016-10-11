@@ -386,6 +386,32 @@ MemoEdit {
 }
 
 
+.btn_forward2 {
+    width: 3mm;
+    height: 100%;
+    dock-align: right;
+}
+
+.btn_forward2 TextView {
+    width: 100%;
+    height: 100%;
+    margin-right: 5mm;
+    padding-top: 26%;
+    text-align: right;
+    dock-align: right;
+    color: #b96f18;
+    font: 39.5% arial;
+}
+
+.btn_forward2 img {
+    background-image: url(arrow.png);
+    margin-top: 24%;
+    margin-right: 1mm;
+    dock-align: right;
+    height: 50%;
+}
+
+
 .btn_back {
     width: 16.3mm;
     height: 100%;
